@@ -1,0 +1,170 @@
+{
+  "version": "LV11",
+  "page": "trust",
+  "defaultLang": "th",
+  "languages": ["th", "en", "zh", "jp"],
+  "updatedAt": "2026-05-22",
+  "ui": {
+    "th": {
+      "sequence": "TRUST SEQUENCE",
+      "continue": "Continue to INME",
+      "back": "Back to MMD",
+      "languageLabel": "Language"
+    },
+    "en": {
+      "sequence": "TRUST SEQUENCE",
+      "continue": "Continue to INME",
+      "back": "Back to MMD",
+      "languageLabel": "Language"
+    },
+    "zh": {
+      "sequence": "信任序列",
+      "continue": "继续进入 INME",
+      "back": "返回 MMD",
+      "languageLabel": "语言"
+    },
+    "jp": {
+      "sequence": "TRUST SEQUENCE",
+      "continue": "INMEへ進む",
+      "back": "MMDへ戻る",
+      "languageLabel": "言語"
+    }
+  },
+  "frames": [
+    {
+      "id": "bangkok",
+      "kicker": {
+        "th": "MMD PRIVÉ",
+        "en": "MMD PRIVÉ",
+        "zh": "MMD PRIVÉ",
+        "jp": "MMD PRIVÉ"
+      },
+      "headline": {
+        "th": "BANGKOK<br>IS LOUD.",
+        "en": "BANGKOK<br>IS LOUD.",
+        "zh": "BANGKOK<br>IS LOUD.",
+        "jp": "BANGKOK<br>IS LOUD."
+      },
+      "lead": {
+        "th": "แต่บางคืน<br>ข้างในใจกลับเงียบกว่าที่คิด",
+        "en": "But on some nights,<br>the silence inside feels louder than the city.",
+        "zh": "可有些夜晚，<br>心里的安静比城市更响。",
+        "jp": "けれど、ある夜は<br>街よりも心の静けさのほうが大きく感じる。"
+      },
+      "micro": {
+        "th": "คุณอาจไม่ได้ต้องการตัวเลือกมากขึ้น<br>คุณอาจแค่ไม่อยากเลือกผิดอีกแล้ว",
+        "en": "Maybe you do not need more choices.<br>Maybe you just do not want to choose wrong again.",
+        "zh": "你也许并不需要更多选择。<br>你只是，不想再选错一次。",
+        "jp": "欲しいのは、選択肢の多さではなく、<br>もう間違えたくないという安心かもしれません。"
+      }
+    },
+    {
+      "id": "kenji",
+      "kicker": {
+        "th": "KENJI RECEIVED",
+        "en": "KENJI RECEIVED",
+        "zh": "KENJI 已接入",
+        "jp": "KENJI RECEIVED"
+      },
+      "headline": {
+        "th": "YOU DON’T<br>GO ALONE.",
+        "en": "YOU DON’T<br>GO ALONE.",
+        "zh": "YOU DON’T<br>GO ALONE.",
+        "jp": "YOU DON’T<br>GO ALONE."
+      },
+      "lead": {
+        "th": "จากตรงนี้<br>ผมจะพาคุณลงไปเองครับ",
+        "en": "From here,<br>I will take you down myself.",
+        "zh": "从这里开始，<br>我会亲自带你下去。",
+        "jp": "ここから先は、<br>僕がご案内します。"
+      },
+      "micro": {
+        "th": "Kenji จะเป็นคนแรกที่รับคุณ<br>เข้าสู่ทางเข้า SĪGIL",
+        "en": "Kenji is the first person to receive you<br>at the entrance to SĪGIL.",
+        "zh": "Kenji 会是第一个接住你的人，<br>在通往 SĪGIL 的入口。",
+        "jp": "SĪGILの入口で最初にあなたを迎えるのは、<br>Kenjiです。"
+      }
+    },
+    {
+      "id": "descent",
+      "kicker": {
+        "th": "DESCENT ACTIVE",
+        "en": "DESCENT ACTIVE",
+        "zh": "下行已启动",
+        "jp": "DESCENT ACTIVE"
+      },
+      "headline": {
+        "th": "THE LIFT<br>IS DESCENDING.",
+        "en": "THE LIFT<br>IS DESCENDING.",
+        "zh": "THE LIFT<br>IS DESCENDING.",
+        "jp": "THE LIFT<br>IS DESCENDING."
+      },
+      "lead": {
+        "th": "ลิฟต์นี้ไม่ได้พาคุณไปห้องรับรอง<br>มันพาคุณลงไปยังชั้นที่ระบบเริ่มมองเห็นคุณจริง ๆ",
+        "en": "This lift is not taking you to a lobby.<br>It is taking you to the layer where the system begins to see you clearly.",
+        "zh": "这部电梯不是通往接待厅。<br>它会带你下到系统真正开始看见你的地方。",
+        "jp": "このエレベーターは、ラウンジへ向かうものではありません。<br>システムがあなたを本当に認識し始める層へ降りていきます。"
+      },
+      "micro": {
+        "th": "Kenji พาคุณลงมา<br>แต่ประตูนี้เปิดได้ เพราะมีคนอนุญาต",
+        "en": "Kenji brings you down.<br>But this door opens only because someone allows it.",
+        "zh": "Kenji 会带你下去。<br>但这扇门会打开，是因为有人允许。",
+        "jp": "Kenjiがあなたを連れて降ります。<br>けれど、この扉が開くのは、誰かが許可したからです。"
+      }
+    },
+    {
+      "id": "door",
+      "kicker": {
+        "th": "SĪGIL GATE DOOR",
+        "en": "SĪGIL GATE DOOR",
+        "zh": "SĪGIL GATE DOOR",
+        "jp": "SĪGIL GATE DOOR"
+      },
+      "headline": {
+        "th": "THIS IS<br>NOT A LOBBY.",
+        "en": "THIS IS<br>NOT A LOBBY.",
+        "zh": "THIS IS<br>NOT A LOBBY.",
+        "jp": "THIS IS<br>NOT A LOBBY."
+      },
+      "lead": {
+        "th": "ที่นี่ไม่ได้มีใคร<br>ที่นี่มีเพียงระบบ<br>ระบบที่จะดูแลคุณอย่างปลอดภัย",
+        "en": "There is no one here.<br>There is only the system.<br>A system designed to keep you safe.",
+        "zh": "这里没有人在等你。<br>这里只有系统。<br>一个会安全照看你的系统。",
+        "jp": "ここに誰かがいるわけではありません。<br>ここにあるのは、システムだけです。<br>あなたを安全に扱うためのシステムです。"
+      },
+      "micro": {
+        "th": "มีเพียงทางเดินเงียบ ๆ<br>และประตูที่พร้อมจะเปิด<br>สำหรับคนที่มีสิทธิ์ได้ไปต่อ",
+        "en": "Only a quiet passage,<br>and a door ready to open<br>for those permitted to continue.",
+        "zh": "这里只有一条安静的通道，<br>和一扇只为有资格继续的人<br>准备打开的门。",
+        "jp": "あるのは静かな通路と、<br>進む権利を持つ人のために<br>開こうとしている扉だけです。"
+      }
+    },
+    {
+      "id": "station",
+      "kicker": {
+        "th": "FINAL THRESHOLD",
+        "en": "FINAL THRESHOLD",
+        "zh": "最终门槛",
+        "jp": "FINAL THRESHOLD"
+      },
+      "headline": {
+        "th": "WELCOME TO<br>SĪGIL STATION.",
+        "en": "WELCOME TO<br>SĪGIL STATION.",
+        "zh": "WELCOME TO<br>SĪGIL STATION.",
+        "jp": "WELCOME TO<br>SĪGIL STATION."
+      },
+      "lead": {
+        "th": "ด้านหลังประตูนี้",
+        "en": "Behind this door,",
+        "zh": "在这扇门后，",
+        "jp": "この扉の向こうに、"
+      },
+      "micro": {
+        "th": "ผมแค่อยากให้คุณเชื่อใจ..",
+        "en": "I only want you to trust me..",
+        "zh": "我只是想让你相信我..",
+        "jp": "ただ、僕を信じてほしいんです.."
+      }
+    }
+  ]
+}
