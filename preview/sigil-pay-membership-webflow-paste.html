@@ -1,12 +1,7 @@
 <!--
   MMD SĪGIL - /sigil/pay/membership
-  Black Gold mobile-first rebuild v2026-06-30
+  Black Gold mobile-first rebuild v2026-06-30 UNDER PAYMENT
   Paste into Webflow page body embed.
-
-  Customer-facing rule:
-  - Simple membership payment page.
-  - Code belongs here at checkout.
-  - VIP / Black Card stays private review only.
 -->
 
 <style>
@@ -18,6 +13,7 @@ body {
 
 #sigil-pay-membership {
   --hero-img: url("https://cdn.prod.website-files.com/68f879d546d2f4e2ab186e90/6a42c19f57d616a9a0259e64_Kenji-Paymember.webp");
+  --under-payment-img: url("https://cdn.prod.website-files.com/68f879d546d2f4e2ab186e90/6a4347c897ec07bb7fdecd0e_UNder%20_payment.png");
   --sigil-logo: url("https://cdn.prod.website-files.com/68f879d546d2f4e2ab186e90/6a0f2cbc7e26b6735aee4cb2_SIGIL%20LOGO%20Transp.webp");
   --bg: #050403;
   --panel: rgba(10, 9, 7, .82);
@@ -655,21 +651,40 @@ body {
 
 #sigil-pay-membership .spm-footer-card {
   position: relative;
-  min-height: 230px;
+  min-height: 330px;
   overflow: hidden;
   margin-top: 18px;
-  border: 1px solid rgba(231, 199, 123, .16);
+  border: 1px solid rgba(231, 199, 123, .18);
   border-radius: 26px;
+  background: #080705;
+  box-shadow: 0 24px 72px rgba(0, 0, 0, .44);
+}
+
+#sigil-pay-membership .spm-footer-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
   background:
-    radial-gradient(circle at 82% 28%, rgba(231, 199, 123, .15), transparent 34%),
-    linear-gradient(135deg, rgba(255, 255, 255, .035), rgba(0, 0, 0, .18)),
-    rgba(9, 8, 6, .86);
+    linear-gradient(90deg, rgba(5, 4, 3, .94) 0%, rgba(5, 4, 3, .80) 38%, rgba(5, 4, 3, .38) 74%, rgba(5, 4, 3, .18) 100%),
+    linear-gradient(180deg, rgba(5, 4, 3, .08), rgba(5, 4, 3, .36)),
+    var(--under-payment-img) center right / cover no-repeat;
+  filter: saturate(.95) contrast(1.04) brightness(.92);
+}
+
+#sigil-pay-membership .spm-footer-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 20% 20%, rgba(231, 199, 123, .16), transparent 36%),
+    linear-gradient(180deg, transparent, rgba(5, 4, 3, .30));
+  pointer-events: none;
 }
 
 #sigil-pay-membership .spm-footer-copy {
   position: relative;
   z-index: 2;
-  max-width: 650px;
+  max-width: 620px;
   padding: 24px;
 }
 
@@ -693,20 +708,9 @@ body {
 
 #sigil-pay-membership .spm-footer-card p {
   margin: 14px 0 0;
-  color: rgba(255, 244, 220, .72);
+  color: rgba(255, 244, 220, .76);
   font-size: 14px;
   line-height: 1.76;
-}
-
-#sigil-pay-membership .spm-footer-mark {
-  position: absolute;
-  right: -42px;
-  bottom: -86px;
-  width: min(76vw, 320px);
-  aspect-ratio: 1;
-  background: var(--sigil-logo) center / contain no-repeat;
-  opacity: .18;
-  filter: drop-shadow(0 0 38px rgba(231, 199, 123, .16));
 }
 
 #sigil-pay-membership .spm-bottom {
@@ -821,6 +825,10 @@ body {
       linear-gradient(180deg, rgba(5,4,3,.03), rgba(5,4,3,.62)),
       linear-gradient(90deg, rgba(5,4,3,.92) 0%, rgba(5,4,3,.74) 36%, rgba(5,4,3,.16) 72%, rgba(5,4,3,.36) 100%),
       var(--hero-img) 72% 16% / cover no-repeat;
+  }
+
+  #sigil-pay-membership .spm-footer-card {
+    min-height: 390px;
   }
 }
 </style>
@@ -1008,7 +1016,6 @@ body {
             <h3>ยืนยันให้ครบ แล้วรอเปิดสิทธิ์</h3>
             <p>เลือกแพ็กเกจ ใส่โค้ดถ้ามี และแนบข้อมูลที่ใช้ค้นหาสมาชิกให้ถูกต้อง ทีมจะตรวจสอบหลักฐานการชำระก่อนเปิดสิทธิ์ให้ครับ</p>
           </div>
-          <div class="spm-footer-mark" aria-hidden="true"></div>
         </section>
       </div>
 
@@ -1030,7 +1037,7 @@ body {
   if (!root) return;
 
   var qs = new URLSearchParams(window.location.search || "");
-  var STORAGE_KEY = "mmd_sigil_pay_membership_black_gold_v2026_06";
+  var STORAGE_KEY = "mmd_sigil_pay_membership_under_payment_v2026_06";
 
   var packages = {
     "7days": { label: "7 Days Guest Pass", amount: 1499, term: "7 วัน" },
