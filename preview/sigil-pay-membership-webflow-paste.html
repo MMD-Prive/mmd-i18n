@@ -1,51 +1,46 @@
 <!--
-  MMD SĪGIL — /sigil/pay/membership
-  Kenji Voice mobile-first rebuild v2026-06-29
-  Paste into Webflow page body embed for /sigil/pay/membership.
+  MMD SĪGIL - /sigil/pay/membership
+  Black Gold mobile-first rebuild v2026-06-30
+  Paste into Webflow page body embed.
 
-  Locks:
-  - Membership payment is 100% upfront.
-  - Discount/private code belongs on this payment gate.
-  - VIP / SVIP / Black Card are private review only.
-  - Submit carries payment_stage=membership to confirm.
+  Customer-facing rule:
+  - Simple membership payment page.
+  - Code belongs here at checkout.
+  - VIP / Black Card stays private review only.
 -->
 
 <style>
 html,
 body {
   margin: 0 !important;
-  background: #030306 !important;
+  background: #050403 !important;
 }
 
 #sigil-pay-membership {
-  --kenji-hero: url("https://cdn.prod.website-files.com/68f879d546d2f4e2ab186e90/6a42c19f57d616a9a0259e64_Kenji-Paymember.webp");
-  --sigil-logo: url("https://cdn.prod.website-files.com/68f879d546d2f4e2ab186e90/69e34c91250ec9f6ee29d319_MMD%20SIGIL%20Logo.png");
-  --bg: #030306;
-  --ink: #07070c;
-  --panel: rgba(9, 9, 16, .78);
-  --panel2: rgba(15, 14, 24, .88);
-  --panel3: rgba(255, 255, 255, .045);
-  --line: rgba(238, 238, 255, .12);
-  --line2: rgba(238, 238, 255, .08);
-  --txt: rgba(250, 250, 255, .96);
-  --muted: rgba(236, 236, 249, .68);
-  --muted2: rgba(236, 236, 249, .50);
-  --silver: #f2f1fa;
-  --silver2: #aaa9c3;
-  --violet: #a783ff;
-  --violet2: #6d55c7;
-  --violet3: #24133f;
-  --gold: #d8bd78;
-  --gold2: #9d7836;
-  --ok: #efe0ad;
-  --bad: #ffb9c0;
-  --radius: 28px;
-  --shadow: 0 30px 94px rgba(0, 0, 0, .58);
+  --hero-img: url("https://cdn.prod.website-files.com/68f879d546d2f4e2ab186e90/6a42c19f57d616a9a0259e64_Kenji-Paymember.webp");
+  --sigil-logo: url("https://cdn.prod.website-files.com/68f879d546d2f4e2ab186e90/6a0f2cbc7e26b6735aee4cb2_SIGIL%20LOGO%20Transp.webp");
+  --bg: #050403;
+  --panel: rgba(10, 9, 7, .82);
+  --panel-strong: rgba(15, 13, 10, .94);
+  --soft: rgba(255, 255, 255, .045);
+  --line: rgba(230, 201, 132, .18);
+  --line-soft: rgba(255, 255, 255, .09);
+  --text: rgba(255, 250, 240, .96);
+  --muted: rgba(255, 244, 220, .68);
+  --muted-2: rgba(255, 244, 220, .48);
+  --gold: #e7c77b;
+  --gold-2: #c69a45;
+  --gold-3: #8f6926;
+  --cream: #fff4d7;
+  --black: #080705;
+  --danger: #ffb6b6;
+  --ok: #ffe6a6;
+  --shadow: 0 30px 92px rgba(0, 0, 0, .62);
+  color: var(--text);
   position: relative;
   min-height: 100svh;
   overflow: hidden;
-  color: var(--txt);
-  font-family: "Outfit", "Prompt", "Noto Sans Thai", system-ui, sans-serif;
+  font-family: "Noto Sans Thai", "Prompt", "Outfit", system-ui, sans-serif;
 }
 
 #sigil-pay-membership * {
@@ -65,12 +60,12 @@ body {
 #sigil-pay-membership::before {
   content: "";
   position: absolute;
-  inset: -180px -80px auto;
+  inset: -220px -90px auto;
   height: 620px;
   background:
-    radial-gradient(circle at 16% 16%, rgba(167, 131, 255, .34), transparent 34%),
-    radial-gradient(circle at 86% 4%, rgba(216, 189, 120, .10), transparent 28%),
-    linear-gradient(180deg, rgba(255, 255, 255, .035), transparent 66%);
+    radial-gradient(circle at 18% 16%, rgba(231, 199, 123, .22), transparent 34%),
+    radial-gradient(circle at 88% 10%, rgba(198, 154, 69, .12), transparent 28%),
+    linear-gradient(180deg, rgba(255, 244, 215, .04), transparent 66%);
   pointer-events: none;
 }
 
@@ -85,8 +80,8 @@ body {
   min-height: 92svh;
   overflow: hidden;
   border-radius: 30px;
-  border: 1px solid var(--line);
-  background: #06060b;
+  border: 1px solid rgba(231, 199, 123, .20);
+  background: #060503;
   box-shadow: 0 34px 110px rgba(0, 0, 0, .76);
 }
 
@@ -95,10 +90,10 @@ body {
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(180deg, rgba(3, 3, 6, .04), rgba(3, 3, 6, .90)),
-    linear-gradient(90deg, rgba(3, 3, 6, .94) 0%, rgba(3, 3, 6, .82) 36%, rgba(3, 3, 6, .24) 68%, rgba(3, 3, 6, .40) 100%),
-    var(--kenji-hero) 66% 12% / cover no-repeat;
-  filter: saturate(.96) contrast(1.06) brightness(.90);
+    linear-gradient(180deg, rgba(5, 4, 3, .04), rgba(5, 4, 3, .92)),
+    linear-gradient(90deg, rgba(5, 4, 3, .94) 0%, rgba(5, 4, 3, .80) 35%, rgba(5, 4, 3, .30) 68%, rgba(5, 4, 3, .50) 100%),
+    var(--hero-img) 66% 12% / cover no-repeat;
+  filter: saturate(.90) contrast(1.06) brightness(.88);
 }
 
 #sigil-pay-membership .spm-hero::after {
@@ -106,22 +101,22 @@ body {
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(circle at 18% 16%, rgba(167, 131, 255, .30), transparent 35%),
-    radial-gradient(circle at 88% 20%, rgba(216, 189, 120, .12), transparent 30%),
-    linear-gradient(180deg, transparent 52%, rgba(3, 3, 6, .92));
+    radial-gradient(circle at 18% 16%, rgba(231, 199, 123, .22), transparent 35%),
+    radial-gradient(circle at 88% 20%, rgba(198, 154, 69, .11), transparent 30%),
+    linear-gradient(180deg, transparent 52%, rgba(5, 4, 3, .94));
   pointer-events: none;
 }
 
-#sigil-pay-membership .spm-hero-grid {
+#sigil-pay-membership .spm-hero-pattern {
   position: absolute;
   inset: 0;
   z-index: 1;
   background:
-    linear-gradient(90deg, rgba(255,255,255,.055) 0 1px, transparent 1px 100%),
-    linear-gradient(180deg, rgba(255,255,255,.045) 0 1px, transparent 1px 100%);
-  background-size: 76px 76px;
-  opacity: .05;
-  mask-image: linear-gradient(90deg, #000, transparent 68%);
+    linear-gradient(90deg, rgba(231, 199, 123, .045) 0 1px, transparent 1px 100%),
+    linear-gradient(180deg, rgba(231, 199, 123, .035) 0 1px, transparent 1px 100%);
+  background-size: 74px 74px;
+  opacity: .08;
+  mask-image: linear-gradient(90deg, #000, transparent 70%);
   pointer-events: none;
 }
 
@@ -142,14 +137,14 @@ body {
   width: fit-content;
   min-height: 38px;
   padding: 9px 14px;
-  border: 1px solid rgba(242, 241, 250, .16);
+  border: 1px solid rgba(231, 199, 123, .26);
   border-radius: 999px;
-  background: rgba(0, 0, 0, .34);
+  background: rgba(0, 0, 0, .36);
   backdrop-filter: blur(16px);
-  color: var(--silver);
+  color: var(--cream);
   font-size: 11px;
-  font-weight: 950;
-  letter-spacing: .12em;
+  font-weight: 800;
+  letter-spacing: .08em;
   text-transform: uppercase;
 }
 
@@ -157,8 +152,8 @@ body {
   width: 7px;
   height: 7px;
   border-radius: 999px;
-  background: linear-gradient(180deg, #fff, var(--violet));
-  box-shadow: 0 0 18px rgba(167, 131, 255, .75);
+  background: linear-gradient(180deg, #fff3c6, var(--gold));
+  box-shadow: 0 0 18px rgba(231, 199, 123, .75);
 }
 
 #sigil-pay-membership .spm-logo-row {
@@ -169,29 +164,27 @@ body {
 }
 
 #sigil-pay-membership .spm-logo {
-  width: clamp(58px, 15vw, 104px);
+  width: clamp(68px, 16vw, 112px);
   display: block;
   filter:
-    grayscale(1)
-    brightness(1.52)
-    drop-shadow(0 18px 42px rgba(0,0,0,.74))
-    drop-shadow(0 0 24px rgba(167,131,255,.22));
+    drop-shadow(0 18px 42px rgba(0, 0, 0, .74))
+    drop-shadow(0 0 24px rgba(231, 199, 123, .18));
 }
 
 #sigil-pay-membership .spm-logo-copy {
   display: grid;
   gap: 3px;
-  color: var(--silver2);
+  color: rgba(255, 244, 220, .64);
   font-size: 11px;
-  letter-spacing: .14em;
+  letter-spacing: .12em;
   text-transform: uppercase;
 }
 
 #sigil-pay-membership .spm-title {
   margin: 0;
   max-width: 760px;
-  line-height: .91;
-  letter-spacing: -.055em;
+  line-height: .92;
+  letter-spacing: -.045em;
 }
 
 #sigil-pay-membership .spm-title span {
@@ -199,33 +192,33 @@ body {
 }
 
 #sigil-pay-membership .spm-title-enter {
-  color: #fff;
-  font-size: clamp(42px, 14vw, 92px);
-  font-weight: 950;
+  color: #fffaf0;
+  font-size: clamp(42px, 14vw, 90px);
+  font-weight: 850;
 }
 
 #sigil-pay-membership .spm-title-access {
   margin-top: 8px;
-  font-size: clamp(48px, 15.5vw, 110px);
-  font-weight: 950;
-  background: linear-gradient(180deg, #fff 0%, #deddf0 34%, #a783ff 70%, #d8bd78 100%);
+  font-size: clamp(48px, 15.5vw, 108px);
+  font-weight: 900;
+  background: linear-gradient(180deg, #fff7dc 0%, #efd38a 40%, #c99a43 76%, #8f6926 100%);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
 }
 
 #sigil-pay-membership .spm-kenji-card {
-  max-width: 610px;
+  max-width: 620px;
   margin-top: 18px;
   padding: 16px;
-  border: 1px solid rgba(242, 241, 250, .12);
+  border: 1px solid rgba(231, 199, 123, .16);
   border-radius: 23px;
-  background: rgba(4, 4, 9, .60);
+  background: rgba(5, 4, 3, .62);
   backdrop-filter: blur(18px);
-  box-shadow: 0 24px 70px rgba(0,0,0,.45);
-  color: rgba(250, 250, 255, .82);
+  box-shadow: 0 24px 70px rgba(0, 0, 0, .45);
+  color: rgba(255, 250, 240, .82);
   font-size: 14px;
-  line-height: 1.76;
+  line-height: 1.78;
 }
 
 #sigil-pay-membership .spm-kenji-card p {
@@ -238,15 +231,15 @@ body {
 
 #sigil-pay-membership .spm-sign {
   margin-top: 13px;
-  color: var(--silver2);
+  color: rgba(255, 226, 166, .72);
   font-size: 12px;
-  letter-spacing: .03em;
+  letter-spacing: .02em;
 }
 
 #sigil-pay-membership .spm-actions {
   display: flex;
-  gap: 10px;
   flex-wrap: wrap;
+  gap: 10px;
   margin-top: 16px;
 }
 
@@ -255,12 +248,15 @@ body {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  border: 1px solid rgba(242, 241, 250, .14);
+  border: 1px solid rgba(231, 199, 123, .18);
   border-radius: 16px;
   padding: 12px 17px;
-  color: #fff;
-  background: rgba(255,255,255,.06);
-  font-weight: 950;
+  color: #fff7dc;
+  background: rgba(255, 255, 255, .055);
+  font-family: "Noto Sans Thai", "Prompt", system-ui, sans-serif;
+  font-weight: 750;
+  letter-spacing: -.01em;
+  line-height: 1.2;
   text-decoration: none;
   cursor: pointer;
   transition: transform .18s ease, border-color .18s ease, box-shadow .18s ease, background .18s ease;
@@ -268,21 +264,19 @@ body {
 
 #sigil-pay-membership .spm-btn:hover {
   transform: translateY(-1px);
-  border-color: rgba(167,131,255,.46);
-  box-shadow: 0 18px 48px rgba(80,55,150,.22);
+  border-color: rgba(231, 199, 123, .46);
+  box-shadow: 0 18px 48px rgba(160, 111, 36, .18);
 }
 
 #sigil-pay-membership .spm-btn-primary {
-  color: #07070b;
-  border-color: rgba(255,255,255,.26);
-  background: linear-gradient(180deg, #f3f1ff, #c8c0ff 48%, #a783ff);
-  box-shadow: 0 24px 58px rgba(167,131,255,.22);
+  color: #110d05;
+  border-color: rgba(255, 255, 255, .20);
+  background: linear-gradient(180deg, #fff3c6, #e2bf6c 48%, #c1943c);
+  box-shadow: 0 22px 56px rgba(160, 111, 36, .24);
 }
 
-#sigil-pay-membership .spm-btn-gold {
-  color: #080808;
-  border-color: rgba(0,0,0,.22);
-  background: linear-gradient(180deg, var(--gold), var(--gold2));
+#sigil-pay-membership .spm-btn-ghost {
+  background: rgba(0, 0, 0, .24);
 }
 
 #sigil-pay-membership .spm-note {
@@ -290,8 +284,8 @@ body {
   max-width: 620px;
   padding: 13px 15px;
   border-radius: 18px;
-  border: 1px solid rgba(242,241,250,.10);
-  background: rgba(0,0,0,.28);
+  border: 1px solid rgba(231, 199, 123, .14);
+  background: rgba(0, 0, 0, .28);
   color: var(--muted);
   font-size: 13px;
   line-height: 1.66;
@@ -304,8 +298,8 @@ body {
   margin: -56px auto 0;
   overflow: hidden;
   border-radius: 25px;
-  border: 1px solid var(--line);
-  background: rgba(8,8,14,.84);
+  border: 1px solid rgba(231, 199, 123, .17);
+  background: rgba(9, 8, 6, .88);
   backdrop-filter: blur(22px);
   box-shadow: var(--shadow);
 }
@@ -320,14 +314,14 @@ body {
 }
 
 #sigil-pay-membership .spm-summary-intro {
-  border-bottom: 1px solid var(--line2);
+  border-bottom: 1px solid var(--line-soft);
 }
 
 #sigil-pay-membership .spm-mini-title {
   margin: 0 0 10px;
-  color: #fff;
+  color: #fff7dc;
   font-size: 17px;
-  font-weight: 950;
+  font-weight: 850;
   letter-spacing: -.02em;
 }
 
@@ -348,9 +342,9 @@ body {
 #sigil-pay-membership .spm-step {
   min-height: 62px;
   padding: 10px;
-  border: 1px solid var(--line2);
+  border: 1px solid var(--line-soft);
   border-radius: 16px;
-  background: rgba(255,255,255,.035);
+  background: rgba(255, 255, 255, .035);
 }
 
 #sigil-pay-membership .spm-step b {
@@ -367,16 +361,12 @@ body {
   line-height: 1.35;
 }
 
-#sigil-pay-membership .spm-rows {
-  display: grid;
-}
-
 #sigil-pay-membership .spm-row {
   display: flex;
   justify-content: space-between;
   gap: 18px;
   padding: 12px 0;
-  border-bottom: 1px solid var(--line2);
+  border-bottom: 1px solid var(--line-soft);
 }
 
 #sigil-pay-membership .spm-row:last-child {
@@ -389,9 +379,9 @@ body {
 }
 
 #sigil-pay-membership .spm-v {
+  color: #fff8e4;
+  font-weight: 800;
   text-align: right;
-  color: #fff;
-  font-weight: 950;
 }
 
 #sigil-pay-membership .spm-total {
@@ -408,11 +398,11 @@ body {
 
 #sigil-pay-membership .spm-card {
   padding: 14px;
-  border: 1px solid var(--line);
+  border: 1px solid rgba(231, 199, 123, .15);
   border-radius: 26px;
   background:
-    radial-gradient(circle at 100% 0%, rgba(167,131,255,.13), transparent 30%),
-    rgba(8,8,14,.78);
+    radial-gradient(circle at 100% 0%, rgba(231, 199, 123, .10), transparent 30%),
+    rgba(8, 7, 5, .82);
   backdrop-filter: blur(18px);
   box-shadow: var(--shadow);
 }
@@ -420,9 +410,9 @@ body {
 #sigil-pay-membership .spm-block {
   margin-bottom: 14px;
   padding: 16px;
-  border: 1px solid rgba(242,241,250,.10);
+  border: 1px solid var(--line-soft);
   border-radius: 22px;
-  background: rgba(0,0,0,.22);
+  background: rgba(0, 0, 0, .22);
 }
 
 #sigil-pay-membership .spm-block-head {
@@ -433,9 +423,9 @@ body {
 
 #sigil-pay-membership .spm-block-head h2 {
   margin: 0;
-  color: #fff;
+  color: #fff7dc;
   font-size: 19px;
-  font-weight: 950;
+  font-weight: 850;
   letter-spacing: -.02em;
 }
 
@@ -459,12 +449,12 @@ body {
 #sigil-pay-membership .spm-tier,
 #sigil-pay-membership .spm-method {
   width: 100%;
-  text-align: left;
-  color: var(--txt);
-  border: 1px solid rgba(242,241,250,.11);
-  border-radius: 20px;
-  background: rgba(255,255,255,.035);
   padding: 15px;
+  border: 1px solid rgba(231, 199, 123, .14);
+  border-radius: 20px;
+  background: rgba(255, 255, 255, .035);
+  color: var(--text);
+  text-align: left;
   cursor: pointer;
   transition: transform .18s ease, border-color .18s ease, background .18s ease, box-shadow .18s ease;
 }
@@ -474,9 +464,9 @@ body {
 #sigil-pay-membership .spm-tier.is-active,
 #sigil-pay-membership .spm-method.is-active {
   transform: translateY(-1px);
-  border-color: rgba(167,131,255,.62);
-  background: linear-gradient(180deg, rgba(167,131,255,.13), rgba(255,255,255,.035));
-  box-shadow: 0 20px 55px rgba(80,55,150,.22);
+  border-color: rgba(231, 199, 123, .54);
+  background: linear-gradient(180deg, rgba(231, 199, 123, .12), rgba(255, 255, 255, .035));
+  box-shadow: 0 20px 55px rgba(160, 111, 36, .18);
 }
 
 #sigil-pay-membership .spm-tier.is-locked {
@@ -493,28 +483,28 @@ body {
 
 #sigil-pay-membership .spm-tier-name,
 #sigil-pay-membership .spm-method-title {
-  color: #fff;
+  color: #fff7dc;
   font-size: 16px;
-  font-weight: 950;
+  font-weight: 850;
 }
 
 #sigil-pay-membership .spm-tag {
   padding: 6px 9px;
+  border: 1px solid rgba(231, 199, 123, .25);
   border-radius: 999px;
-  border: 1px solid rgba(216,189,120,.26);
   color: var(--ok);
   font-size: 10px;
-  font-weight: 950;
-  letter-spacing: .05em;
+  font-weight: 800;
+  letter-spacing: .04em;
   text-transform: uppercase;
   white-space: nowrap;
 }
 
 #sigil-pay-membership .spm-price {
   margin-top: 12px;
-  color: #f8f5ff;
+  color: #fff8e4;
   font-size: 25px;
-  font-weight: 950;
+  font-weight: 850;
 }
 
 #sigil-pay-membership .spm-desc {
@@ -524,7 +514,7 @@ body {
 #sigil-pay-membership .spm-meta {
   margin-top: 11px;
   padding-top: 10px;
-  border-top: 1px solid var(--line2);
+  border-top: 1px solid var(--line-soft);
 }
 
 #sigil-pay-membership .spm-info,
@@ -532,23 +522,23 @@ body {
 #sigil-pay-membership .spm-remarks {
   margin-top: 13px;
   padding: 14px;
-  border: 1px solid rgba(216,189,120,.18);
+  border: 1px solid rgba(231, 199, 123, .16);
   border-radius: 19px;
-  background: rgba(216,189,120,.055);
-  color: rgba(250,250,255,.82);
+  background: rgba(231, 199, 123, .052);
+  color: rgba(255, 250, 240, .82);
   font-size: 13px;
   line-height: 1.7;
 }
 
 #sigil-pay-membership .spm-remarks {
-  border-color: var(--line2);
-  background: rgba(0,0,0,.18);
+  border-color: var(--line-soft);
+  background: rgba(0, 0, 0, .18);
 }
 
 #sigil-pay-membership .spm-remarks-title {
   margin-bottom: 8px;
   color: var(--ok);
-  font-weight: 950;
+  font-weight: 850;
 }
 
 #sigil-pay-membership ul {
@@ -564,18 +554,18 @@ body {
 #sigil-pay-membership label {
   display: block;
   margin-bottom: 7px;
-  color: #fff;
+  color: #fff7dc;
   font-size: 12px;
-  font-weight: 950;
+  font-weight: 800;
 }
 
 #sigil-pay-membership input,
 #sigil-pay-membership textarea {
   width: 100%;
-  border: 1px solid rgba(242,241,250,.13);
+  border: 1px solid rgba(255, 255, 255, .12);
   border-radius: 16px;
-  background: rgba(0,0,0,.30);
-  color: #fff;
+  background: rgba(0, 0, 0, .31);
+  color: #fffaf0;
   padding: 13px 14px;
   outline: none;
 }
@@ -587,8 +577,8 @@ body {
 
 #sigil-pay-membership input:focus,
 #sigil-pay-membership textarea:focus {
-  border-color: rgba(167,131,255,.62);
-  box-shadow: 0 0 0 4px rgba(167,131,255,.12);
+  border-color: rgba(231, 199, 123, .58);
+  box-shadow: 0 0 0 4px rgba(231, 199, 123, .10);
 }
 
 #sigil-pay-membership .spm-code-row {
@@ -614,20 +604,20 @@ body {
 }
 
 #sigil-pay-membership .spm-code-msg.bad {
-  color: var(--bad);
+  color: var(--danger);
 }
 
 #sigil-pay-membership .spm-code-msg.warn {
-  color: #d9c9ff;
+  color: #ffe1a0;
 }
 
 #sigil-pay-membership .spm-toast {
   display: none;
   margin-top: 14px;
   padding: 13px;
-  border: 1px solid rgba(242,241,250,.13);
+  border: 1px solid rgba(231, 199, 123, .16);
   border-radius: 16px;
-  background: rgba(0,0,0,.28);
+  background: rgba(0, 0, 0, .28);
   color: var(--muted);
 }
 
@@ -637,17 +627,14 @@ body {
 
 #sigil-pay-membership .spm-toast.good {
   color: var(--ok);
-  border-color: rgba(216,189,120,.35);
 }
 
 #sigil-pay-membership .spm-toast.bad {
-  color: var(--bad);
-  border-color: rgba(255,120,136,.28);
+  color: var(--danger);
 }
 
 #sigil-pay-membership .spm-toast.warn {
-  color: #d9c9ff;
-  border-color: rgba(167,131,255,.32);
+  color: #ffe1a0;
 }
 
 #sigil-pay-membership .spm-cta {
@@ -668,21 +655,21 @@ body {
 
 #sigil-pay-membership .spm-footer-card {
   position: relative;
-  min-height: 258px;
+  min-height: 230px;
   overflow: hidden;
   margin-top: 18px;
-  border: 1px solid var(--line);
+  border: 1px solid rgba(231, 199, 123, .16);
   border-radius: 26px;
   background:
-    radial-gradient(circle at 82% 28%, rgba(167,131,255,.20), transparent 34%),
-    linear-gradient(135deg, rgba(255,255,255,.04), rgba(0,0,0,.18)),
-    rgba(8,8,14,.80);
+    radial-gradient(circle at 82% 28%, rgba(231, 199, 123, .15), transparent 34%),
+    linear-gradient(135deg, rgba(255, 255, 255, .035), rgba(0, 0, 0, .18)),
+    rgba(9, 8, 6, .86);
 }
 
 #sigil-pay-membership .spm-footer-copy {
   position: relative;
   z-index: 2;
-  max-width: 620px;
+  max-width: 650px;
   padding: 24px;
 }
 
@@ -690,45 +677,45 @@ body {
   margin-bottom: 12px;
   color: var(--ok);
   font-size: 12px;
-  font-weight: 950;
-  letter-spacing: .12em;
+  font-weight: 800;
+  letter-spacing: .10em;
   text-transform: uppercase;
 }
 
 #sigil-pay-membership .spm-footer-card h3 {
   margin: 0;
-  color: #fff;
-  font-size: clamp(30px, 10vw, 52px);
-  line-height: 1.04;
-  letter-spacing: -.045em;
+  color: #fff7dc;
+  font-size: clamp(28px, 9vw, 48px);
+  line-height: 1.08;
+  letter-spacing: -.035em;
+  font-weight: 850;
 }
 
 #sigil-pay-membership .spm-footer-card p {
   margin: 14px 0 0;
-  color: rgba(250,250,255,.76);
+  color: rgba(255, 244, 220, .72);
   font-size: 14px;
   line-height: 1.76;
 }
 
 #sigil-pay-membership .spm-footer-mark {
   position: absolute;
-  right: -40px;
+  right: -42px;
   bottom: -86px;
-  width: min(78vw, 320px);
+  width: min(76vw, 320px);
   aspect-ratio: 1;
   background: var(--sigil-logo) center / contain no-repeat;
-  opacity: .27;
-  filter:
-    grayscale(1)
-    brightness(1.5)
-    drop-shadow(0 0 38px rgba(167,131,255,.30));
+  opacity: .18;
+  filter: drop-shadow(0 0 38px rgba(231, 199, 123, .16));
 }
 
 #sigil-pay-membership .spm-bottom {
   margin: 16px 0 0;
   text-align: center;
-  color: rgba(250,250,255,.46);
+  color: rgba(255, 244, 220, .44);
   font-size: 12px;
+  font-weight: 450;
+  letter-spacing: .01em;
 }
 
 #sigil-pay-membership .spm-sticky {
@@ -742,11 +729,11 @@ body {
   gap: 10px;
   align-items: center;
   padding: 10px;
-  border: 1px solid rgba(242,241,250,.14);
+  border: 1px solid rgba(231, 199, 123, .18);
   border-radius: 20px;
-  background: rgba(8,8,14,.88);
+  background: rgba(9, 8, 6, .90);
   backdrop-filter: blur(22px);
-  box-shadow: 0 18px 64px rgba(0,0,0,.66);
+  box-shadow: 0 18px 64px rgba(0, 0, 0, .66);
 }
 
 #sigil-pay-membership .spm-sticky-label {
@@ -756,12 +743,12 @@ body {
 }
 
 #sigil-pay-membership .spm-sticky-label span {
-  color: var(--muted2);
+  color: var(--muted-2);
   font-size: 11px;
 }
 
 #sigil-pay-membership .spm-sticky-label b {
-  color: #fff;
+  color: #fff7dc;
   font-size: 14px;
   white-space: nowrap;
   overflow: hidden;
@@ -786,7 +773,7 @@ body {
 
   #sigil-pay-membership .spm-summary-intro {
     border-bottom: 0;
-    border-right: 1px solid var(--line2);
+    border-right: 1px solid var(--line-soft);
   }
 
   #sigil-pay-membership .spm-tier-grid {
@@ -831,9 +818,9 @@ body {
 
   #sigil-pay-membership .spm-hero::before {
     background:
-      linear-gradient(180deg, rgba(3,3,6,.03), rgba(3,3,6,.58)),
-      linear-gradient(90deg, rgba(3,3,6,.92) 0%, rgba(3,3,6,.72) 36%, rgba(3,3,6,.14) 72%, rgba(3,3,6,.30) 100%),
-      var(--kenji-hero) 72% 16% / cover no-repeat;
+      linear-gradient(180deg, rgba(5,4,3,.03), rgba(5,4,3,.62)),
+      linear-gradient(90deg, rgba(5,4,3,.92) 0%, rgba(5,4,3,.74) 36%, rgba(5,4,3,.16) 72%, rgba(5,4,3,.36) 100%),
+      var(--hero-img) 72% 16% / cover no-repeat;
   }
 }
 </style>
@@ -846,17 +833,17 @@ body {
   data-blackcard-url="/blackcard/black-card"
 >
   <div class="spm-shell">
-    <header class="spm-hero" aria-label="SĪGIL Pay Membership">
-      <div class="spm-hero-grid" aria-hidden="true"></div>
+    <header class="spm-hero" aria-label="SĪGIL membership payment">
+      <div class="spm-hero-pattern" aria-hidden="true"></div>
 
       <div class="spm-hero-inner">
-        <div class="spm-pill"><span class="spm-pill-dot"></span>SĪGIL MEMBERSHIP GATE</div>
+        <div class="spm-pill"><span class="spm-pill-dot"></span>SĪGIL MEMBERSHIP</div>
 
         <div class="spm-logo-row">
-          <img class="spm-logo" src="https://cdn.prod.website-files.com/68f879d546d2f4e2ab186e90/69e34c91250ec9f6ee29d319_MMD%20SIGIL%20Logo.png" alt="SĪGIL">
+          <img class="spm-logo" src="https://cdn.prod.website-files.com/68f879d546d2f4e2ab186e90/6a0f2cbc7e26b6735aee4cb2_SIGIL%20LOGO%20Transp.webp" alt="SĪGIL">
           <div class="spm-logo-copy">
             <span>MMD SĪGIL</span>
-            <span>Kenji Verification</span>
+            <span>Private Access</span>
           </div>
         </div>
 
@@ -866,39 +853,39 @@ body {
         </h1>
 
         <div class="spm-kenji-card">
-          <p>เข้ามาก่อนครับ เดี๋ยวผมพาไปทีละขั้น เลือกระดับ access ที่เหมาะกับคุณ แนบ code ถ้ามี แล้วค่อยส่งรายการไปยืนยันอย่างเป็นระเบียบ</p>
-          <p>สิทธิ์จะเปิดหลังการตรวจสอบเรียบร้อยเท่านั้น ส่วน VIP และ Black Card ผมจะไม่ปล่อยให้ซื้อแบบเร่งรีบ เพราะบางประตูต้องใช้ความไว้ใจมากกว่าเงิน</p>
-          <div class="spm-sign">Kenji • SĪGIL Membership Gate</div>
+          <p>เข้ามาก่อนครับ เลือกระดับสมาชิกที่ต้องการ ถ้ามีโค้ดส่วนลดให้ใส่ไว้ตรงนี้ แล้วผมจะพาคุณไปยืนยันการชำระในขั้นถัดไป</p>
+          <p>หลังส่งหลักฐานเรียบร้อย ทีมจะตรวจสอบและเปิดสิทธิ์ให้ตามแพ็กเกจที่เลือก ส่วน VIP และ Black Card จะดูเป็นรายเคสเท่านั้นครับ</p>
+          <div class="spm-sign">Kenji • SĪGIL Membership</div>
         </div>
 
         <div class="spm-actions">
-          <button class="spm-btn spm-btn-primary" type="button" data-spm-action="scroll-form">เริ่มเลือก Access</button>
-          <a class="spm-btn" href="/membership/benefits">ดูสิทธิ์ประโยชน์</a>
+          <button class="spm-btn spm-btn-primary" type="button" data-spm-action="scroll-form">เริ่มเลือกแพ็กเกจ</button>
+          <a class="spm-btn spm-btn-ghost" href="/membership/benefits">ดูสิทธิ์สมาชิก</a>
         </div>
 
-        <div class="spm-note">หน้านี้เป็นการชำระเต็มจำนวนสำหรับ membership เท่านั้น ผมจะแนบ package, code, amount และ payment method ไปหน้า confirm ให้ครบครับ</div>
+        <div class="spm-note">หน้านี้ใช้สำหรับสมัครสมาชิกและชำระค่าสมาชิกเท่านั้น หลังจากยืนยันแล้วทีมจะตรวจสอบก่อนเปิดสิทธิ์ให้ครับ</div>
       </div>
     </header>
 
     <aside class="spm-summary-card">
       <div class="spm-summary-grid">
         <div class="spm-summary-intro">
-          <h2 class="spm-mini-title">Kenji will keep the gate quiet.</h2>
-          <p class="spm-mini-copy">ไม่ต้องเปิดข้อมูลเกินจำเป็น เลือกให้ชัด ชำระให้ถูก แล้วรอการยืนยันอย่างเป็นทางการก่อนเปิดสิทธิ์ครับ</p>
-          <div class="spm-steps" aria-label="SĪGIL steps">
-            <div class="spm-step"><b>01</b><span>Choose Access</span></div>
-            <div class="spm-step"><b>02</b><span>Attach Code</span></div>
-            <div class="spm-step"><b>03</b><span>Confirm Payment</span></div>
+          <h2 class="spm-mini-title">สรุปรายการก่อนยืนยัน</h2>
+          <p class="spm-mini-copy">ตรวจแพ็กเกจ ยอดชำระ และช่องทางติดต่อให้ถูกต้องก่อนส่งรายการ เพื่อให้เปิดสิทธิ์ได้เร็วขึ้นครับ</p>
+          <div class="spm-steps" aria-label="ขั้นตอนสมัครสมาชิก">
+            <div class="spm-step"><b>01</b><span>เลือกแพ็กเกจ</span></div>
+            <div class="spm-step"><b>02</b><span>ใส่โค้ดถ้ามี</span></div>
+            <div class="spm-step"><b>03</b><span>ไปหน้ายืนยัน</span></div>
           </div>
         </div>
 
         <div class="spm-summary-right">
           <div class="spm-rows">
-            <div class="spm-row"><div class="spm-k">Access Level</div><div class="spm-v" data-spm-out="summary_pkg">SĪGIL Standard</div></div>
-            <div class="spm-row"><div class="spm-k">Duration</div><div class="spm-v" data-spm-out="summary_term">365 วัน</div></div>
-            <div class="spm-row"><div class="spm-k">Private Code</div><div class="spm-v" data-spm-out="summary_code">ไม่มี</div></div>
-            <div class="spm-row"><div class="spm-k">Payment Method</div><div class="spm-v" data-spm-out="summary_method">Bank Transfer</div></div>
-            <div class="spm-row"><div class="spm-k">Amount</div><div class="spm-v spm-total" data-spm-out="summary_total">1,199 ฿</div></div>
+            <div class="spm-row"><div class="spm-k">แพ็กเกจ</div><div class="spm-v" data-spm-out="summary_pkg">SĪGIL Standard</div></div>
+            <div class="spm-row"><div class="spm-k">อายุสมาชิก</div><div class="spm-v" data-spm-out="summary_term">365 วัน</div></div>
+            <div class="spm-row"><div class="spm-k">โค้ดส่วนลด</div><div class="spm-v" data-spm-out="summary_code">ไม่มี</div></div>
+            <div class="spm-row"><div class="spm-k">วิธีชำระเงิน</div><div class="spm-v" data-spm-out="summary_method">โอนธนาคาร</div></div>
+            <div class="spm-row"><div class="spm-k">ยอดชำระ</div><div class="spm-v spm-total" data-spm-out="summary_total">1,199 ฿</div></div>
           </div>
         </div>
       </div>
@@ -908,130 +895,130 @@ body {
       <div class="spm-card">
         <section class="spm-block">
           <div class="spm-block-head">
-            <h2>1) เลือกระดับที่จะเข้า</h2>
-            <div class="spm-muted">เริ่มจากระดับที่คุณพร้อมก่อนครับ ถ้าต้องลึกกว่านี้ ผมค่อยพาไปหลังยืนยันสิทธิ์</div>
+            <h2>1) เลือกแพ็กเกจสมาชิก</h2>
+            <div class="spm-muted">เลือกแพ็กเกจที่เหมาะกับการใช้งานของคุณก่อนครับ หลังเปิดสิทธิ์แล้วสามารถดูรายละเอียดเพิ่มเติมในพื้นที่สมาชิกได้</div>
           </div>
 
           <div class="spm-tier-grid">
             <button class="spm-tier" type="button" data-spm-pkg="7days">
-              <div class="spm-tier-top"><div class="spm-tier-name">7-Day Entry</div><div class="spm-tag">Entry</div></div>
+              <div class="spm-tier-top"><div class="spm-tier-name">7 Days Guest Pass</div><div class="spm-tag">Trial</div></div>
               <div class="spm-price">1,499 ฿</div>
-              <div class="spm-desc">ลองเข้าประตูก่อนแบบจำกัดเวลา เหมาะกับคนที่อยากดูจังหวะของ SĪGIL ก่อนตัดสินใจยาว ๆ</div>
+              <div class="spm-desc">เหมาะสำหรับคนที่อยากทดลองเข้าถึงสมาชิกแบบระยะสั้นก่อนตัดสินใจใช้งานระยะยาว</div>
               <div class="spm-meta">อายุสมาชิก <b>7 วัน</b></div>
             </button>
 
             <button class="spm-tier is-active" type="button" data-spm-pkg="standard">
               <div class="spm-tier-top"><div class="spm-tier-name">SĪGIL Standard</div><div class="spm-tag">Start</div></div>
               <div class="spm-price">1,199 ฿</div>
-              <div class="spm-desc">จุดเริ่มต้นที่นิ่งที่สุดสำหรับเข้าสู่ private model layer และพื้นที่สมาชิกของ MMD</div>
+              <div class="spm-desc">เริ่มใช้งานระบบสมาชิกและเข้าถึงข้อมูลพื้นฐานที่จัดไว้สำหรับสมาชิก</div>
               <div class="spm-meta">อายุสมาชิก <b>365 วัน</b></div>
             </button>
 
             <button class="spm-tier" type="button" data-spm-pkg="premium">
               <div class="spm-tier-top"><div class="spm-tier-name">SĪGIL Premium</div><div class="spm-tag">Recommended</div></div>
               <div class="spm-price">2,999 ฿</div>
-              <div class="spm-desc">สำหรับคนที่ต้องการ access ลึกขึ้น ใช้งานต่อเนื่อง และอยากให้ผมช่วยคัดทางเลือกให้ละเอียดขึ้น</div>
+              <div class="spm-desc">เหมาะสำหรับคนที่ต้องการดูตัวเลือกมากขึ้น ใช้งานต่อเนื่อง และต้องการการดูแลที่ลึกขึ้น</div>
               <div class="spm-meta">อายุสมาชิก <b>365 วัน</b></div>
             </button>
 
             <button class="spm-tier is-locked" type="button" disabled>
-              <div class="spm-tier-top"><div class="spm-tier-name">Black Card</div><div class="spm-tag">Invite Only</div></div>
+              <div class="spm-tier-top"><div class="spm-tier-name">Black Card</div><div class="spm-tag">Review</div></div>
               <div class="spm-price">Private</div>
-              <div class="spm-desc">ประตูนี้ไม่เปิดด้วยปุ่มจ่ายเงิน ต้องผ่าน invitation หรือ owner review เท่านั้น</div>
-              <div class="spm-meta">ผมจะไม่พาเข้าโดยไม่มีการตรวจสอบ</div>
+              <div class="spm-desc">สำหรับสมาชิกที่ผ่านการพิจารณาเป็นรายเคส ไม่สามารถซื้อได้จากหน้านี้โดยตรง</div>
+              <div class="spm-meta">สอบถาม Per หากต้องการให้พิจารณา</div>
             </button>
           </div>
 
           <div class="spm-remarks">
-            <div class="spm-remarks-title">Kenji Notes</div>
+            <div class="spm-remarks-title">เงื่อนไขสำคัญ</div>
             <ul>
-              <li>Membership เป็นการชำระเต็มจำนวนเท่านั้น ไม่มี deposit</li>
-              <li>Standard / Premium อายุ 365 วัน ส่วน 7-Day Entry อายุ 7 วัน</li>
-              <li>100 บาท = 1 point ตาม points ledger</li>
-              <li>VIP / Black Card ต้องผ่าน owner review และไม่ใช่การซื้ออัตโนมัติ</li>
+              <li>ค่าสมาชิกชำระเต็มจำนวนในขั้นตอนสมัคร</li>
+              <li>Standard และ Premium มีอายุ 365 วัน</li>
+              <li>7 Days Guest Pass มีอายุ 7 วัน</li>
+              <li>VIP และ Black Card ต้องผ่านการพิจารณาก่อนเท่านั้น</li>
             </ul>
           </div>
         </section>
 
         <section class="spm-block">
           <div class="spm-block-head">
-            <h2>2) มี code ไหมครับ</h2>
-            <div class="spm-muted">ถ้ามี private code หรือ discount code ใส่ตรงนี้ครับ ผมจะเช็กกับยอดจริงก่อนพาไป confirm</div>
+            <h2>2) ใส่โค้ดส่วนลด</h2>
+            <div class="spm-muted">ถ้าคุณได้รับโค้ดจากแคมเปญหรือจากทีม MMD ให้กรอกตรงนี้ก่อนยืนยันยอดชำระ</div>
           </div>
 
           <div class="spm-codebox">
             <div class="spm-code-row">
               <div>
-                <label for="spm_private_code">Private Code หรือ Discount Code</label>
+                <label for="spm_private_code">โค้ดส่วนลดหรือโค้ดส่วนตัว</label>
                 <input id="spm_private_code" data-spm-in="code" placeholder="เช่น KJ-PRV-XXXXXX" inputmode="latin" autocomplete="off">
               </div>
 
               <div class="spm-code-actions">
-                <button class="spm-btn spm-btn-gold" type="button" data-spm-action="apply-code">Apply</button>
-                <button class="spm-btn" type="button" data-spm-action="clear-code">Clear</button>
+                <button class="spm-btn spm-btn-primary" type="button" data-spm-action="apply-code">ตรวจโค้ด</button>
+                <button class="spm-btn spm-btn-ghost" type="button" data-spm-action="clear-code">ล้าง</button>
               </div>
             </div>
 
-            <div class="spm-code-msg" data-spm-out="code_msg">ถ้ามี code ให้ใส่ไว้ตรงนี้ครับ ผมจะเช็กก่อนคำนวณยอด</div>
+            <div class="spm-code-msg" data-spm-out="code_msg">มีโค้ดให้กรอกก่อน ระบบจะคำนวณยอดใหม่ให้ทันที</div>
           </div>
         </section>
 
         <section class="spm-block">
           <div class="spm-block-head">
-            <h2>3) เลือกทางชำระ</h2>
-            <div class="spm-muted">เลือกช่องทางที่สะดวก เดี๋ยวผมแนบไปหน้า confirm ให้เรียบร้อย</div>
+            <h2>3) เลือกวิธีชำระเงิน</h2>
+            <div class="spm-muted">เลือกช่องทางที่คุณสะดวก แล้วไปแนบหลักฐานในหน้าถัดไป</div>
           </div>
 
           <div class="spm-method-grid">
-            <button class="spm-method is-active" type="button" data-spm-method="bank_transfer"><div class="spm-method-title">Bank Transfer</div><div class="spm-method-desc">โอนผ่านบัญชีธนาคารโดยตรง</div></button>
-            <button class="spm-method" type="button" data-spm-method="promptpay"><div class="spm-method-title">PromptPay</div><div class="spm-method-desc">สแกนจ่ายผ่าน PromptPay</div></button>
-            <button class="spm-method" type="button" data-spm-method="paypal"><div class="spm-method-title">PayPal</div><div class="spm-method-desc">ใช้ PayPal โดยอาจมีค่าธรรมเนียมตามกติกา</div></button>
+            <button class="spm-method is-active" type="button" data-spm-method="bank_transfer"><div class="spm-method-title">โอนธนาคาร</div><div class="spm-method-desc">เหมาะสำหรับการตรวจสอบยอดแบบชัดเจน</div></button>
+            <button class="spm-method" type="button" data-spm-method="promptpay"><div class="spm-method-title">PromptPay</div><div class="spm-method-desc">สแกนจ่ายและแนบสลิปในหน้าถัดไป</div></button>
+            <button class="spm-method" type="button" data-spm-method="paypal"><div class="spm-method-title">PayPal</div><div class="spm-method-desc">ใช้สำหรับการชำระผ่าน PayPal</div></button>
           </div>
 
-          <div class="spm-info">หลังจากนี้ผมจะส่งรายการเป็น <b>payment_stage = membership</b> เพื่อให้หน้า confirm รับต่ออย่างถูกต้อง</div>
+          <div class="spm-info">หลังจากยืนยัน ทีมจะตรวจสอบหลักฐานการชำระก่อนเปิดสิทธิ์สมาชิกให้ครับ</div>
         </section>
 
         <section class="spm-block">
           <div class="spm-block-head">
-            <h2>4) ข้อมูลเปิดสิทธิ์</h2>
-            <div class="spm-muted">ขอเท่าที่จำเป็นครับ ยิ่งข้อมูลชัด ผมยิ่งเปิดทางให้เร็วขึ้นหลังตรวจสอบ</div>
+            <h2>4) ค้นหาข้อมูลสมาชิกของคุณ</h2>
+            <div class="spm-muted">กรอกข้อมูลที่ใช้ค้นหาและเปิดสิทธิ์สมาชิกให้ถูกต้อง เพื่อให้ทีมตรวจสอบได้เร็วขึ้น</div>
           </div>
 
           <div class="spm-form-grid">
-            <div><label for="spm_name">ชื่อเล่น + ตัวอักษร 2 ตัว</label><input id="spm_name" data-spm-in="display_name" placeholder="เช่น Jay UA"><div class="spm-help">ใช้เรียกในงานและช่วยรักษาความเป็นส่วนตัว</div></div>
+            <div><label for="spm_name">ชื่อเล่น + ตัวอักษร 2 ตัว</label><input id="spm_name" data-spm-in="display_name" placeholder="เช่น Jay UA"><div class="spm-help">ใช้สำหรับค้นหาและอ้างอิงในงานสมาชิก</div></div>
             <div><label for="spm_email">Email สำหรับเปิดสิทธิ์</label><input id="spm_email" data-spm-in="email" placeholder="yourname@gmail.com"></div>
             <div><label for="spm_telegram">Telegram</label><input id="spm_telegram" data-spm-in="telegram" placeholder="@username"></div>
             <div><label for="spm_contact">ช่องทางติดต่อสำรอง</label><input id="spm_contact" data-spm-in="contact" placeholder="Line / IG / โทร"></div>
             <div><label for="spm_budget">งบประมาณที่สะดวกต่อครั้ง</label><input id="spm_budget" data-spm-in="budget_range" placeholder="เช่น 3,000–5,000 / 10,000+"></div>
-            <div><label for="spm_max_budget">ถ้าเจอสเปคจริง จ่ายได้สูงสุดประมาณเท่าไหร่</label><input id="spm_max_budget" data-spm-in="max_budget" placeholder="เช่น 8,000 / 15,000 / 30,000+"></div>
-            <div style="grid-column:1 / -1;"><label for="spm_note">อยากบอกอะไรผมเพิ่มไหม</label><textarea id="spm_note" data-spm-in="note" placeholder="เช่น สนใจ access แบบไหน / ขอคำแนะนำก่อนเปิดสิทธิ์"></textarea></div>
+            <div><label for="spm_max_budget">งบสูงสุดเมื่อเจอคนที่ตรงใจ</label><input id="spm_max_budget" data-spm-in="max_budget" placeholder="เช่น 8,000 / 15,000 / 30,000+"></div>
+            <div style="grid-column:1 / -1;"><label for="spm_note">หมายเหตุเพิ่มเติม</label><textarea id="spm_note" data-spm-in="note" placeholder="เช่น สนใจแพ็กเกจไหน / ต้องการให้แนะนำก่อนเปิดสิทธิ์"></textarea></div>
           </div>
 
           <div class="spm-toast" data-spm-out="toast"></div>
         </section>
 
         <div class="spm-cta">
-          <button class="spm-btn spm-btn-primary" type="button" data-spm-action="submit">ไปหน้า Confirm กับผม</button>
-          <div class="spm-cta-sub">ผมจะแนบ package / amount / code / payment method ไปให้ครบ แล้วให้คุณยืนยันหลักฐานการชำระในขั้นถัดไปครับ</div>
+          <button class="spm-btn spm-btn-primary" type="button" data-spm-action="submit">ยืนยันการสมัคร</button>
+          <div class="spm-cta-sub">ขั้นถัดไปคือหน้าแนบหลักฐานการชำระเงิน หลังตรวจสอบเรียบร้อย ทีมจะเปิดสิทธิ์สมาชิกให้ครับ</div>
         </div>
 
         <section class="spm-footer-card">
           <div class="spm-footer-copy">
-            <div class="spm-footer-kicker">KENJI CHECKPOINT</div>
-            <h3>เข้าประตูนี้ช้าได้ แต่ต้องสะอาด</h3>
-            <p>ผมไม่เร่งให้ใครผ่าน SĪGIL โดยไม่มีร่องรอยที่ตรวจได้ เลือกสิทธิ์ให้ถูก แนบ code ให้ครบ แล้วค่อยเปิด access หลัง verification ครับ</p>
+            <div class="spm-footer-kicker">SĪGIL CONFIRMATION</div>
+            <h3>ยืนยันให้ครบ แล้วรอเปิดสิทธิ์</h3>
+            <p>เลือกแพ็กเกจ ใส่โค้ดถ้ามี และแนบข้อมูลที่ใช้ค้นหาสมาชิกให้ถูกต้อง ทีมจะตรวจสอบหลักฐานการชำระก่อนเปิดสิทธิ์ให้ครับ</p>
           </div>
           <div class="spm-footer-mark" aria-hidden="true"></div>
         </section>
       </div>
 
-      <div class="spm-bottom">MMD SĪGIL Access Gate • Discreet by design, Elegant by choice.</div>
+      <div class="spm-bottom">MMD SĪGIL ดูแลข้อมูลสมาชิกด้วยความเป็นส่วนตัว</div>
     </main>
   </div>
 
-  <div class="spm-sticky" aria-label="Mobile payment summary">
+  <div class="spm-sticky" aria-label="สรุปรายการบนมือถือ">
     <div class="spm-sticky-label"><span data-spm-out="sticky_pkg">SĪGIL Standard</span><b data-spm-out="sticky_total">1,199 ฿</b></div>
-    <button class="spm-btn spm-btn-primary" type="button" data-spm-action="submit">Confirm</button>
+    <button class="spm-btn spm-btn-primary" type="button" data-spm-action="submit">ยืนยัน</button>
   </div>
 </section>
 
@@ -1043,10 +1030,10 @@ body {
   if (!root) return;
 
   var qs = new URLSearchParams(window.location.search || "");
-  var STORAGE_KEY = "mmd_sigil_pay_membership_v2026_kenji_voice";
+  var STORAGE_KEY = "mmd_sigil_pay_membership_black_gold_v2026_06";
 
   var packages = {
-    "7days": { label: "7-Day SĪGIL Entry", amount: 1499, term: "7 วัน" },
+    "7days": { label: "7 Days Guest Pass", amount: 1499, term: "7 วัน" },
     standard: { label: "SĪGIL Standard", amount: 1199, term: "365 วัน" },
     premium: { label: "SĪGIL Premium", amount: 2999, term: "365 วัน" }
   };
@@ -1171,16 +1158,19 @@ body {
 
   function render() {
     var c = calc();
+
     root.querySelectorAll("[data-spm-pkg]").forEach(function (btn) {
       var active = btn.getAttribute("data-spm-pkg") === state.package_code;
       btn.classList.toggle("is-active", active);
       btn.setAttribute("aria-pressed", active ? "true" : "false");
     });
+
     root.querySelectorAll("[data-spm-method]").forEach(function (btn) {
       var active = btn.getAttribute("data-spm-method") === state.method;
       btn.classList.toggle("is-active", active);
       btn.setAttribute("aria-pressed", active ? "true" : "false");
     });
+
     if (out.pkg) out.pkg.textContent = packages[state.package_code].label;
     if (out.term) out.term.textContent = packages[state.package_code].term;
     if (out.method) out.method.textContent = labelMethod(state.method);
@@ -1188,59 +1178,69 @@ body {
     if (out.code) out.code.textContent = state.code ? state.code : "ไม่มี";
     if (out.stickyPkg) out.stickyPkg.textContent = packages[state.package_code].label;
     if (out.stickyTotal) out.stickyTotal.textContent = money(c.total);
+
     renderCodeMsg();
   }
 
   function labelMethod(method) {
     if (method === "promptpay") return "PromptPay";
     if (method === "paypal") return "PayPal";
-    return "Bank Transfer";
+    return "โอนธนาคาร";
   }
 
   function renderCodeMsg() {
     if (!out.codeMsg) return;
     out.codeMsg.className = "spm-code-msg";
+
     if (!state.code) {
-      out.codeMsg.textContent = "ถ้ามี code ให้ใส่ไว้ตรงนี้ครับ ผมจะเช็กก่อนคำนวณยอด";
+      out.codeMsg.textContent = "มีโค้ดให้กรอกก่อน ระบบจะคำนวณยอดใหม่ให้ทันที";
       return;
     }
+
     if (state.codeStatus === "pending") {
-      out.codeMsg.textContent = "ผมกำลังตรวจ code ให้ครับ...";
+      out.codeMsg.textContent = "กำลังตรวจสอบโค้ด...";
       out.codeMsg.classList.add("warn");
       return;
     }
+
     if (state.codeStatus === "good") {
-      out.codeMsg.textContent = "ใช้ code แล้วครับ ส่วนลด " + money(state.discount);
+      out.codeMsg.textContent = "ใช้โค้ดแล้ว ส่วนลด " + money(state.discount);
       out.codeMsg.classList.add("good");
       return;
     }
+
     if (state.codeStatus === "bad") {
-      out.codeMsg.textContent = state.codeMessage || "code นี้ใช้ไม่ได้ หรือหมดอายุแล้วครับ";
+      out.codeMsg.textContent = state.codeMessage || "โค้ดนี้ใช้ไม่ได้ หรือหมดอายุแล้ว";
       out.codeMsg.classList.add("bad");
       return;
     }
-    out.codeMsg.textContent = "code ถูกแนบไว้แล้ว กด Apply ให้ผมเช็กก่อนครับ";
+
+    out.codeMsg.textContent = "โค้ดถูกแนบไว้แล้ว กดตรวจโค้ดเพื่อคำนวณยอด";
   }
 
   async function validateCode(silent) {
     state.code = normalizeCode(codeInput ? codeInput.value : state.code);
     if (codeInput) codeInput.value = state.code;
     state.discount = 0;
+
     if (!state.code) {
       state.codeStatus = "empty";
       render();
       return;
     }
+
     var endpoint = attr("data-promo-endpoint", "/promo/validate");
     if (!endpoint) {
       state.codeStatus = "bad";
-      state.codeMessage = "ผมแนบ code ไว้ให้ตรวจเอง ไม่มีการลดราคาอัตโนมัติครับ";
+      state.codeMessage = "แนบโค้ดไว้ให้ทีมตรวจสอบ ไม่มีการลดราคาอัตโนมัติ";
       render();
       return;
     }
+
     var base = packages[state.package_code].amount;
     state.codeStatus = "pending";
     render();
+
     try {
       var res = await fetch(endpoint, {
         method: "POST",
@@ -1254,21 +1254,24 @@ body {
           page: "sigil/pay/membership"
         })
       });
+
       var data = await res.json().catch(function () { return {}; });
       if (!res.ok || data.ok === false) throw new Error(data.error || "promo_validate_failed");
+
       var discount = parseDiscount(base, data);
       if (data.valid === false) {
         state.codeStatus = "bad";
-        state.codeMessage = "code นี้ใช้ไม่ได้ หรือหมดอายุแล้วครับ";
+        state.codeMessage = "โค้ดนี้ใช้ไม่ได้ หรือหมดอายุแล้ว";
       } else {
         state.discount = discount;
         state.codeStatus = "good";
       }
     } catch (e) {
       state.codeStatus = "bad";
-      state.codeMessage = "ตอนนี้ผมเช็ก code ให้ไม่ได้ แต่จะแนบไว้ให้ทีมตรวจต่อครับ";
+      state.codeMessage = "ยังตรวจโค้ดไม่ได้ตอนนี้ แต่จะส่งโค้ดให้ทีมตรวจสอบต่อ";
       if (!silent) console.warn("SĪGIL code validate failed", e);
     }
+
     render();
   }
 
@@ -1310,11 +1313,13 @@ body {
 
   async function submit() {
     var email = getInput("email");
+
     if (!email) {
-      showToast("ขอ Email สำหรับเปิดสิทธิ์ก่อนครับ แล้วผมจะพาไปต่อ", "bad");
+      showToast("กรุณากรอก Email สำหรับเปิดสิทธิ์ก่อนครับ", "bad");
       scrollToForm();
       return;
     }
+
     var c = calc();
     var payload = {
       page: "sigil/pay/membership",
@@ -1336,7 +1341,9 @@ body {
       note: getInput("note"),
       created_at: new Date().toISOString()
     };
-    showToast("ผมกำลังสร้างรายการชำระให้ครับ...", "warn");
+
+    showToast("กำลังสร้างรายการสมัครสมาชิก...", "warn");
+
     try {
       var endpoint = attr("data-pay-verify-endpoint", "/v1/pay/verify");
       var verify = await fetch(endpoint, {
@@ -1355,6 +1362,7 @@ body {
           source: "sigil_pay_membership"
         })
       }).then(function (r) { return r.json().catch(function () { return { ok: false }; }); });
+
       if (verify && verify.ok) {
         payload.transaction_ref = verify.transaction_ref || verify.payment_ref || "";
         payload.payment_ref = payload.transaction_ref;
@@ -1366,7 +1374,9 @@ body {
       payload.verify_warning = "verify_unavailable";
       console.warn("SĪGIL pay verify failed", e);
     }
+
     try { sessionStorage.setItem(STORAGE_KEY, JSON.stringify(payload)); } catch (e) {}
+
     var next = new URL(attr("data-confirm-url", "/confirm/payment-confirmation"), window.location.origin);
     next.searchParams.set("page", "sigil/pay/membership");
     next.searchParams.set("source", "sigil_pay_membership");
@@ -1378,6 +1388,7 @@ body {
     next.searchParams.set("email", payload.member_email);
     if (payload.code) next.searchParams.set("code", payload.code);
     if (payload.payment_ref) next.searchParams.set("payment_ref", payload.payment_ref);
+
     window.location.href = next.pathname + next.search;
   }
 })();
