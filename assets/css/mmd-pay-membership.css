@@ -71,3 +71,100 @@ font-size:16px;
 color:var(--muted);
 
 }
+
+/* Private Code / Discount Code checkout block */
+#mmd-pay-membership .mmd-codebox{
+  margin:18px 0;
+  padding:18px;
+  border:1px solid rgba(201,162,74,.28);
+  border-radius:18px;
+  background:linear-gradient(180deg, rgba(255,255,255,.045), rgba(255,255,255,.018));
+  box-shadow:0 18px 54px rgba(0,0,0,.24);
+}
+
+#mmd-pay-membership .mmd-codebox__head{
+  display:flex;
+  flex-direction:column;
+  gap:6px;
+  margin-bottom:12px;
+}
+
+#mmd-pay-membership .mmd-codebox__title{
+  color:var(--txt, #fff);
+  font-weight:800;
+  letter-spacing:.02em;
+}
+
+#mmd-pay-membership .mmd-codebox__helper,
+#mmd-pay-membership .mmd-codebox__msg{
+  color:var(--muted, rgba(255,255,255,.66));
+  font-size:13px;
+  line-height:1.55;
+}
+
+#mmd-pay-membership .mmd-codebox__row{
+  display:grid;
+  grid-template-columns:1fr auto auto;
+  gap:10px;
+  align-items:center;
+}
+
+#mmd-pay-membership .mmd-codebox__input{
+  min-height:46px;
+  width:100%;
+  border:1px solid rgba(255,255,255,.16);
+  border-radius:13px;
+  background:rgba(0,0,0,.26);
+  color:var(--txt, #fff);
+  padding:0 14px;
+  outline:none;
+  letter-spacing:.06em;
+  text-transform:uppercase;
+}
+
+#mmd-pay-membership .mmd-codebox__input:focus{
+  border-color:rgba(201,162,74,.64);
+  box-shadow:0 0 0 3px rgba(201,162,74,.13);
+}
+
+#mmd-pay-membership .mmd-codebox__btn{
+  min-height:46px;
+  border:1px solid rgba(201,162,74,.55);
+  border-radius:13px;
+  padding:0 16px;
+  background:linear-gradient(180deg, rgba(201,162,74,.96), rgba(158,115,39,.92));
+  color:#111;
+  font-weight:800;
+  cursor:pointer;
+}
+
+#mmd-pay-membership .mmd-codebox__btn--ghost{
+  background:rgba(255,255,255,.04);
+  color:var(--txt, #fff);
+  border-color:rgba(255,255,255,.16);
+}
+
+#mmd-pay-membership .mmd-codebox__msg{
+  margin-top:10px;
+}
+
+#mmd-pay-membership .mmd-codebox__msg.is-valid{
+  color:#d7f7c2;
+}
+
+#mmd-pay-membership .mmd-codebox__msg.is-error{
+  color:#ffd2d2;
+}
+
+#mmd-pay-membership .mmd-codebox__msg.is-pending{
+  color:#ffe3a3;
+}
+
+@media (max-width:640px){
+  #mmd-pay-membership .mmd-codebox__row{
+    grid-template-columns:1fr;
+  }
+  #mmd-pay-membership .mmd-codebox__btn{
+    width:100%;
+  }
+}
