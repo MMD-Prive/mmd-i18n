@@ -1,26 +1,30 @@
 /* =========================================
-   MMD • GLOBAL FOUNDATION v2026-WORLD-02
+   MMD • GLOBAL FOUNDATION v2026-WORLD-03
+   LINE Seed Sans TH + Noto Sans Thai Restore
    Safe Light Default + Scoped World Themes
+
    MMD Privé = White World
    SĪGIL System = Underground World
 
    Rule:
    - Default is never dark.
-   - Thai = Noto Sans Thai.
-   - English display only = Cormorant Garamond.
-   - No global transparent/gradient headline.
+   - Main UI / Thai = LINE Seed Sans TH.
+   - Thai fallback = Noto Sans Thai.
+   - No global transparent / gradient headline.
+   - SIGIL dark mode only inside .sigil-system.
 ========================================= */
 
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Noto+Sans+Thai:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@400;500;600&display=swap');
+@import url('https://cdn.jsdelivr.net/gh/googlefonts/line-seed-sans@latest/LINESeedSansTH.css');
 
 :root{
   /* =========================
      FONT SYSTEM
   ========================= */
-  --mmd-font-main:"Noto Sans Thai","Inter",system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
-  --mmd-font-th:"Noto Sans Thai","Inter",system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
-  --mmd-font-en:"Inter","Noto Sans Thai",system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
-  --mmd-font-display-en:"Cormorant Garamond",Georgia,"Times New Roman",serif;
+  --mmd-font-main:"LINE Seed Sans TH","Noto Sans Thai",system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  --mmd-font-th:"LINE Seed Sans TH","Noto Sans Thai",system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  --mmd-font-en:"LINE Seed Sans TH","Noto Sans Thai",system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  --mmd-font-display-en:"LINE Seed Sans TH","Noto Sans Thai",system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
 
   --font-main:var(--mmd-font-main);
   --font-th:var(--mmd-font-th);
@@ -176,23 +180,21 @@ a{
 .mmd-font-th{font-family:var(--mmd-font-th);}
 .mmd-font-en{font-family:var(--mmd-font-en);}
 
-/* English display only */
 .mmd-display-en,
 .mmd-brand-en,
 .mmd-hero-display-en{
   font-family:var(--mmd-font-display-en);
   font-weight:600;
-  letter-spacing:-.045em;
-  line-height:.9;
+  letter-spacing:-.035em;
+  line-height:.96;
 }
 
-/* Thai / normal display */
 .mmd-display-title{
   color:var(--mmd-text);
   font-family:var(--mmd-font-th);
-  font-weight:800;
-  letter-spacing:-.055em;
-  line-height:.98;
+  font-weight:600;
+  letter-spacing:-.045em;
+  line-height:1.02;
 }
 
 .mmd-h1,
@@ -202,8 +204,8 @@ a{
 .mmd-heading-th{
   color:var(--mmd-text);
   font-family:var(--mmd-font-th);
-  font-weight:700;
-  letter-spacing:-.035em;
+  font-weight:600;
+  letter-spacing:-.032em;
   line-height:1.16;
 }
 
@@ -219,7 +221,7 @@ a{
   font-family:var(--mmd-font-th);
   font-size:16px;
   font-weight:400;
-  line-height:1.75;
+  line-height:1.78;
 }
 
 .mmd-body-strong{
@@ -283,7 +285,8 @@ a{
   color-scheme:light;
 }
 
-.mmd-prive .mmd-page-light{
+.mmd-prive .mmd-page-light,
+.mmd-page-light.mmd-prive{
   background:
     radial-gradient(circle at 96% 0%,rgba(96,64,76,.06),transparent 28rem),
     radial-gradient(circle at 0 0,rgba(148,21,35,.045),transparent 24rem),
@@ -296,7 +299,7 @@ a{
   color:var(--mmd-action);
   font-family:var(--mmd-font-en);
   font-size:11px;
-  font-weight:700;
+  font-weight:600;
   line-height:1;
   letter-spacing:.16em;
   text-transform:uppercase;
@@ -328,7 +331,7 @@ a{
   background:rgba(255,255,255,.84);
   color:var(--mmd-text-soft);
   font-size:11px;
-  font-weight:600;
+  font-weight:500;
   letter-spacing:.07em;
   box-shadow:none;
 }
@@ -371,7 +374,7 @@ a{
 .mmd-prive .mmd-dark-card .mmd-text,
 .mmd-prive .mmd-founder-panel .mmd-text,
 .mmd-prive .mmd-hero-dark .mmd-text{
-  color:rgba(248,247,245,.78);
+  color:rgba(248,247,245,.76);
 }
 
 /* =========================================
@@ -417,15 +420,15 @@ a{
   --mmd-bg-deep:#020202;
   --mmd-bg-soft:#090909;
 
-  --mmd-text:rgba(255,248,237,.96);
-  --mmd-text-soft:rgba(255,248,237,.86);
-  --mmd-text-muted:rgba(255,248,237,.72);
-  --mmd-text-faint:rgba(255,248,237,.52);
-  --mmd-line:rgba(255,255,255,.11);
+  --mmd-text:rgba(255,248,237,.90);
+  --mmd-text-soft:rgba(255,248,237,.74);
+  --mmd-text-muted:rgba(255,248,237,.56);
+  --mmd-text-faint:rgba(255,248,237,.38);
+  --mmd-line:rgba(255,255,255,.09);
 
-  --mmd-gold-champagne:#fff2c2;
-  --mmd-gold-light:#f6d98e;
-  --mmd-gold-antique:#d9b66f;
+  --mmd-gold-champagne:#fff4c8;
+  --mmd-gold-light:#f3d58d;
+  --mmd-gold-antique:#d7b46a;
   --mmd-gold:#d4af37;
   --mmd-gold-deep:#b47a34;
 
@@ -440,7 +443,8 @@ a{
   color-scheme:dark;
 }
 
-.sigil-system .mmd-page-dark{
+.sigil-system .mmd-page-dark,
+.mmd-page-dark.sigil-system{
   background:
     radial-gradient(circle at 78% 20%,rgba(217,179,111,.12),transparent 28%),
     linear-gradient(180deg,#050505 0%,#020202 100%);
@@ -448,9 +452,9 @@ a{
 }
 
 .sigil-system .mmd-glass{
-  border:1px solid rgba(255,255,255,.10);
+  border:1px solid rgba(255,255,255,.09);
   border-radius:var(--mmd-radius-xl);
-  background:linear-gradient(180deg,rgba(255,255,255,.06),rgba(255,255,255,.026)),rgba(4,4,4,.62);
+  background:linear-gradient(180deg,rgba(255,255,255,.052),rgba(255,255,255,.022)),rgba(4,4,4,.58);
   box-shadow:var(--mmd-shadow-deep);
   backdrop-filter:blur(22px);
   -webkit-backdrop-filter:blur(22px);
@@ -459,7 +463,7 @@ a{
 .sigil-system .mmd-line{
   width:100%;
   height:1px;
-  background:linear-gradient(90deg,transparent,rgba(217,179,111,.28),transparent);
+  background:linear-gradient(90deg,transparent,rgba(217,179,111,.26),transparent);
 }
 
 .sigil-system .mmd-kicker{
@@ -467,9 +471,8 @@ a{
   color:var(--mmd-gold-light);
   font-family:var(--mmd-font-en);
   font-size:11px;
-  font-weight:800;
   line-height:1;
-  letter-spacing:.16em;
+  letter-spacing:.22em;
   text-transform:uppercase;
 }
 
@@ -484,76 +487,22 @@ a{
   background:linear-gradient(180deg,rgba(217,179,111,.14),rgba(217,179,111,.045));
   color:var(--mmd-gold-light);
   font-size:11px;
-  font-weight:800;
-  letter-spacing:.16em;
+  letter-spacing:.18em;
   text-transform:uppercase;
   box-shadow:inset 0 1px 0 rgba(255,255,255,.08);
-}
-
-.sigil-system .mmd-text,
-.sigil-system .mmd-body,
-.sigil-system .mmd-copy,
-.sigil-system .mmd-description,
-.sigil-system p,
-.sigil-system li{
-  color:var(--mmd-text-soft);
-  font-family:var(--mmd-font-th);
-  font-weight:500;
-  line-height:1.72;
-  letter-spacing:-.012em;
-}
-
-.sigil-system strong,
-.sigil-system b,
-.sigil-system .mmd-body-strong{
-  color:var(--mmd-text);
-  font-weight:700;
-}
-
-.sigil-system h1,
-.sigil-system h2,
-.sigil-system h3,
-.sigil-system h4,
-.sigil-system h5,
-.sigil-system h6,
-.sigil-system .mmd-title,
-.sigil-system .mmd-display-title,
-.sigil-system .mmd-title-th,
-.sigil-system .mmd-heading-th{
-  color:var(--mmd-text);
-  font-family:var(--mmd-font-th);
-  font-weight:800;
-  letter-spacing:-.035em;
-  text-shadow:none;
-  filter:none;
-}
-
-.sigil-system .mmd-display-en,
-.sigil-system .mmd-brand-en,
-.sigil-system .mmd-hero-display-en{
-  font-family:var(--mmd-font-display-en);
-  color:var(--mmd-gold-champagne);
-  font-weight:600;
-  letter-spacing:-.035em;
-  line-height:.92;
-  text-shadow:none;
 }
 
 .sigil-system .mmd-heading-boss,
 .sigil-system .mmd-gradient-gold{
   color:transparent;
-  background:linear-gradient(
-    180deg,
-    #fff7d8 0%,
-    #f6d98e 28%,
-    #d9b66f 58%,
-    #a86f2c 100%
-  );
+  background:linear-gradient(180deg,#fff4c8 0%,#f3d58d 22%,#d7b46a 48%,#b47a34 72%,#6f421c 100%);
   -webkit-background-clip:text;
   background-clip:text;
   -webkit-text-fill-color:transparent;
   text-shadow:none;
-  filter:drop-shadow(0 14px 30px rgba(0,0,0,.72));
+  filter:
+    drop-shadow(0 20px 42px rgba(0,0,0,.9))
+    drop-shadow(0 0 18px rgba(217,179,111,.20));
 }
 
 .sigil-system .mmd-heading-gold-clean{
@@ -563,7 +512,7 @@ a{
   background-clip:text;
   -webkit-text-fill-color:transparent;
   text-shadow:none;
-  filter:drop-shadow(0 14px 30px rgba(0,0,0,.72));
+  filter:drop-shadow(0 18px 38px rgba(0,0,0,.86));
 }
 
 .sigil-system .mmd-btn-gold{
@@ -574,14 +523,14 @@ a{
 
 .sigil-system .mmd-btn-dark{
   color:var(--mmd-text);
-  border-color:rgba(255,255,255,.11);
-  background:rgba(255,255,255,.055);
+  border-color:rgba(255,255,255,.10);
+  background:rgba(255,255,255,.045);
 }
 
 .sigil-system .mmd-btn-ghost{
   color:var(--mmd-gold-light);
-  border-color:rgba(217,179,111,.28);
-  background:rgba(217,179,111,.065);
+  border-color:rgba(217,179,111,.26);
+  background:rgba(217,179,111,.055);
 }
 
 .sigil-system .mmd-field input,
@@ -590,10 +539,10 @@ a{
   width:100%;
   min-height:52px;
   padding:13px 15px;
-  border:1px solid rgba(255,255,255,.10);
+  border:1px solid rgba(255,255,255,.09);
   border-radius:15px;
   outline:none;
-  background:linear-gradient(180deg,rgba(255,255,255,.06),rgba(255,255,255,.028));
+  background:linear-gradient(180deg,rgba(255,255,255,.055),rgba(255,255,255,.025));
   color:#fff;
   font-size:14px;
   line-height:1.45;
@@ -607,16 +556,7 @@ a{
 
 .sigil-system .mmd-field input::placeholder,
 .sigil-system .mmd-field textarea::placeholder{
-  color:rgba(255,248,237,.42);
-}
-
-/* Very faint background headline stays decorative */
-.sigil-system .mmd-bg-title,
-.sigil-system .mmd-ghost-title,
-.sigil-system [class*="ghost-title"],
-.sigil-system [class*="bg-title"]{
-  color:rgba(255,248,237,.075);
-  -webkit-text-fill-color:currentColor;
+  color:rgba(255,248,237,.36);
 }
 
 /* =========================================
@@ -635,17 +575,10 @@ a{
   text-decoration:none;
   font:inherit;
   font-size:13.5px;
-  font-weight:700;
+  font-weight:600;
   line-height:1;
   cursor:pointer;
   white-space:nowrap;
-}
-
-.sigil-system .mmd-btn,
-.sigil-system button,
-.sigil-system a[class*="btn"]{
-  font-weight:800;
-  letter-spacing:.035em;
 }
 
 /* =========================================
@@ -654,13 +587,13 @@ a{
 
 @media screen and (max-width:767px){
   .mmd-display-title{
-    letter-spacing:-.045em;
+    letter-spacing:-.04em;
   }
 
   .mmd-display-en,
   .mmd-brand-en,
   .mmd-hero-display-en{
-    letter-spacing:-.035em;
+    letter-spacing:-.03em;
   }
 
   .mmd-btn{
