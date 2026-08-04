@@ -23,16 +23,26 @@ Load these files once, in this order:
 Production should pin an approved release tag after the restore PR is merged.
 Using `@main` is the migration bridge, not the long-term release policy.
 
+## Rollout decision
+
+MMD will complete and approve the Thai system first. EN / ZH / JP are future
+locales and must not appear in the public language selector until Thai copy,
+routes, forms, states, and mobile variants are complete.
+
+The engine retains future-locale compatibility so translation can be added
+later without replacing the runtime again.
+
 ## Language behavior
 
 | Item | Contract |
 | --- | --- |
-| Supported | TH / EN / ZH / JP |
-| Alias | `ja` normalizes to `jp` |
+| Active | TH only |
+| Future / disabled | EN / ZH / JP |
+| Compatibility alias | `ja` normalizes to `jp` after JP is enabled |
 | Default | Thai |
 | Storage | write both `mmd_lang` and legacy `lang` |
-| URL override | `?lang=th|en|zh|jp` |
-| Missing key | selected → Thai → English → keep existing copy |
+| URL override | `?lang=th`; unavailable locales resolve safely to TH |
+| Missing key | Thai → keep existing Thai source copy |
 | Page navigation | the stored language remains active across routes |
 
 ## Markup
@@ -44,7 +54,7 @@ page still works if JavaScript or the CDN is unavailable.
 <h1 data-i18n-text="public.access.hero.title">เริ่มจากสิ่งที่คุณต้องการจริง ๆ</h1>
 <p data-i18n="public.access.hero.body">ผมจะช่วยจัดตัวเลือกให้ชัดขึ้นครับ</p>
 <input data-i18n-placeholder="booking.brief.placeholder" placeholder="เล่าให้ผมฟังสั้น ๆ">
-<button type="button" data-set-lang="en">EN</button>
+<button type="button" data-set-lang="th">TH</button>
 ```
 
 Use `data-i18n-html` only for trusted repository-owned copy. Prefer
@@ -65,11 +75,12 @@ comment containing `data-mmd-i18n-exempt:` and a reason.
 
 ## Migration order
 
-1. Global Webflow loader and language selector.
+1. Global Webflow loader with TH locked as the only active language.
 2. Public acquisition pages and navigation/footer.
 3. Membership, booking, payment, and confirmation.
 4. Member Dashboard / LIFF.
 5. SIGIL application, model, and internal lanes according to access scope.
 
 The restoration must be incremental. Existing Thai copy remains visible until
-the matching language keys have been reviewed.
+the matching Thai keys have been reviewed. Translation begins only after Thai
+coverage is complete and approved.
