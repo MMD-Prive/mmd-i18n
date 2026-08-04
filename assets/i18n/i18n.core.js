@@ -1,34 +1,16 @@
-/* =========================================
-   i18n Core Engine — MMD Privé (v1.7.1 LOCK • 2026-01-14)
-   - no-blank overwrite (uses data-fallback / keep existing)
-   - reads/writes BOTH: mmd_lang + lang
-   - supports role suffix: key.{role}
-   - supports mobile suffix: key.m (when data-i18n-mobile="true")
-   - dict supports:
-       A) I18N_DICT[lang][key]
-       B) I18N_DICT[key][lang] (compat)
-   - role normalize 1:1 (canonical):
-       guest | standard | premium | vip | blackcard | 7days
-   - role source priority:
-       1) root data-user-role
-       2) root role="standard" (MMD tokens only)
-       3) body data-user-role
-       4) body role="standard" (MMD tokens only)
-       5) localStorage mmd_role / role
-   - bindings (NO-BLANK overwrite rules apply to ALL):
-       [data-i18n="key"]                      -> innerHTML
-       [data-i18n-text="key"]                 -> textContent
-       [data-i18n-html="key"]                 -> innerHTML
-       [data-i18n-placeholder="key"]          -> placeholder
-       [data-i18n-title="key"]                -> title
-       [data-i18n-aria-label="key"]           -> aria-label
-       [data-i18n-value="key"]                -> value
-       [data-i18n-attr="attr:key;attr2:key2"] -> setAttribute(attr, value)
-   - fallback attributes (optional):
-       data-fallback (generic)
-       data-fallback-text / -html / -placeholder / -title / -aria-label / -value
-       data-fallback-attr-<attr>
-========================================= */
+/* =====================================================
+   MMD Privé i18n Core — RESTORE v2.0.0 (2026-08-04)
+
+   Canonical language engine for Webflow and Worker HTML.
+   Active rollout language: th.
+   Future languages remain known but disabled until copy review is complete.
+
+   Safety contract:
+   - Thai is the default and the first translation fallback.
+   - Missing/blank translations never erase existing page copy.
+   - mmd_lang and the legacy lang storage key stay in sync.
+   - Existing data-i18n bindings and role/mobile suffixes remain compatible.
+   ===================================================== */
 
 (function () {
   "use strict";
@@ -36,483 +18,378 @@
   var W = window;
   var D = document;
 
-  // ---------- Config ----------
-  var LOCK_VERSION = "v1.7.1 LOCK";
+  if (W.__MMD_I18N_RESTORE_V2__) return;
+  W.__MMD_I18N_RESTORE_V2__ = true;
+
+  var VERSION = "2.0.0-restore";
   var DEFAULT_LANG = "th";
+  var KNOWN_LANGS = ["th", "en", "zh", "jp"];
+  var AVAILABLE_LANGS = ["th"];
   var STORAGE_KEYS = ["mmd_lang", "lang"];
+  var BUTTON_SELECTOR = ".mmd-lang-btn,[data-set-lang],[data-lang-btn]";
 
-  // ---------- Helpers ----------
-  function str(v) {
-    return (v === null || v === undefined) ? "" : String(v);
-  }
-  function trim(v) {
-    return str(v).replace(/\s+/g, " ").trim();
-  }
-  function isTruthyAttr(v) {
-    v = (v || "").toString().toLowerCase().trim();
-    return v === "true" || v === "1" || v === "yes" || v === "on";
-  }
-  function safeGetLS(key) {
-    try { return localStorage.getItem(key); } catch (_) { return null; }
-  }
-  function safeSetLS(key, val) {
-    try { localStorage.setItem(key, val); } catch (_) {}
+  function str(value) {
+    return value === null || value === undefined ? "" : String(value);
   }
 
-  // ---------- Role normalize (1:1 canonical) ----------
-  function normalizeRole(input) {
-    var r = trim(input).toLowerCase();
-
-    // tolerate common variants but output MUST be canonical
-    if (!r) return "guest";
-
-    // strip separators
-    r = r.replace(/[_\s]+/g, "-");
-
-    // aliases -> canonical
-    var map = {
-      "guest": "guest",
-      "free": "guest",
-      "public": "guest",
-
-      "standard": "standard",
-      "std": "standard",
-
-      "premium": "premium",
-      "pre": "premium",
-
-      "vip": "vip",
-
-      "blackcard": "blackcard",
-      "black-card": "blackcard",
-      "black": "blackcard",
-      "svip": "blackcard",     // SVIP สิทธิ์เท่า Black Card (canonical: blackcard)
-      "s-vip": "blackcard",
-
-      "7days": "7days",
-      "7-day": "7days",
-      "7-days": "7days",
-      "7days-pass": "7days",
-      "guest-pass": "7days"
-    };
-
-    return map[r] || "guest";
+  function trim(value) {
+    return str(value).replace(/\s+/g, " ").trim();
   }
 
-  // Allow role="standard" but ONLY if it is an MMD role token (avoid ARIA role collisions)
-  function isMmdRoleToken(v) {
-    v = (v || "").toString().trim().toLowerCase();
-    return /^(guest|standard|std|premium|pre|vip|blackcard|black-card|black|svip|7days|7-day|7-days)$/.test(v);
+  function isNonBlank(value) {
+    return trim(value) !== "";
   }
 
-  function getCurrentRole(root) {
-    // priority: root data-user-role -> root role -> body data-user-role -> body role -> localStorage -> guest
+  function isTruthyAttr(value) {
+    value = trim(value).toLowerCase();
+    return value === "" || value === "true" || value === "1" || value === "yes" || value === "on" || value === "mobile";
+  }
 
-    // 1) root data-user-role
-    var fromRoot = root && root.getAttribute && (
-      root.getAttribute("data-user-role") ||
-      (root.dataset && root.dataset.userRole)
-    );
-    if (fromRoot) return normalizeRole(fromRoot);
+  function safeGetStorage(key) {
+    try { return W.localStorage.getItem(key); } catch (_) { return null; }
+  }
 
-    // 2) root role="standard" (MMD-only tokens)
-    if (root && root.getAttribute) {
-      var rootRoleAttr = root.getAttribute("role");
-      if (isMmdRoleToken(rootRoleAttr)) return normalizeRole(rootRoleAttr);
+  function safeSetStorage(key, value) {
+    try { W.localStorage.setItem(key, value); } catch (_) {}
+  }
+
+  function normalizeLang(input) {
+    var lang = trim(input).toLowerCase().replace(/_/g, "-");
+    if (!lang) return null;
+    if (lang === "ja" || lang.indexOf("ja-") === 0 || lang.indexOf("jp-") === 0) return "jp";
+    if (lang.indexOf("zh-") === 0) return "zh";
+    if (lang.indexOf("th-") === 0) return "th";
+    if (lang.indexOf("en-") === 0) return "en";
+    return KNOWN_LANGS.indexOf(lang) >= 0 ? lang : null;
+  }
+
+  function availableLang(input) {
+    var lang = normalizeLang(input);
+    return lang && AVAILABLE_LANGS.indexOf(lang) >= 0 ? lang : null;
+  }
+
+  function getUrlLang() {
+    try {
+      return availableLang(new URLSearchParams(W.location.search || "").get("lang"));
+    } catch (_) {
+      return null;
     }
+  }
 
-    // 3) body data-user-role
-    var body = D.body;
-    if (body) {
-      var fromBody = body.getAttribute("data-user-role") || (body.dataset ? body.dataset.userRole : "");
-      if (fromBody) return normalizeRole(fromBody);
-
-      // 4) body role="standard" (MMD-only tokens)
-      var bodyRoleAttr = body.getAttribute("role");
-      if (isMmdRoleToken(bodyRoleAttr)) return normalizeRole(bodyRoleAttr);
+  function getStoredLang() {
+    for (var i = 0; i < STORAGE_KEYS.length; i += 1) {
+      var lang = availableLang(safeGetStorage(STORAGE_KEYS[i]));
+      if (lang) return lang;
     }
+    return null;
+  }
 
-    // 5) localStorage
-    var cached = safeGetLS("mmd_role") || safeGetLS("role") || "";
-    if (cached) return normalizeRole(cached);
-
-    return "guest";
+  function getHtmlLang() {
+    try { return availableLang(D.documentElement.getAttribute("lang")); } catch (_) { return null; }
   }
 
   function getLang() {
-    var a = safeGetLS("mmd_lang");
-    var b = safeGetLS("lang");
-    var lang = trim(a || b || DEFAULT_LANG).toLowerCase();
-    if (!lang) lang = DEFAULT_LANG;
+    return getUrlLang() || getStoredLang() || getHtmlLang() || DEFAULT_LANG;
+  }
+
+  function persistLang(input) {
+    var lang = availableLang(input) || DEFAULT_LANG;
+    for (var i = 0; i < STORAGE_KEYS.length; i += 1) safeSetStorage(STORAGE_KEYS[i], lang);
+    try {
+      D.documentElement.setAttribute("lang", lang === "jp" ? "ja" : lang);
+      D.documentElement.setAttribute("data-mmd-lang", lang);
+    } catch (_) {}
     return lang;
   }
 
-  function setLang(lang) {
-    lang = trim(lang).toLowerCase() || DEFAULT_LANG;
-    for (var i = 0; i < STORAGE_KEYS.length; i++) safeSetLS(STORAGE_KEYS[i], lang);
-    try { D.documentElement.setAttribute("lang", lang); } catch (_) {}
-    return lang;
+  function normalizeRole(input) {
+    var role = trim(input).toLowerCase().replace(/[_\s]+/g, "-");
+    var aliases = {
+      "guest": "guest", "free": "guest", "public": "guest",
+      "standard": "standard", "std": "standard",
+      "premium": "premium", "pre": "premium",
+      "vip": "vip",
+      "blackcard": "blackcard", "black-card": "blackcard", "black": "blackcard",
+      "svip": "blackcard", "s-vip": "blackcard",
+      "7days": "7days", "7-day": "7days", "7-days": "7days",
+      "7days-pass": "7days", "guest-pass": "7days"
+    };
+    return aliases[role] || "guest";
+  }
+
+  function isMmdRoleToken(value) {
+    return /^(guest|standard|std|premium|pre|vip|blackcard|black-card|black|svip|s-vip|7days|7-day|7-days|guest-pass)$/.test(trim(value).toLowerCase());
+  }
+
+  function getCurrentRole(root) {
+    var body = D.body;
+    var candidates = [];
+    if (root && root.getAttribute) {
+      candidates.push(root.getAttribute("data-user-role"));
+      if (isMmdRoleToken(root.getAttribute("role"))) candidates.push(root.getAttribute("role"));
+    }
+    if (body && body.getAttribute) {
+      candidates.push(body.getAttribute("data-user-role"));
+      if (isMmdRoleToken(body.getAttribute("role"))) candidates.push(body.getAttribute("role"));
+    }
+    candidates.push(safeGetStorage("mmd_role"));
+    candidates.push(safeGetStorage("role"));
+    for (var i = 0; i < candidates.length; i += 1) {
+      if (isNonBlank(candidates[i])) return normalizeRole(candidates[i]);
+    }
+    return "guest";
   }
 
   function getDict() {
     return W.I18N_DICT || W.I18N || W.DICT || {};
   }
 
-  // dict supports:
-  // A) dict[lang][key]
-  // B) dict[key][lang]
-  function lookupRaw(lang, key) {
+  function lookupInLang(lang, key) {
     var dict = getDict();
-    if (!dict) return null;
-
-    if (dict[lang] && Object.prototype.hasOwnProperty.call(dict[lang], key)) {
-      return dict[lang][key];
-    }
-    if (dict[key] && Object.prototype.hasOwnProperty.call(dict[key], lang)) {
-      return dict[key][lang];
-    }
+    if (dict[lang] && Object.prototype.hasOwnProperty.call(dict[lang], key)) return dict[lang][key];
+    if (dict[key] && Object.prototype.hasOwnProperty.call(dict[key], lang)) return dict[key][lang];
     return null;
   }
 
-  // mobile + role suffix resolution
-  function resolveKeyCandidates(baseKey, role, isMobile) {
-    var out = [];
-    var k = trim(baseKey);
-    if (!k) return out;
-
-    var r = normalizeRole(role);
-
-    // Preferred order:
-    // 1) key.m.role
-    // 2) key.role.m   (optional compatibility)
-    // 3) key.m
-    // 4) key.role
-    // 5) key
-    if (isMobile) {
-      out.push(k + ".m." + r);
-      out.push(k + "." + r + ".m");
-      out.push(k + ".m");
-    }
-    out.push(k + "." + r);
-    out.push(k);
-
-    // de-dup
+  function languageFallbacks(input) {
+    var selected = availableLang(input) || DEFAULT_LANG;
+    var order = [selected, "th", "en"];
     var seen = {};
-    var uniq = [];
-    for (var i = 0; i < out.length; i++) {
-      var kk = out[i];
-      if (!seen[kk]) { seen[kk] = true; uniq.push(kk); }
-    }
-    return uniq;
+    return order.filter(function (lang) {
+      if (seen[lang]) return false;
+      seen[lang] = true;
+      return true;
+    });
   }
 
-  function translate(key, opts) {
-    opts = opts || {};
-    var lang = trim(opts.lang || getLang()).toLowerCase();
-    var role = normalizeRole(opts.role || getCurrentRole(opts.root || D.body));
-    var isMobile = !!opts.mobile;
+  function keyCandidates(baseKey, role, mobile) {
+    var key = trim(baseKey);
+    if (!key) return [];
+    var normalizedRole = normalizeRole(role);
+    var order = [];
+    if (mobile) {
+      order.push(key + ".m." + normalizedRole);
+      order.push(key + "." + normalizedRole + ".m");
+      order.push(key + ".m");
+    }
+    order.push(key + "." + normalizedRole);
+    order.push(key);
+    var seen = {};
+    return order.filter(function (candidate) {
+      if (seen[candidate]) return false;
+      seen[candidate] = true;
+      return true;
+    });
+  }
 
-    var candidates = resolveKeyCandidates(key, role, isMobile);
-    for (var i = 0; i < candidates.length; i++) {
-      var v = lookupRaw(lang, candidates[i]);
-      if (v === null || v === undefined) continue;
+  function translate(key, options) {
+    options = options || {};
+    var languages = languageFallbacks(options.lang || getLang());
+    var role = normalizeRole(options.role || getCurrentRole(options.root || D.body));
+    var keys = keyCandidates(key, role, !!options.mobile);
 
-      // IMPORTANT: no-blank overwrite => treat blank as missing
-      var vv = str(v);
-      if (trim(vv) === "") continue;
-
-      return vv;
+    for (var i = 0; i < languages.length; i += 1) {
+      for (var j = 0; j < keys.length; j += 1) {
+        var value = lookupInLang(languages[i], keys[j]);
+        if (isNonBlank(value)) return str(value);
+      }
     }
     return null;
   }
 
-  function getFallback(el, kind, attrName) {
-    // kind: "text" | "html" | "placeholder" | "title" | "aria-label" | "value" | "attr"
-    // attrName used only for kind="attr" to support data-fallback-attr-<attr>
-    if (!el || !el.getAttribute) return "";
-
+  function getFallback(element, kind, attributeName) {
+    if (!element || !element.getAttribute) return "";
     var specific = "";
-    if (kind === "attr" && attrName) {
-      specific = el.getAttribute("data-fallback-attr-" + String(attrName).toLowerCase()) || "";
+    if (kind === "attr" && attributeName) {
+      specific = element.getAttribute("data-fallback-attr-" + str(attributeName).toLowerCase()) || "";
     } else if (kind) {
-      specific = el.getAttribute("data-fallback-" + kind) || "";
+      specific = element.getAttribute("data-fallback-" + kind) || "";
     }
-    var generic = el.getAttribute("data-fallback") || "";
-
-    return trim(specific || generic);
+    return trim(specific || element.getAttribute("data-fallback") || "");
   }
 
-  function applyNoBlank(el, kind, value, attrName) {
-    // if value is blank => use fallback if provided, else KEEP existing
-    var v = str(value);
-    if (trim(v) === "") v = "";
+  function applyValue(element, kind, value, attributeName) {
+    if (!element) return;
+    var output = isNonBlank(value) ? str(value) : getFallback(element, kind, attributeName);
+    if (!isNonBlank(output)) return;
 
-    if (!v) {
-      var fb = getFallback(el, kind, attrName);
-      if (fb) v = fb;
-    }
+    if (kind === "text") element.textContent = output;
+    else if (kind === "html") element.innerHTML = output;
+    else if (kind === "value") {
+      try { element.value = output; } catch (_) { element.setAttribute("value", output); }
+    } else if (kind === "attr" && attributeName) element.setAttribute(attributeName, output);
+    else element.setAttribute(kind, output);
+  }
 
-    if (!v) return; // keep existing (no overwrite)
+  function parseAttributeMap(input) {
+    return str(input).split(/[;,]/g).map(function (item) {
+      var index = item.indexOf(":");
+      if (index <= 0) return null;
+      var attribute = trim(item.slice(0, index));
+      var key = trim(item.slice(index + 1));
+      return attribute && key ? { attribute: attribute, key: key } : null;
+    }).filter(Boolean);
+  }
 
-    if (kind === "text") {
-      el.textContent = v;
-      return;
-    }
-    if (kind === "html") {
-      el.innerHTML = v;
-      return;
-    }
-    if (kind === "placeholder") {
-      el.setAttribute("placeholder", v);
-      return;
-    }
-    if (kind === "title") {
-      el.setAttribute("title", v);
-      return;
-    }
-    if (kind === "aria-label") {
-      el.setAttribute("aria-label", v);
-      return;
-    }
-    if (kind === "value") {
-      try { el.value = v; } catch (_) { el.setAttribute("value", v); }
-      return;
-    }
-    if (kind === "attr" && attrName) {
-      el.setAttribute(attrName, v);
-      return;
+  function query(root, selector) {
+    return root && root.querySelectorAll ? root.querySelectorAll(selector) : [];
+  }
+
+  function isMobileBinding(element) {
+    if (!element || !element.getAttribute) return false;
+    var value = element.getAttribute("data-i18n-mobile");
+    return value !== null && isTruthyAttr(value);
+  }
+
+  function applySelector(root, selector, keyAttribute, kind, lang, role) {
+    var nodes = query(root, selector);
+    for (var i = 0; i < nodes.length; i += 1) {
+      var element = nodes[i];
+      var key = element.getAttribute(keyAttribute);
+      var value = translate(key, { lang: lang, role: role, mobile: isMobileBinding(element), root: root });
+      applyValue(element, kind, value);
     }
   }
 
-  function parseAttrMap(s) {
-    // "href:nav.home;title:nav.home.title" (supports ; or , separators)
-    s = str(s);
-    if (!trim(s)) return [];
-    var parts = s.split(/[;,]/g);
-    var out = [];
-    for (var i = 0; i < parts.length; i++) {
-      var p = trim(parts[i]);
-      if (!p) continue;
-      var idx = p.indexOf(":");
-      if (idx <= 0) continue;
-      var a = trim(p.slice(0, idx));
-      var k = trim(p.slice(idx + 1));
-      if (!a || !k) continue;
-      out.push({ attr: a, key: k });
-    }
-    return out;
-  }
-
-  function applyToRoot(root, opts) {
-    root = root || D;
-    opts = opts || {};
-
-    var lang = trim(opts.lang || getLang()).toLowerCase();
-    var role = normalizeRole(opts.role || getCurrentRole(root));
-    var dict = getDict(); // ensure loaded
-    void dict;
-
-    // detect mobile per element: data-i18n-mobile="true"
-    function isMobileEl(el) {
-      if (!el || !el.getAttribute) return false;
-      var v = el.getAttribute("data-i18n-mobile");
-      if (v === null) return false;
-      return isTruthyAttr(v) || v === "" || v === "mobile";
-    }
-
-    // [data-i18n] -> innerHTML
-    var nodes;
-
-    nodes = root.querySelectorAll ? root.querySelectorAll("[data-i18n]") : [];
-    for (var i = 0; i < nodes.length; i++) {
-      var el = nodes[i];
-      var key = el.getAttribute("data-i18n");
-      var val = translate(key, { lang: lang, role: role, mobile: isMobileEl(el), root: root });
-      applyNoBlank(el, "html", val);
-    }
-
-    // [data-i18n-text] -> textContent
-    nodes = root.querySelectorAll ? root.querySelectorAll("[data-i18n-text]") : [];
-    for (i = 0; i < nodes.length; i++) {
-      el = nodes[i];
-      key = el.getAttribute("data-i18n-text");
-      val = translate(key, { lang: lang, role: role, mobile: isMobileEl(el), root: root });
-      applyNoBlank(el, "text", val);
-    }
-
-    // [data-i18n-html] -> innerHTML
-    nodes = root.querySelectorAll ? root.querySelectorAll("[data-i18n-html]") : [];
-    for (i = 0; i < nodes.length; i++) {
-      el = nodes[i];
-      key = el.getAttribute("data-i18n-html");
-      val = translate(key, { lang: lang, role: role, mobile: isMobileEl(el), root: root });
-      applyNoBlank(el, "html", val);
-    }
-
-    // placeholder
-    nodes = root.querySelectorAll ? root.querySelectorAll("[data-i18n-placeholder]") : [];
-    for (i = 0; i < nodes.length; i++) {
-      el = nodes[i];
-      key = el.getAttribute("data-i18n-placeholder");
-      val = translate(key, { lang: lang, role: role, mobile: isMobileEl(el), root: root });
-      applyNoBlank(el, "placeholder", val);
-    }
-
-    // title
-    nodes = root.querySelectorAll ? root.querySelectorAll("[data-i18n-title]") : [];
-    for (i = 0; i < nodes.length; i++) {
-      el = nodes[i];
-      key = el.getAttribute("data-i18n-title");
-      val = translate(key, { lang: lang, role: role, mobile: isMobileEl(el), root: root });
-      applyNoBlank(el, "title", val);
-    }
-
-    // aria-label
-    nodes = root.querySelectorAll ? root.querySelectorAll("[data-i18n-aria-label]") : [];
-    for (i = 0; i < nodes.length; i++) {
-      el = nodes[i];
-      key = el.getAttribute("data-i18n-aria-label");
-      val = translate(key, { lang: lang, role: role, mobile: isMobileEl(el), root: root });
-      applyNoBlank(el, "aria-label", val);
-    }
-
-    // value
-    nodes = root.querySelectorAll ? root.querySelectorAll("[data-i18n-value]") : [];
-    for (i = 0; i < nodes.length; i++) {
-      el = nodes[i];
-      key = el.getAttribute("data-i18n-value");
-      val = translate(key, { lang: lang, role: role, mobile: isMobileEl(el), root: root });
-      applyNoBlank(el, "value", val);
-    }
-
-    // attr map
-    nodes = root.querySelectorAll ? root.querySelectorAll("[data-i18n-attr]") : [];
-    for (i = 0; i < nodes.length; i++) {
-      el = nodes[i];
-      var mapStr = el.getAttribute("data-i18n-attr");
-      var pairs = parseAttrMap(mapStr);
-      for (var j = 0; j < pairs.length; j++) {
-        var aName = pairs[j].attr;
-        var aKey = pairs[j].key;
-        var aVal = translate(aKey, { lang: lang, role: role, mobile: isMobileEl(el), root: root });
-        applyNoBlank(el, "attr", aVal, aName);
+  function updateButtons(root, lang) {
+    var buttons = query(root || D, BUTTON_SELECTOR);
+    for (var i = 0; i < buttons.length; i += 1) {
+      var button = buttons[i];
+      var target = availableLang(button.getAttribute("data-set-lang") || button.getAttribute("data-lang-btn") || button.getAttribute("data-lang"));
+      if (!target) continue;
+      var active = target === lang;
+      if (button.classList) {
+        button.classList.toggle("mmd-lang-active", active);
+        button.classList.toggle("is-active", active);
       }
+      button.setAttribute("aria-pressed", active ? "true" : "false");
     }
+  }
 
-    // mark state
+  function dispatch(name, detail) {
     try {
-      if (root === D || root === D.documentElement) {
-        D.documentElement.setAttribute("data-mmd-lang", lang);
-        D.documentElement.setAttribute("data-mmd-role", role);
-      } else if (root && root.setAttribute) {
-        root.setAttribute("data-mmd-lang", lang);
-        root.setAttribute("data-mmd-role", role);
+      var event;
+      if (typeof W.CustomEvent === "function") event = new W.CustomEvent(name, { detail: detail });
+      else {
+        event = D.createEvent("CustomEvent");
+        event.initCustomEvent(name, false, false, detail);
       }
+      D.dispatchEvent(event);
     } catch (_) {}
   }
 
-  function bindLangButtons(root, opts) {
+  function applyToRoot(root, options) {
     root = root || D;
-    opts = opts || {};
-    var selector = opts.selector || ".mmd-lang-btn,[data-set-lang]";
-    var activeClass = opts.activeClass || "mmd-lang-active";
+    options = options || {};
+    var lang = availableLang(options.lang) || getLang();
+    var role = normalizeRole(options.role || getCurrentRole(root));
 
-    var btns = root.querySelectorAll ? root.querySelectorAll(selector) : [];
-    function refreshActive(lang) {
-      for (var i = 0; i < btns.length; i++) {
-        var b = btns[i];
-        var target = b.getAttribute("data-set-lang") || (b.dataset ? b.dataset.setLang : "");
-        if (!target) target = b.getAttribute("data-lang") || (b.dataset ? b.dataset.lang : "");
-        target = trim(target).toLowerCase();
-        if (!target) continue;
-        if (b.classList) b.classList.toggle(activeClass, target === lang);
+    applySelector(root, "[data-i18n]", "data-i18n", "html", lang, role);
+    applySelector(root, "[data-i18n-text]", "data-i18n-text", "text", lang, role);
+    applySelector(root, "[data-i18n-html]", "data-i18n-html", "html", lang, role);
+    applySelector(root, "[data-i18n-placeholder]", "data-i18n-placeholder", "placeholder", lang, role);
+    applySelector(root, "[data-i18n-title]", "data-i18n-title", "title", lang, role);
+    applySelector(root, "[data-i18n-aria-label]", "data-i18n-aria-label", "aria-label", lang, role);
+    applySelector(root, "[data-i18n-value]", "data-i18n-value", "value", lang, role);
+
+    var attributeNodes = query(root, "[data-i18n-attr]");
+    for (var i = 0; i < attributeNodes.length; i += 1) {
+      var element = attributeNodes[i];
+      var pairs = parseAttributeMap(element.getAttribute("data-i18n-attr"));
+      for (var j = 0; j < pairs.length; j += 1) {
+        var value = translate(pairs[j].key, { lang: lang, role: role, mobile: isMobileBinding(element), root: root });
+        applyValue(element, "attr", value, pairs[j].attribute);
       }
     }
 
-    for (var i = 0; i < btns.length; i++) {
-      (function (b) {
-        b.addEventListener("click", function () {
-          var target = b.getAttribute("data-set-lang") || (b.dataset ? b.dataset.setLang : "");
-          if (!target) target = b.getAttribute("data-lang") || (b.dataset ? b.dataset.lang : "");
-          target = trim(target).toLowerCase();
-          if (!target) return;
+    try {
+      var stateRoot = root === D ? D.documentElement : root;
+      if (stateRoot && stateRoot.setAttribute) {
+        stateRoot.setAttribute("data-mmd-lang", lang);
+        stateRoot.setAttribute("data-mmd-role", role);
+      }
+    } catch (_) {}
 
-          var lang = setLang(target);
-          applyToRoot(opts.applyRoot || D, { lang: lang });
-          refreshActive(lang);
-
-          if (typeof opts.onChange === "function") {
-            try { opts.onChange(lang); } catch (_) {}
-          }
-        });
-      })(btns[i]);
-    }
-
-    refreshActive(getLang());
+    updateButtons(D, lang);
+    dispatch("mmd:i18n:applied", { lang: lang, role: role, version: VERSION });
+    return lang;
   }
 
-  function init(opts) {
-    opts = opts || {};
-    var root = opts.root || D;
+  function changeLanguage(input, options) {
+    options = options || {};
+    var lang = persistLang(input);
+    applyToRoot(options.root || D, { lang: lang, role: options.role });
+    dispatch("mmd:i18n:change", { lang: lang, version: VERSION });
+    return lang;
+  }
 
-    // Ensure lang persisted
-    setLang(getLang());
+  function bindLanguageButtons(root) {
+    root = root || D;
+    if (root.__MMD_I18N_BUTTONS_BOUND__) return;
+    root.__MMD_I18N_BUTTONS_BOUND__ = true;
+    if (!root.addEventListener) return;
 
-    // Apply once
-    applyToRoot(root, { lang: getLang(), role: getCurrentRole(root) });
+    root.addEventListener("click", function (event) {
+      var target = event.target;
+      if (target && target.closest) target = target.closest(BUTTON_SELECTOR);
+      if (!target || !target.getAttribute) return;
+      var lang = target.getAttribute("data-set-lang") || target.getAttribute("data-lang-btn") || target.getAttribute("data-lang");
+      if (!availableLang(lang)) return;
+      if (event.preventDefault) event.preventDefault();
+      changeLanguage(lang);
+    });
+    updateButtons(root, getLang());
+  }
 
-    // Bind language toggles (optional)
-    if (opts.bindLangButtons !== false) {
-      bindLangButtons(D, { applyRoot: root });
-    }
+  function observe(root) {
+    if (W.__MMD_I18N_OBSERVER__ || typeof W.MutationObserver !== "function") return;
+    var target = root === D ? D.body : root;
+    if (!target) return;
+    var observer = new W.MutationObserver(function (mutations) {
+      for (var i = 0; i < mutations.length; i += 1) {
+        var added = mutations[i].addedNodes || [];
+        for (var j = 0; j < added.length; j += 1) {
+          if (added[j] && added[j].nodeType === 1) applyToRoot(added[j], { lang: getLang() });
+        }
+      }
+    });
+    observer.observe(target, { childList: true, subtree: true });
+    W.__MMD_I18N_OBSERVER__ = observer;
+  }
 
-    // Observe DOM changes (optional)
-    if (opts.observe === true) {
-      try {
-        var mo = new MutationObserver(function (mutations) {
-          for (var i = 0; i < mutations.length; i++) {
-            var m = mutations[i];
-            if (!m.addedNodes || !m.addedNodes.length) continue;
-            for (var j = 0; j < m.addedNodes.length; j++) {
-              var n = m.addedNodes[j];
-              if (!n || n.nodeType !== 1) continue;
-              applyToRoot(n, { lang: getLang(), role: getCurrentRole(root) });
-            }
-          }
-        });
-        mo.observe(root === D ? D.body : root, { childList: true, subtree: true });
-        W.__MMD_I18N_MO__ = mo;
-      } catch (_) {}
-    }
-
+  function init(options) {
+    options = options || {};
+    var root = options.root || D;
+    var lang = persistLang(options.lang || getLang());
+    applyToRoot(root, { lang: lang, role: options.role });
+    if (options.bindLangButtons !== false) bindLanguageButtons(D);
+    if (options.observe !== false) observe(root);
+    dispatch("mmd:i18n:ready", { lang: lang, version: VERSION, languages: AVAILABLE_LANGS.slice() });
     return true;
   }
 
-  // ---------- Public API ----------
   var API = {
-    version: LOCK_VERSION,
+    version: VERSION,
+    languages: AVAILABLE_LANGS.slice(),
+    knownLanguages: KNOWN_LANGS.slice(),
+    defaultLang: DEFAULT_LANG,
+    normalizeLang: normalizeLang,
     normalizeRole: normalizeRole,
     getLang: getLang,
-    setLang: function (lang) { return setLang(lang); },
-    t: function (key, opts) { return translate(key, opts || {}); },
-    apply: function (root, opts) { return applyToRoot(root || D, opts || {}); },
-    bindLangButtons: function (root, opts) { return bindLangButtons(root || D, opts || {}); },
+    setLang: changeLanguage,
+    t: translate,
+    apply: applyToRoot,
+    bindLangButtons: bindLanguageButtons,
     init: init
   };
 
   W.MMD_I18N = API;
+  if (typeof W.T !== "function") W.T = function (key, options) { return API.t(key, options || {}); };
 
-  // Convenience global T(k) (non-destructive)
-  if (typeof W.T !== "function") {
-    W.T = function (key, opts) { return API.t(key, opts); };
+  function boot() {
+    try { API.init({ root: D, observe: true }); } catch (_) {}
   }
 
-  // Auto init on DOM ready (safe default)
-  if (D.readyState === "loading") {
-    D.addEventListener("DOMContentLoaded", function () {
-      try { API.init({ root: D }); } catch (_) {}
-    });
-  } else {
-    try { API.init({ root: D }); } catch (_) {}
-  }
+  if (D.readyState === "loading") D.addEventListener("DOMContentLoaded", boot);
+  else boot();
 })();

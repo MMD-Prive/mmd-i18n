@@ -1,0 +1,42 @@
+name: i18n contract
+
+on:
+  pull_request:
+    paths:
+      - "**/*.html"
+      - "assets/i18n/**"
+      - "scripts/audit-i18n.mjs"
+      - "scripts/report-th-coverage.mjs"
+      - "test/i18n-core.test.mjs"
+      - "package.json"
+  push:
+    branches: [main]
+    paths:
+      - "assets/i18n/**"
+      - "scripts/audit-i18n.mjs"
+      - "scripts/report-th-coverage.mjs"
+      - "test/i18n-core.test.mjs"
+      - "package.json"
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm test
+      - name: Audit changed HTML artifacts
+        if: github.event_name == 'pull_request'
+        shell: bash
+        run: |
+          changed="$(git diff --name-only "origin/${{ github.base_ref }}...HEAD" -- '*.html')"
+          if [[ -n "$changed" ]]; then
+            node scripts/audit-i18n.mjs --strict $changed
+            node scripts/report-th-coverage.mjs $changed
+          else
+            echo "i18n audit: no changed HTML artifacts"
+          fi
