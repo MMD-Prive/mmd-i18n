@@ -6,10 +6,5 @@
 <script defer src="https://cdn.jsdelivr.net/gh/MMD-Prive/mmd-i18n@main/assets/i18n/i18n.dict.js?v=20260804-restore-2"></script>
 <script defer src="https://cdn.jsdelivr.net/gh/MMD-Prive/mmd-i18n@main/assets/i18n/i18n.core.js?v=20260804-restore-2"></script>
 
-<!-- Optional switcher. Styling belongs to the page/design system. -->
-<nav class="mmd-lang-switch" aria-label="Language">
-  <button type="button" data-set-lang="th">TH</button>
-  <button type="button" data-set-lang="en">EN</button>
-  <button type="button" data-set-lang="zh">中文</button>
-  <button type="button" data-set-lang="jp">日本語</button>
-</nav>
+<!-- TH-FIRST: do not expose EN / ZH / JP controls until each locale passes review. -->
+<span data-mmd-language-phase="th" hidden>TH</span>
