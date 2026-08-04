@@ -2,7 +2,8 @@
    MMD Privé i18n Core — RESTORE v2.0.0 (2026-08-04)
 
    Canonical language engine for Webflow and Worker HTML.
-   Supported languages: th / en / zh / jp (ja is an alias).
+   Active rollout language: th.
+   Future languages remain known but disabled until copy review is complete.
 
    Safety contract:
    - Thai is the default and the first translation fallback.
@@ -22,7 +23,8 @@
 
   var VERSION = "2.0.0-restore";
   var DEFAULT_LANG = "th";
-  var SUPPORTED_LANGS = ["th", "en", "zh", "jp"];
+  var KNOWN_LANGS = ["th", "en", "zh", "jp"];
+  var AVAILABLE_LANGS = ["th"];
   var STORAGE_KEYS = ["mmd_lang", "lang"];
   var BUTTON_SELECTOR = ".mmd-lang-btn,[data-set-lang],[data-lang-btn]";
 
@@ -58,12 +60,17 @@
     if (lang.indexOf("zh-") === 0) return "zh";
     if (lang.indexOf("th-") === 0) return "th";
     if (lang.indexOf("en-") === 0) return "en";
-    return SUPPORTED_LANGS.indexOf(lang) >= 0 ? lang : null;
+    return KNOWN_LANGS.indexOf(lang) >= 0 ? lang : null;
+  }
+
+  function availableLang(input) {
+    var lang = normalizeLang(input);
+    return lang && AVAILABLE_LANGS.indexOf(lang) >= 0 ? lang : null;
   }
 
   function getUrlLang() {
     try {
-      return normalizeLang(new URLSearchParams(W.location.search || "").get("lang"));
+      return availableLang(new URLSearchParams(W.location.search || "").get("lang"));
     } catch (_) {
       return null;
     }
@@ -71,14 +78,14 @@
 
   function getStoredLang() {
     for (var i = 0; i < STORAGE_KEYS.length; i += 1) {
-      var lang = normalizeLang(safeGetStorage(STORAGE_KEYS[i]));
+      var lang = availableLang(safeGetStorage(STORAGE_KEYS[i]));
       if (lang) return lang;
     }
     return null;
   }
 
   function getHtmlLang() {
-    try { return normalizeLang(D.documentElement.getAttribute("lang")); } catch (_) { return null; }
+    try { return availableLang(D.documentElement.getAttribute("lang")); } catch (_) { return null; }
   }
 
   function getLang() {
@@ -86,7 +93,7 @@
   }
 
   function persistLang(input) {
-    var lang = normalizeLang(input) || DEFAULT_LANG;
+    var lang = availableLang(input) || DEFAULT_LANG;
     for (var i = 0; i < STORAGE_KEYS.length; i += 1) safeSetStorage(STORAGE_KEYS[i], lang);
     try {
       D.documentElement.setAttribute("lang", lang === "jp" ? "ja" : lang);
@@ -145,7 +152,7 @@
   }
 
   function languageFallbacks(input) {
-    var selected = normalizeLang(input) || DEFAULT_LANG;
+    var selected = availableLang(input) || DEFAULT_LANG;
     var order = [selected, "th", "en"];
     var seen = {};
     return order.filter(function (lang) {
@@ -248,7 +255,7 @@
     var buttons = query(root || D, BUTTON_SELECTOR);
     for (var i = 0; i < buttons.length; i += 1) {
       var button = buttons[i];
-      var target = normalizeLang(button.getAttribute("data-set-lang") || button.getAttribute("data-lang-btn") || button.getAttribute("data-lang"));
+      var target = availableLang(button.getAttribute("data-set-lang") || button.getAttribute("data-lang-btn") || button.getAttribute("data-lang"));
       if (!target) continue;
       var active = target === lang;
       if (button.classList) {
@@ -274,7 +281,7 @@
   function applyToRoot(root, options) {
     root = root || D;
     options = options || {};
-    var lang = normalizeLang(options.lang) || getLang();
+    var lang = availableLang(options.lang) || getLang();
     var role = normalizeRole(options.role || getCurrentRole(root));
 
     applySelector(root, "[data-i18n]", "data-i18n", "html", lang, role);
@@ -327,7 +334,7 @@
       if (target && target.closest) target = target.closest(BUTTON_SELECTOR);
       if (!target || !target.getAttribute) return;
       var lang = target.getAttribute("data-set-lang") || target.getAttribute("data-lang-btn") || target.getAttribute("data-lang");
-      if (!normalizeLang(lang)) return;
+      if (!availableLang(lang)) return;
       if (event.preventDefault) event.preventDefault();
       changeLanguage(lang);
     });
@@ -357,13 +364,14 @@
     applyToRoot(root, { lang: lang, role: options.role });
     if (options.bindLangButtons !== false) bindLanguageButtons(D);
     if (options.observe !== false) observe(root);
-    dispatch("mmd:i18n:ready", { lang: lang, version: VERSION, languages: SUPPORTED_LANGS.slice() });
+    dispatch("mmd:i18n:ready", { lang: lang, version: VERSION, languages: AVAILABLE_LANGS.slice() });
     return true;
   }
 
   var API = {
     version: VERSION,
-    languages: SUPPORTED_LANGS.slice(),
+    languages: AVAILABLE_LANGS.slice(),
+    knownLanguages: KNOWN_LANGS.slice(),
     defaultLang: DEFAULT_LANG,
     normalizeLang: normalizeLang,
     normalizeRole: normalizeRole,
