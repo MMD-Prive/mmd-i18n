@@ -72,23 +72,26 @@ test("defaults to Thai and applies canonical bindings", () => {
   assert.equal(heading.textContent, "หัวข้อ");
 });
 
-test("persists language in both current and legacy storage keys", () => {
+test("locks unavailable locales to Thai in both storage keys", () => {
   const runtime = createRuntime();
   runtime.window.MMD_I18N.setLang("en");
-  assert.equal(runtime.storage.get("mmd_lang"), "en");
-  assert.equal(runtime.storage.get("lang"), "en");
-  assert.equal(runtime.document.documentElement.getAttribute("lang"), "en");
+  assert.equal(runtime.storage.get("mmd_lang"), "th");
+  assert.equal(runtime.storage.get("lang"), "th");
+  assert.equal(runtime.document.documentElement.getAttribute("lang"), "th");
 });
 
-test("normalizes Japanese alias and accepts URL language override", () => {
+test("keeps future locale compatibility without activating it", () => {
   const runtime = createRuntime({ stored: { mmd_lang: "th" }, search: "?lang=ja" });
-  assert.equal(runtime.window.MMD_I18N.getLang(), "jp");
-  assert.equal(runtime.window.MMD_I18N.t("title"), "タイトル");
+  assert.equal(runtime.window.MMD_I18N.normalizeLang("ja"), "jp");
+  assert.equal(runtime.window.MMD_I18N.getLang(), "th");
+  assert.deepEqual(Array.from(runtime.window.MMD_I18N.languages), ["th"]);
 });
 
-test("falls back to Thai and never returns blank translations", () => {
+test("always resolves runtime copy from Thai during TH-first rollout", () => {
   const runtime = createRuntime({ stored: { mmd_lang: "en" } });
   runtime.window.I18N_DICT.en.onlyThai = "";
+  assert.equal(runtime.window.MMD_I18N.getLang(), "th");
+  assert.equal(runtime.window.MMD_I18N.t("title"), "หัวข้อ");
   assert.equal(runtime.window.MMD_I18N.t("onlyThai"), "ภาษาไทย");
   assert.equal(runtime.window.MMD_I18N.t("missing"), null);
 });
