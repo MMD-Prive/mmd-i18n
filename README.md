@@ -9,12 +9,14 @@ Status: **RESTORED / HARD LOCK**
 
 - Canonical engine: `/assets/i18n/i18n.core.js`
 - Canonical dictionary: `/assets/i18n/i18n.dict.js`
-- Supported languages: `th`, `en`, `zh`, `jp` (`ja` is accepted as an alias)
+- Active rollout language: `th`
+- Future languages: `en`, `zh`, `jp` remain disabled until Thai copy is complete
 - Default language: Thai
 - Missing translation fallback: selected language → Thai → English → existing page copy
 - Persistent keys: `mmd_lang` and legacy `lang`
 - Webflow loader: `/components/webflow/mmd-i18n-loader.html`
 - Contract audit: `npm run audit:i18n`
+- Thai coverage report: `npm run audit:th -- <HTML files>`
 
 New or redesigned pages must not create another local language engine. Load the
 canonical dictionary and core, then bind copy with `data-i18n*` attributes.
