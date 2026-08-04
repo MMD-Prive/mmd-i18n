@@ -1,3 +1,27 @@
+# MMD Privé · Canonical i18n + CSS System
+
+`MMD-Prive/mmd-i18n` is the source of truth for language copy shared by
+Webflow pages and Worker-rendered HTML.
+
+## Language system status
+
+Status: **RESTORED / HARD LOCK**
+
+- Canonical engine: `/assets/i18n/i18n.core.js`
+- Canonical dictionary: `/assets/i18n/i18n.dict.js`
+- Supported languages: `th`, `en`, `zh`, `jp` (`ja` is accepted as an alias)
+- Default language: Thai
+- Missing translation fallback: selected language → Thai → English → existing page copy
+- Persistent keys: `mmd_lang` and legacy `lang`
+- Webflow loader: `/components/webflow/mmd-i18n-loader.html`
+- Contract audit: `npm run audit:i18n`
+
+New or redesigned pages must not create another local language engine. Load the
+canonical dictionary and core, then bind copy with `data-i18n*` attributes.
+See `/docs/i18n/MMD-I18N-RESTORE-CONTRACT-v2.md`.
+
+---
+
 # MMD CSS System
 
 ระบบ CSS ของ MMD ถูกออกแบบให้เป็น **scoped design system** เพื่อให้หน้า payment / membership / renewal / confirm ใช้ชุด style เดียวกันได้ โดยไม่ทำให้ CSS ลามไปกระทบหน้าอื่นของเว็บ
