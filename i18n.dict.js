@@ -23,6 +23,18 @@ window.I18N_DICT = {
 
     "cta.manage": "จัดการสถานะสมาชิก",
 
+    /* Public Access Gate */
+    "access.label": "ACCESS",
+    "access.kicker": "MMD PRIVÉ · ACCESS",
+    "access.title": "เข้าสู่พื้นที่ของคุณ",
+    "access.body": "ยืนยันผ่าน LINE เพื่อให้ MMD ตรวจสถานะสมาชิกและพาไปยังขั้นตอนที่เกี่ยวข้องกับบัญชีของคุณ",
+    "access.card.title": "เข้าสู่ระบบด้วย LINE",
+    "access.card.body": "ระบบจะตรวจตัวตนและสถานะจากข้อมูลที่ยืนยันได้ก่อนเปิดพื้นที่สมาชิก",
+    "access.cta.line": "Continue with LINE",
+    "access.cta.new": "New to MMD",
+    "access.note": "หน้า Access ไม่อนุมัติสมาชิก ไม่สร้าง Points และไม่ตัดสินสิทธิ์จาก browser",
+    "access.footer": "PRIVATE ACCESS GATE",
+
     /* Black Card */
     "black.title": "Black Card",
     "black.subtitle": "ไม่ใช่ทุกคนจะเข้าถึงได้",
@@ -50,6 +62,17 @@ window.I18N_DICT = {
     "pkg.premium.desc.m": "Ongoing use",
 
     "cta.manage": "Manage membership status",
+
+    "access.label": "ACCESS",
+    "access.kicker": "MMD PRIVÉ · ACCESS",
+    "access.title": "Enter your MMD space",
+    "access.body": "Continue with LINE so MMD can verify your identity, membership status, and the next step connected to your account.",
+    "access.card.title": "Continue with LINE",
+    "access.card.body": "Your identity and verified status are checked before member access is opened.",
+    "access.cta.line": "Continue with LINE",
+    "access.cta.new": "New to MMD",
+    "access.note": "This Access page does not approve membership, create Points, or determine eligibility in the browser.",
+    "access.footer": "PRIVATE ACCESS GATE",
 
     "black.title": "Black Card",
     "black.subtitle": "Access is considered",
