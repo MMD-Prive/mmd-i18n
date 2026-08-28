@@ -1,0 +1,244 @@
+<!-- =========================
+ MMD PUBLIC FOOTER COMPONENT
+ Small Signature Footer
+ Use on public / white-world pages only
+
+ Component name:
+ MMD Public Footer
+========================= -->
+
+<footer class="mmd-signature-footer is-light" aria-label="MMD Privé footer">
+  <div class="mmd-footer-inner">
+    <div class="mmd-footer-brand-block">
+      <p class="mmd-footer-kicker">MMD PRIVÉ</p>
+
+      <h2 class="mmd-footer-title">
+        Bangkok <span>•</span> Kept Secrets
+      </h2>
+
+      <p class="mmd-footer-line">
+        Discreet by your desire, Elegant by choice.
+      </p>
+
+      <p class="mmd-footer-th">
+        กรุงเทพฯ เมืองแห่งความลับ — เพราะคนที่เขารออยู่.. อาจเป็นคุณ
+      </p>
+    </div>
+
+    <nav class="mmd-footer-nav" aria-label="MMD Privé footer navigation">
+      <a href="/">Home</a>
+      <a href="/profiles">Profiles</a>
+      <a href="/public/access">Public Access</a>
+      <a href="/services/companion">Companion</a>
+      <a href="/member/membership">Membership</a>
+      <a href="/trust/inme">Trust</a>
+    </nav>
+
+    <div class="mmd-footer-bottom">
+      <p class="mmd-footer-credit">
+        Concept, system design, graphic direction, character design, cinematic writing, operations and care by Per × AI System Workers.
+      </p>
+
+      <p class="mmd-footer-year">
+        2020 - 2026
+      </p>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .mmd-signature-footer{
+    --mf-bg:#fbfaf8;
+    --mf-bg-soft:#f4f2ef;
+    --mf-card:#ffffff;
+    --mf-text:#18171b;
+    --mf-soft:#555158;
+    --mf-muted:rgba(24,23,27,.58);
+    --mf-line:rgba(24,23,27,.11);
+    --mf-wine:#941523;
+    --mf-wine-deep:#68111c;
+    --mf-gold:#b98a3e;
+    --mf-radius:28px;
+
+    position:relative;
+    width:100%;
+    overflow:hidden;
+    padding:34px 18px 28px;
+    background:
+      radial-gradient(circle at 12% 0%,rgba(148,21,35,.055),transparent 26rem),
+      radial-gradient(circle at 88% 18%,rgba(185,138,62,.075),transparent 24rem),
+      linear-gradient(180deg,var(--mf-bg) 0%,var(--mf-bg-soft) 100%);
+    color:var(--mf-text);
+    font-family:"Noto Sans Thai","Inter",system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  }
+
+  .mmd-signature-footer,
+  .mmd-signature-footer *{
+    box-sizing:border-box;
+  }
+
+  .mmd-footer-inner{
+    width:min(1120px,100%);
+    margin:0 auto;
+    padding:24px;
+    border:1px solid var(--mf-line);
+    border-radius:var(--mf-radius);
+    background:rgba(255,255,255,.68);
+    box-shadow:0 18px 54px rgba(25,20,23,.07);
+    backdrop-filter:blur(18px);
+    -webkit-backdrop-filter:blur(18px);
+  }
+
+  .mmd-footer-brand-block{
+    display:grid;
+    gap:8px;
+    text-align:left;
+  }
+
+  .mmd-footer-kicker{
+    margin:0;
+    color:var(--mf-wine);
+    font-family:"Inter","Noto Sans Thai",system-ui,sans-serif;
+    font-size:11px;
+    font-weight:800;
+    line-height:1;
+    letter-spacing:.18em;
+    text-transform:uppercase;
+  }
+
+  .mmd-footer-title{
+    margin:0;
+    color:var(--mf-text);
+    font-family:"Cormorant Garamond",Georgia,"Times New Roman",serif;
+    font-size:clamp(34px,6vw,68px);
+    font-weight:600;
+    line-height:.92;
+    letter-spacing:-.045em;
+  }
+
+  .mmd-footer-title span{
+    color:var(--mf-gold);
+  }
+
+  .mmd-footer-line{
+    max-width:620px;
+    margin:2px 0 0;
+    color:var(--mf-soft);
+    font-size:15px;
+    font-weight:500;
+    line-height:1.65;
+    letter-spacing:-.01em;
+  }
+
+  .mmd-footer-th{
+    max-width:680px;
+    margin:0;
+    color:var(--mf-muted);
+    font-size:14px;
+    font-weight:500;
+    line-height:1.75;
+    letter-spacing:-.012em;
+  }
+
+  .mmd-footer-nav{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+    margin-top:24px;
+    padding-top:20px;
+    border-top:1px solid var(--mf-line);
+  }
+
+  .mmd-footer-nav a{
+    min-height:38px;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    padding:0 14px;
+    border:1px solid rgba(24,23,27,.10);
+    border-radius:999px;
+    background:rgba(255,255,255,.72);
+    color:var(--mf-soft);
+    text-decoration:none;
+    font-size:12px;
+    font-weight:700;
+    line-height:1;
+    letter-spacing:.02em;
+    transition:
+      color .2s ease,
+      border-color .2s ease,
+      background .2s ease,
+      transform .2s ease;
+  }
+
+  .mmd-footer-nav a:hover{
+    color:var(--mf-wine);
+    border-color:rgba(148,21,35,.28);
+    background:rgba(148,21,35,.045);
+    transform:translateY(-1px);
+  }
+
+  .mmd-footer-bottom{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-end;
+    gap:18px;
+    margin-top:22px;
+    padding-top:18px;
+    border-top:1px solid var(--mf-line);
+  }
+
+  .mmd-footer-credit{
+    max-width:760px;
+    margin:0;
+    color:var(--mf-muted);
+    font-size:12.5px;
+    font-weight:500;
+    line-height:1.7;
+    letter-spacing:-.005em;
+  }
+
+  .mmd-footer-year{
+    margin:0;
+    flex:0 0 auto;
+    color:var(--mf-wine);
+    font-family:"Inter","Noto Sans Thai",system-ui,sans-serif;
+    font-size:11px;
+    font-weight:800;
+    line-height:1;
+    letter-spacing:.14em;
+    text-transform:uppercase;
+  }
+
+  @media screen and (max-width:767px){
+    .mmd-signature-footer{
+      padding:24px 14px 22px;
+    }
+
+    .mmd-footer-inner{
+      padding:20px;
+      border-radius:24px;
+    }
+
+    .mmd-footer-nav{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:8px;
+    }
+
+    .mmd-footer-nav a{
+      width:100%;
+      min-height:40px;
+    }
+
+    .mmd-footer-bottom{
+      display:grid;
+      gap:14px;
+      align-items:start;
+    }
+
+    .mmd-footer-year{
+      order:-1;
+    }
+  }
+</style>

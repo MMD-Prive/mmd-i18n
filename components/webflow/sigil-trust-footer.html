@@ -1,0 +1,250 @@
+<!-- =========================
+ SĪGIL TRUST FOOTER COMPONENT
+ Minimal privacy / trust signature
+ Use on client / model / partner-facing private trust pages
+
+ Component name:
+ SĪGIL Trust Footer
+========================= -->
+
+<footer class="sigil-trust-footer" aria-label="SĪGIL trust footer">
+  <div class="sigil-trust-footer__inner">
+    <div class="sigil-trust-footer__seal" aria-hidden="true">
+      <span></span>
+    </div>
+
+    <div class="sigil-trust-footer__content">
+      <p class="sigil-trust-footer__kicker">
+        SĪGIL SYSTEM · PRIVATE TRUST LAYER
+      </p>
+
+      <h2 class="sigil-trust-footer__title">
+        Designed under Per’s direct oversight.
+      </h2>
+
+      <p class="sigil-trust-footer__copy">
+        ข้อมูลของลูกค้า โมเดล และพาร์ทเนอร์ ถูกจัดวางอยู่ในระบบที่ Per ออกแบบและกำกับเองโดยตรง
+        ตั้งแต่ภาพลักษณ์ การไหลของข้อมูล การคัดกรอง ไปจนถึงจุดที่ต้องมีมนุษย์เข้ามาตรวจสอบ
+        เพื่อให้ทุกขั้นตอนจำกัดการมองเห็นเท่าที่จำเป็น และรักษาความไว้วางใจของทุกฝ่ายให้มากที่สุด
+      </p>
+
+      <div class="sigil-trust-footer__points" aria-label="SĪGIL trust principles">
+        <span>Direct Per oversight</span>
+        <span>Minimal data exposure</span>
+        <span>Client · Model · Partner privacy</span>
+      </div>
+    </div>
+
+    <div class="sigil-trust-footer__bottom">
+      <p>
+        System design, visual language, access flow, privacy structure and operational care by Per × AI System Workers.
+      </p>
+      <span>SĪGIL · PRIVATE BY DESIGN</span>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .sigil-trust-footer{
+    --stf-bg:#050505;
+    --stf-panel:rgba(255,255,255,.045);
+    --stf-panel-soft:rgba(255,255,255,.025);
+    --stf-line:rgba(255,255,255,.10);
+    --stf-line-gold:rgba(217,179,111,.28);
+    --stf-text:rgba(255,248,237,.92);
+    --stf-soft:rgba(255,248,237,.74);
+    --stf-muted:rgba(255,248,237,.52);
+    --stf-gold:#f6d98e;
+    --stf-gold-deep:#b47a34;
+    --stf-ink:#0b0906;
+
+    position:relative;
+    width:100%;
+    overflow:hidden;
+    padding:28px 18px 24px;
+    background:
+      radial-gradient(circle at 10% 0%,rgba(217,179,111,.10),transparent 24rem),
+      radial-gradient(circle at 92% 20%,rgba(148,21,35,.08),transparent 22rem),
+      linear-gradient(180deg,#070707 0%,#020202 100%);
+    color:var(--stf-text);
+    font-family:"Noto Sans Thai","Inter",system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  }
+
+  .sigil-trust-footer,
+  .sigil-trust-footer *{
+    box-sizing:border-box;
+  }
+
+  .sigil-trust-footer__inner{
+    width:min(1120px,100%);
+    margin:0 auto;
+    display:grid;
+    grid-template-columns:auto 1fr;
+    gap:18px 20px;
+    padding:22px;
+    border:1px solid var(--stf-line);
+    border-radius:28px;
+    background:
+      linear-gradient(180deg,var(--stf-panel),var(--stf-panel-soft)),
+      rgba(4,4,4,.70);
+    box-shadow:
+      0 24px 90px rgba(0,0,0,.52),
+      inset 0 1px 0 rgba(255,255,255,.055);
+    backdrop-filter:blur(18px);
+    -webkit-backdrop-filter:blur(18px);
+  }
+
+  .sigil-trust-footer__seal{
+    width:44px;
+    height:44px;
+    display:grid;
+    place-items:center;
+    border:1px solid var(--stf-line-gold);
+    border-radius:999px;
+    background:
+      radial-gradient(circle at 50% 20%,rgba(255,242,194,.20),transparent 42%),
+      linear-gradient(180deg,rgba(217,179,111,.14),rgba(217,179,111,.035));
+  }
+
+  .sigil-trust-footer__seal span{
+    width:12px;
+    height:22px;
+    display:block;
+    border-radius:10px 10px 3px 3px;
+    background:linear-gradient(180deg,#fff2c2 0%,#d9b66f 58%,#8f5c24 100%);
+    box-shadow:0 0 22px rgba(217,179,111,.22);
+    clip-path:polygon(50% 0%,100% 22%,82% 100%,18% 100%,0% 22%);
+  }
+
+  .sigil-trust-footer__content{
+    min-width:0;
+  }
+
+  .sigil-trust-footer__kicker{
+    margin:0 0 8px;
+    color:var(--stf-gold);
+    font-family:"Inter","Noto Sans Thai",system-ui,sans-serif;
+    font-size:10.5px;
+    font-weight:800;
+    line-height:1;
+    letter-spacing:.18em;
+    text-transform:uppercase;
+  }
+
+  .sigil-trust-footer__title{
+    margin:0;
+    color:transparent;
+    background:linear-gradient(180deg,#fff7d8 0%,#f6d98e 42%,#b47a34 100%);
+    -webkit-background-clip:text;
+    background-clip:text;
+    -webkit-text-fill-color:transparent;
+    font-family:"Cormorant Garamond",Georgia,"Times New Roman",serif;
+    font-size:clamp(28px,4.2vw,48px);
+    font-weight:600;
+    line-height:.96;
+    letter-spacing:-.04em;
+    text-shadow:none;
+    filter:drop-shadow(0 16px 32px rgba(0,0,0,.62));
+  }
+
+  .sigil-trust-footer__copy{
+    max-width:880px;
+    margin:12px 0 0;
+    color:var(--stf-soft);
+    font-size:14.5px;
+    font-weight:500;
+    line-height:1.82;
+    letter-spacing:-.012em;
+  }
+
+  .sigil-trust-footer__points{
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px;
+    margin-top:16px;
+  }
+
+  .sigil-trust-footer__points span{
+    min-height:34px;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    padding:0 12px;
+    border:1px solid rgba(217,179,111,.22);
+    border-radius:999px;
+    background:rgba(217,179,111,.055);
+    color:rgba(255,248,237,.78);
+    font-size:11px;
+    font-weight:700;
+    line-height:1;
+    letter-spacing:.055em;
+  }
+
+  .sigil-trust-footer__bottom{
+    grid-column:1 / -1;
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-end;
+    gap:18px;
+    padding-top:18px;
+    border-top:1px solid var(--stf-line);
+  }
+
+  .sigil-trust-footer__bottom p{
+    max-width:760px;
+    margin:0;
+    color:var(--stf-muted);
+    font-size:12px;
+    font-weight:500;
+    line-height:1.7;
+    letter-spacing:-.005em;
+  }
+
+  .sigil-trust-footer__bottom span{
+    flex:0 0 auto;
+    color:var(--stf-gold);
+    font-family:"Inter","Noto Sans Thai",system-ui,sans-serif;
+    font-size:10px;
+    font-weight:800;
+    line-height:1;
+    letter-spacing:.16em;
+    text-transform:uppercase;
+  }
+
+  @media screen and (max-width:767px){
+    .sigil-trust-footer{
+      padding:22px 14px 20px;
+    }
+
+    .sigil-trust-footer__inner{
+      grid-template-columns:1fr;
+      padding:18px;
+      border-radius:24px;
+    }
+
+    .sigil-trust-footer__seal{
+      width:40px;
+      height:40px;
+    }
+
+    .sigil-trust-footer__copy{
+      font-size:14px;
+      line-height:1.78;
+    }
+
+    .sigil-trust-footer__points{
+      display:grid;
+      grid-template-columns:1fr;
+    }
+
+    .sigil-trust-footer__bottom{
+      display:grid;
+      gap:12px;
+      align-items:start;
+    }
+
+    .sigil-trust-footer__bottom span{
+      order:-1;
+    }
+  }
+</style>

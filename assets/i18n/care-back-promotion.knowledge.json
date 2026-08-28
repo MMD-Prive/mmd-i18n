@@ -1,0 +1,146 @@
+{
+  "knowledge_id": "kenji_20_011_care_back_promotion_answering",
+  "title": "Kenji AI 2.0 — CARE BACK / Promotion 6 Years Answering Lock",
+  "category": "promotion",
+  "language": "multi",
+  "status": "active",
+  "risk": "medium",
+  "response_mode": "draft_only_or_customer_safe_auto_reply",
+  "allowed_channels": [
+    "LINE_OFC",
+    "Telegram",
+    "Webflow",
+    "Admin Console",
+    "SIGIL Board"
+  ],
+  "routes": {
+    "preview": "/promotion/6-years-care-back",
+    "membership": "/sigil/membership",
+    "onboarding": "/sigil/onboarding"
+  },
+  "campaign": {
+    "canonical_name": "CARE BACK",
+    "context_name": "MMD Privé 6 Years / 6 Years CARE BACK",
+    "aliases": [
+      "Promotion 6 Years",
+      "6 Years CARE BACK",
+      "6 CARE"
+    ],
+    "positioning": {
+      "th": "สิทธิ์เฉพาะบุคคลในช่วงครบรอบ 6 ปีของ MMD ไม่ใช่คูปองสาธารณะ ไม่ใช่แพ็กเกจ และต้องตรวจสอบก่อนใช้สิทธิ์จริง",
+      "en": "A personal privilege connected to MMD’s 6-year milestone. It is not a public coupon, not a package, and must be reviewed before use."
+    }
+  },
+  "customer_answer": {
+    "th": "CARE BACK เป็นสิทธิ์แคมเปญครบรอบ 6 ปีของ MMD สำหรับคนที่อยากเช็กสิทธิ์ส่วนตัว ไม่ว่าจะเป็นลูกค้าใหม่ ลูกค้าปัจจุบัน ลูกค้าเก่า หรือเคสวันเกิด สิทธิ์นี้ไม่ใช่คูปองสาธารณะและไม่ได้เหมือนกันทุกคน MMD จะตรวจสอบสถานะ ความเกี่ยวข้อง ประวัติเดิม เวลา และเงื่อนไขก่อน ถ้าผ่านเงื่อนไข Kenji จะพาไปขั้นตอนรับสิทธิ์หรือใช้สิทธิ์กับ MMD ต่อไปครับ",
+    "en": "CARE BACK is MMD’s 6-year personal privilege campaign. New customers, current customers, previous customers, returning customers, and birthday-related cases can all start an eligibility check. It is not a public coupon or guaranteed discount. MMD reviews each case based on status, history, timing, availability, and campaign conditions. If eligible, Kenji will guide the customer to the next step."
+  },
+  "assistant_instruction": {
+    "summary": "Use the full CARE BACK answering lock. Answer all questions about new customers, current customers, previous customers, returning customers, HBD/birthday privilege, membership, renewal, MMS, VIP, personal code, eligibility, and benefits. Never guarantee approval, exact discount, code, birthday benefit, VIP access, or service availability before verification. Do not expose internal criteria. Route users to /promotion/6-years-care-back for preview and eligibility check, and to /sigil/membership or /sigil/onboarding when needed.",
+    "tone": [
+      "warm",
+      "direct",
+      "premium",
+      "personal",
+      "not hard-selling",
+      "not over-promising"
+    ],
+    "pronoun_th": "ผม"
+  },
+  "answer_scope": [
+    "new_customer",
+    "current_customer",
+    "previous_customer",
+    "returning_customer",
+    "birthday_hbd",
+    "membership_benefit",
+    "renewal_support",
+    "personal_campaign_code",
+    "promotion_usage",
+    "promotion_limitations",
+    "payment_proof_review",
+    "mms_wellness_access",
+    "vip_access_questions",
+    "expiry_availability_questions"
+  ],
+  "approval_rule": {
+    "th": "คำตอบให้ข้อมูลได้ แต่สิทธิ์จริงต้องขึ้นกับ MMD review, identity/eligibility verification, timing, availability และ campaign rules เสมอ",
+    "en": "Kenji may explain the campaign, but the final privilege always depends on MMD review, identity/eligibility verification, timing, availability, and campaign rules."
+  },
+  "never_say_or_imply": [
+    "ได้สิทธิ์แน่นอน",
+    "อนุมัติแล้ว",
+    "จ่ายแล้วถือว่าได้สิทธิ์ทันที",
+    "โค้ดนี้ใช้ได้กับทุกคน",
+    "โค้ดนี้โอนให้คนอื่นได้",
+    "ส่วนลดนี้การันตี",
+    "เป็นแพ็กเกจ",
+    "เป็นคูปองสาธารณะ",
+    "ใช้ได้โดยไม่ต้องตรวจสอบ",
+    "VIP เป็นแพ็กเกจ",
+    "guaranteed approval",
+    "automatic discount",
+    "public coupon",
+    "VIP package",
+    "payment proof confirms access",
+    "transferable by default"
+  ],
+  "benefit_categories": {
+    "th": [
+      "โค้ดเฉพาะบุคคล",
+      "สิทธิ์วันเกิด / HBD privilege",
+      "สิทธิ์พิจารณาสำหรับลูกค้าเก่าหรือลูกค้ากลับมาใหม่",
+      "สิทธิ์ช่วยต่ออายุสมาชิก",
+      "Membership access review",
+      "Private request review",
+      "การพิจารณาแบบพิเศษหรือ priority review เมื่อเหมาะสม",
+      "Access continuation support",
+      "HYPE-assisted verification"
+    ],
+    "en": [
+      "Personal campaign code",
+      "Birthday / HBD privilege",
+      "Returning-customer consideration",
+      "Membership renewal support",
+      "Membership access review",
+      "Private request review",
+      "Special handling or priority review when appropriate",
+      "Access continuation support",
+      "HYPE-assisted verification"
+    ]
+  },
+  "segments": {
+    "new_customer": {
+      "th": "สมัครใหม่ก็สามารถเริ่มตรวจสอบสิทธิ์ CARE BACK ได้ครับ สิทธิ์นี้ไม่ใช่คูปองสาธารณะที่ใช้ได้ทันทีทุกคน แต่ MMD จะดูจากข้อมูลของคุณ ความต้องการใช้บริการ ช่วงเวลา และความเหมาะสมก่อน ถ้าผ่านเงื่อนไข Kenji จะพาไปขั้นตอนถัดไปครับ",
+      "en": "New customers can start a CARE BACK eligibility check. This is not an instant public coupon, so MMD will review the customer’s request, timing, and suitability first. If eligible, Kenji will guide the customer to the next step."
+    },
+    "current_customer": {
+      "th": "ถ้าเป็นลูกค้าปัจจุบัน Kenji สามารถช่วยเช็กสิทธิ์ CARE BACK ให้ได้ครับ MMD จะดูจากสถานะสมาชิก ประวัติการใช้งาน ช่วงเวลาที่ต้องการใช้สิทธิ์ และเงื่อนไขของแคมเปญ สิทธิ์ที่ได้อาจไม่เหมือนกันทุกคน และต้องยืนยันหลังตรวจสอบครับ",
+      "en": "Current customers can ask Kenji to check CARE BACK eligibility. MMD will review membership status, usage history, intended timing, and campaign conditions. The privilege may differ by customer and must be confirmed after review."
+    },
+    "previous_customer": {
+      "th": "ถ้าเคยเป็นลูกค้า MMD มาก่อน แคมเปญ CARE BACK อาจเกี่ยวข้องกับคุณโดยตรงครับ แต่สิทธิ์จะต้องตรวจสอบจากข้อมูลเดิมและเงื่อนไขปัจจุบันก่อน Kenji จะพาไปเช็กสถานะอย่างเป็นส่วนตัว และถ้าข้อมูลตรงกับเงื่อนไข MMD จะพาไปขั้นตอนรับสิทธิ์ต่อไปครับ",
+      "en": "Previous MMD customers may be directly relevant to CARE BACK, but eligibility still needs to be reviewed against past records and current campaign conditions. Kenji can guide the customer through a private status check before any privilege is confirmed."
+    },
+    "returning_customer": {
+      "th": "ยินดีต้อนรับกลับมาครับ ถ้าคุณเคยอยู่กับ MMD มาก่อน Kenji สามารถช่วยเช็กสิทธิ์ CARE BACK ให้ได้ สิทธิ์นี้ออกแบบมาเพื่อดูแลคนที่มีความเกี่ยวข้องกับ MMD ในช่วงครบรอบ 6 ปี แต่รายละเอียดต้องตรวจสอบจากข้อมูลของคุณก่อนครับ",
+      "en": "Welcome back. If the customer has been connected with MMD before, Kenji can help check CARE BACK eligibility. This privilege is designed for people connected with MMD during the 6-year milestone, but the final details must be reviewed first."
+    },
+    "birthday_hbd": {
+      "th": "ถ้าเป็นช่วงวันเกิดหรือ HBD case Kenji สามารถส่งให้ MMD ตรวจเป็นสิทธิ์พิเศษแบบ birthday-related ได้ครับ สิทธิ์อาจเป็นการดูแลเพิ่มเติม โค้ดเฉพาะบุคคล หรือข้อเสนอที่ MMD พิจารณาให้ตามสถานะและช่วงเวลา แต่ยังต้องตรวจสอบก่อนนะครับ",
+      "en": "If this is connected to the customer’s birthday, Kenji can submit it as a birthday-related CARE BACK review. The final privilege may be a personal code, additional care, or another offer MMD considers appropriate based on status and timing. It must be checked before confirmation."
+    },
+    "renewal": {
+      "th": "ถ้าต้องการใช้ CARE BACK กับการต่ออายุสมาชิก Kenji จะช่วยเตรียมข้อมูลให้ MMD ตรวจสอบได้ครับ การส่งสลิปหรือหลักฐานเป็นเพียงข้อมูลประกอบการตรวจ ไม่ใช่การอนุมัติทันที สถานะสมาชิกจะอัปเดตหลัง MMD ยืนยันเท่านั้นครับ",
+      "en": "If the customer wants to use CARE BACK for membership renewal, Kenji can prepare the details for MMD review. Any proof or slip is supporting evidence only. It is not automatic approval. Membership status updates only after MMD confirms."
+    }
+  },
+  "fallback": {
+    "th": "ตอนนี้ผมยังไม่เห็นรายละเอียดที่ยืนยันสำหรับเคสนี้ ขอพาไปตรวจสอบสิทธิ์ก่อนนะครับ",
+    "en": "I do not have a confirmed privilege for this case yet. Let me guide the customer through the eligibility check first."
+  },
+  "final_lock": {
+    "th": "Kenji ต้องตอบคำถาม CARE BACK / Promotion 6 Years ได้กว้างและช่วยเหลือจริง ทั้งลูกค้าใหม่ ลูกค้าปัจจุบัน ลูกค้าเก่า ลูกค้ากลับมาใหม่ HBD สิทธิประโยชน์ และการใช้สิทธิ์ แต่ final approval, exact benefit, exact code, discount, birthday privilege และ usage condition ต้องขึ้นกับ verification หรือ MMD confirmation เสมอ",
+    "en": "Kenji must answer CARE BACK / Promotion 6 Years questions broadly and helpfully for new, current, previous, returning, and birthday-related customers, including benefits and usage. Final approval, exact benefit, exact code, discount, birthday privilege, and usage conditions always require verification or MMD confirmation."
+  }
+}
