@@ -1,0 +1,103 @@
+{
+  "version": "mms-therapist-application-v3",
+  "page": "/apply/mms-therapist",
+  "defaultLang": "th",
+  "supportedLanguages": ["th", "en"],
+  "updatedAt": "2026-08-28",
+  "ownerVoice": "semi-formal-owner-page",
+  "lineUrl": "https://lin.ee/WKKjnZ1",
+  "ui": {
+    "heroTitle": "สมัครเป็น Male Therapist",
+    "heroLead": "MMS ทำ Male Massage Delivery มาต่อเนื่อง 6 ปี และกำลังเปิดรับคนทำงานที่มี Skill จริง ให้เลือกรับงานตามพื้นที่และเวลาที่สะดวกได้ทั่วประเทศ",
+    "start": "เริ่มสมัคร",
+    "readBeforeApplying": "อ่านก่อนสมัคร",
+    "modelTitle": "MMS กำลังหา Model Therapist ที่มี Skill จริง",
+    "modelLead": "เหมาะกับคนสายสุขภาพ นักกายภาพบำบัด เทรนเนอร์ หรือคนที่มีประสบการณ์นวด ดูแลตัวเองดี สื่อสารเป็น และรับผิดชอบกับเวลาที่ตกลงไว้",
+    "clientsTitle": "เข้าใจกลุ่มลูกค้าก่อนสมัคร",
+    "clientsLead": "ผู้สมัครเลือกขอบเขตลูกค้าที่ตัวเองสะดวกได้ในใบสมัคร และ MMD จะประสานรายละเอียดก่อนทุกงาน",
+    "skillsTitle": "เลือก Skills ที่คุณทำได้จริง",
+    "skillsLead": "เลือกได้มากกว่า 1 ข้อ MMD จะใช้ Skills เหล่านี้ประกอบการพิจารณาและประสานงานในอนาคต",
+    "formTitle": "เล่าให้เรารู้จักคุณ",
+    "formLead": "ใช้เวลาประมาณ 6–8 นาที กรอกข้อมูลตามจริง เลือก Skills และขอบเขตที่สะดวก การส่งใบสมัครยังไม่ใช่การรับเข้าทำงาน",
+    "steps": ["ข้อมูลติดต่อ", "ตัวตน", "Skills และพื้นที่", "ประสบการณ์", "ไฟล์และยืนยัน"],
+    "contactHint": "กรุณาระบุเบอร์โทรหรือ LINE ID อย่างน้อยหนึ่งอย่าง",
+    "sensitiveExplanation": "ข้อมูลอ่อนไหวนี้เก็บในตารางแยก ไม่แสดงต่อลูกค้า และไม่ใช้ในการ Match งาน",
+    "sensitiveConsent": "ยินยอมให้ MMS จัดเก็บข้อมูลรสนิยมทางเพศตามวัตถุประสงค์ที่แจ้งไว้",
+    "nationwideHint": "รับสมัครทั่วประเทศ เลือกทักษะที่ทำได้จริงอย่างน้อย 1 รายการ",
+    "workBaseArea": "จังหวัด / อำเภอ / พื้นที่ฐาน",
+    "mobilityOptions": ["พื้นที่ฐานเป็นหลัก", "จังหวัดใกล้เคียง", "ทั่วประเทศตามตกลง"],
+    "uploadPrivacy": "ไฟล์เป็นตัวเลือกและเก็บใน Private R2 ไม่ใช้ public URL",
+    "generalConsent": "ยืนยันว่าข้อมูลเป็นความจริง และยินยอมให้ MMS ใช้ข้อมูลเพื่อพิจารณา คัดเลือก และประสานงาน",
+    "submit": "ส่งใบสมัคร",
+    "successTitle": "รับใบสมัครแล้วครับ",
+    "successLead": "ทีม MMS จะตรวจข้อมูลและติดต่อกลับตามช่องทางที่ให้ไว้",
+    "contactMms": "ติดต่อ MMS ทาง LINE"
+  },
+  "validation": {
+    "required": "กรุณาตรวจข้อมูลที่จำเป็นให้ครบครับ",
+    "contact": "กรุณาระบุเบอร์โทรหรือ LINE ID อย่างน้อยหนึ่งช่องครับ",
+    "sensitiveConsent": "กรุณาให้ความยินยอมสำหรับข้อมูลอ่อนไหว หรือเลือกไม่เก็บข้อมูลนี้ครับ",
+    "skills": "กรุณาเลือก Skill 1–8 รายการครับ",
+    "spaName": "กรุณาระบุชื่อร้านหรือสปาครับ",
+    "independentSocial": "กรุณาระบุ Social Media หรือช่องทางอ้างอิงครับ",
+    "unsupportedFile": "เป็นชนิดไฟล์ที่ไม่รองรับครับ",
+    "fileTooLarge": "มีขนาดเกิน 10 MB ครับ",
+    "missingReference": "รับใบสมัครแล้วแต่ไม่พบ Reference กรุณาติดต่อ MMS ครับ",
+    "uploadRetry": "รับใบสมัครแล้ว แต่มีไฟล์อัปโหลดไม่สำเร็จ กรุณากดส่งอีกครั้งเพื่อ Retry โดยใช้ Reference",
+    "submitFailed": "ส่งใบสมัครไม่สำเร็จ กรุณาลองใหม่อีกครั้งครับ"
+  },
+  "upload": {
+    "none": "ไม่มีไฟล์แนบ",
+    "missingToken": "ไม่พบ Upload Token สำหรับ Retry",
+    "success": "อัปโหลดไฟล์สำเร็จ"
+  },
+  "translations": {
+    "en": {
+      "ui": {
+        "heroTitle": "Apply as a Male Therapist",
+        "heroLead": "MMS has provided Male Massage Delivery for six years and is welcoming skilled professionals who want to choose suitable locations and working times across Thailand.",
+        "start": "Start application",
+        "readBeforeApplying": "Read before applying",
+        "modelTitle": "MMS is looking for Model Therapists with genuine skills",
+        "modelLead": "This opportunity suits health professionals, physiotherapists, trainers, and experienced massage practitioners who are well-presented, communicate clearly, and respect agreed schedules.",
+        "clientsTitle": "Understand the client mix before applying",
+        "clientsLead": "Applicants choose the client scope they are comfortable with, and MMD confirms the details before every assignment.",
+        "skillsTitle": "Select only the skills you genuinely offer",
+        "skillsLead": "You may select more than one. MMD uses these skills when reviewing your application and coordinating suitable future assignments.",
+        "formTitle": "Tell us about yourself",
+        "formLead": "This takes about 6–8 minutes. Enter accurate information and select your skills and preferred scope. Submitting an application does not guarantee engagement.",
+        "steps": ["Contact details", "Identity", "Skills and coverage", "Experience", "Files and confirmation"],
+        "contactHint": "Provide at least a phone number or LINE ID.",
+        "sensitiveExplanation": "This sensitive information is stored separately, is not shown to clients, and is not used for assignment matching.",
+        "sensitiveConsent": "I consent to MMS storing my sexual orientation for the stated purpose.",
+        "nationwideHint": "Applications are open nationwide. Select 1–8 skills you can genuinely provide.",
+        "workBaseArea": "Province / district / base area",
+        "mobilityOptions": ["Mainly within my base area", "Nearby provinces", "Nationwide by agreement"],
+        "uploadPrivacy": "Attachments are optional and stored privately in R2 without a public URL.",
+        "generalConsent": "I confirm the information is accurate and consent to MMS using it for review, selection, and coordination.",
+        "submit": "Submit application",
+        "successTitle": "We have received your application",
+        "successLead": "The MMS team will review it and contact you using the details provided.",
+        "contactMms": "Contact MMS on LINE"
+      },
+      "validation": {
+        "required": "Please complete all required information.",
+        "contact": "Please provide at least a phone number or LINE ID.",
+        "sensitiveConsent": "Please consent to storing sensitive information or choose not to provide it.",
+        "skills": "Please select 1–8 skills.",
+        "spaName": "Please provide the spa or shop name.",
+        "independentSocial": "Please provide a social profile or reference channel.",
+        "unsupportedFile": "This file type is not supported.",
+        "fileTooLarge": "This file is larger than 10 MB.",
+        "missingReference": "Your application was received, but no reference was returned. Please contact MMS.",
+        "uploadRetry": "Your application was received, but one or more files did not upload. Submit again to retry with the same reference.",
+        "submitFailed": "The application could not be submitted. Please try again."
+      },
+      "upload": {
+        "none": "No attachments",
+        "missingToken": "No upload token is available for retry",
+        "success": "Files uploaded successfully"
+      }
+    }
+  }
+}
