@@ -3,6 +3,7 @@
 (function () {
   "use strict";
 
+  var W = window;
   var routes = [
     { path: "/", world: "public" },
     { path: "/profiles", world: "public" },
@@ -90,4 +91,4 @@
       document.documentElement.setAttribute("data-mmd-i18n-runtime", "canonical");
     }
   } catch (_) {}
-})(window);
+})();
