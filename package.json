@@ -1,9 +1,9 @@
 {
   "name": "@mmd-prive/i18n",
   "private": true,
-  "version": "2.0.0-restore",
+  "version": "2.1.0-rollout",
   "scripts": {
-    "test": "node --test test/i18n-core.test.mjs",
+    "test": "node --test test/*.test.mjs",
     "audit:i18n": "node scripts/audit-i18n.mjs",
     "audit:th": "node scripts/report-th-coverage.mjs"
   }

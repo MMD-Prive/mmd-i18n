@@ -1,10 +1,20 @@
 <!--
-  MMD PRIVÉ · CANONICAL I18N LOADER · RESTORE v2
+  MMD PRIVE · CANONICAL I18N LOADER · MULTI-LANGUAGE ROLLOUT v2.1
   Place once in Webflow Site Settings > Before </body>.
-  The query version prevents a stale branch cache after an approved release.
--->
-<script defer src="https://cdn.jsdelivr.net/gh/MMD-Prive/mmd-i18n@main/assets/i18n/i18n.dict.js?v=20260804-restore-2"></script>
-<script defer src="https://cdn.jsdelivr.net/gh/MMD-Prive/mmd-i18n@main/assets/i18n/i18n.core.js?v=20260804-restore-2"></script>
 
-<!-- TH-FIRST: do not expose EN / ZH / JP controls until each locale passes review. -->
-<span data-mmd-language-phase="th" hidden>TH</span>
+  Active runtime languages: TH / EN / ZH
+  Default: TH
+  Missing-copy fallback: selected -> TH -> EN -> existing page copy
+  Completed legacy Webflow pages are migrated by exact/unique dictionary auto-binding.
+-->
+<script defer src="https://cdn.jsdelivr.net/gh/MMD-Prive/mmd-i18n@main/assets/i18n/i18n.dict.js?v=20260904-rollout-1"></script>
+<script defer src="https://cdn.jsdelivr.net/gh/MMD-Prive/mmd-i18n@main/assets/i18n/pages/mms.js?v=20260904-rollout-1"></script>
+<script defer src="https://cdn.jsdelivr.net/gh/MMD-Prive/mmd-i18n@main/assets/i18n/pages/mms-how-to-use.js?v=20260904-rollout-1"></script>
+<script defer src="https://cdn.jsdelivr.net/gh/MMD-Prive/mmd-i18n@main/assets/i18n/pages/mms-therapist-application.js?v=20260904-rollout-1"></script>
+<script defer src="https://cdn.jsdelivr.net/gh/MMD-Prive/mmd-i18n@main/assets/i18n/pages/mmd-shop.js?v=20260904-rollout-1"></script>
+<script defer src="https://cdn.jsdelivr.net/gh/MMD-Prive/mmd-i18n@main/assets/i18n/care-back-promotion.i18n.js?v=20260904-rollout-1"></script>
+<script defer src="https://cdn.jsdelivr.net/gh/MMD-Prive/mmd-i18n@main/assets/i18n/care-back-wish-submission.i18n.js?v=20260904-rollout-1"></script>
+<script defer src="https://cdn.jsdelivr.net/gh/MMD-Prive/mmd-i18n@main/assets/i18n/completed-pages.registry.js?v=20260904-rollout-1"></script>
+<script defer src="https://cdn.jsdelivr.net/gh/MMD-Prive/mmd-i18n@main/assets/i18n/i18n.autobind.js?v=20260904-rollout-1"></script>
+<script defer src="https://cdn.jsdelivr.net/gh/MMD-Prive/mmd-i18n@main/assets/i18n/i18n.core.v21.js?v=20260904-rollout-1"></script>
+<span data-mmd-language-phase="th-en-zh" hidden>TH · EN · ZH</span>
