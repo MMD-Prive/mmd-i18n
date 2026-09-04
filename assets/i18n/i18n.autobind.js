@@ -1,5 +1,5 @@
 /* =====================================================
-   MMD Prive i18n Auto-bind — v1.0.0 (2026-09-04)
+   MMD Prive i18n Auto-bind — v1.0.1 (2026-09-04)
 
    Migration bridge for finished Webflow pages that were built before
    data-i18n attributes became mandatory. It binds ONLY exact, unique
@@ -23,6 +23,21 @@
 
   function norm(value) {
     return String(value == null ? "" : value).replace(/\s+/g, " ").trim();
+  }
+
+  function currentPath() {
+    return (location.pathname || "/").replace(/\/+$/, "") || "/";
+  }
+
+  function completedRoute() {
+    var registry = W.MMD_I18N_COMPLETED_ROUTES;
+    if (!Array.isArray(registry) || !registry.length) return false;
+    var path = currentPath();
+    for (var i = 0; i < registry.length; i += 1) {
+      var candidate = String(registry[i].path || "/").replace(/\/+$/, "") || "/";
+      if (candidate === path) return true;
+    }
+    return false;
   }
 
   function usable(value) {
@@ -110,6 +125,7 @@
   }
 
   function scan(root) {
+    if (!completedRoute()) return false;
     root = root || D;
     var reverse = buildReverse();
     bindText(root, reverse);
@@ -118,9 +134,14 @@
       if (W.MMD_I18N && typeof W.MMD_I18N.apply === "function") W.MMD_I18N.apply(root);
       D.documentElement.setAttribute("data-mmd-i18n-autobind", "1");
     } catch (_) {}
+    return true;
   }
 
   function boot() {
+    if (!completedRoute()) {
+      try { D.documentElement.setAttribute("data-mmd-i18n-autobind", "skipped"); } catch (_) {}
+      return;
+    }
     scan(D);
     if (typeof W.MutationObserver !== "function" || !D.body) return;
     var queued = false;
