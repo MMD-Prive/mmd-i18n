@@ -38,6 +38,7 @@
     { path: "/promotion/6-years-care-back/wish", world: "campaign", bundle: "care-back-wish" },
 
     { path: "/male-massage/", world: "mms", bundle: "mms" },
+    { path: "/male-massage/home", world: "mms", bundle: "mms" },
     { path: "/male-massage/how-to-use", world: "mms", bundle: "mms" },
     { path: "/male-massage/member/mms-booking", world: "mms", bundle: "mms" },
     { path: "/male-massage/therapists/mms", world: "mms", bundle: "mms" },
