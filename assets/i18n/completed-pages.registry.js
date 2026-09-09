@@ -11,6 +11,7 @@
     { path: "/services/companion", world: "public" },
     { path: "/booking", world: "public" },
     { path: "/find", world: "public" },
+    { path: "/apply/public-model", world: "public", bundle: "public-model-apply" },
     { path: "/therapists", world: "mms" },
     { path: "/membership", world: "member" },
     { path: "/terms", world: "trust" },
