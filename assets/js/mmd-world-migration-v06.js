@@ -25,10 +25,10 @@
 
   function resolveWorld(){
     if(HARD_KEEP){W=null;html.dataset.mmdMigrationScope='keep';return;}
-    const hasSigil=!!document.querySelector('.sigil-system');
-    const hasPublic=!!document.querySelector('.mmd-prive');
-    if(hasSigil&&!hasPublic)W='sigil';
-    else if(hasPublic&&!hasSigil)W='public';
+    const sigilRoot=!!document.querySelector('body.sigil-system,body>.sigil-system,main.sigil-system');
+    const publicRoot=!!document.querySelector('body.mmd-prive,body>.mmd-prive,main.mmd-prive');
+    if(sigilRoot&&!publicRoot)W='sigil';
+    else if(publicRoot&&!sigilRoot)W='public';
     else W=W||routeWorld();
     html.dataset.mmdMigrationScope=W||'keep';
     if(W)html.dataset.mmdWorld=W;
