@@ -1,0 +1,114 @@
+/* =========================================================
+   MMD GLOBAL TYPOGRAPHY · WORLD-06
+   Legacy migration layer over WORLD-05.
+
+   Runtime classification:
+   KEEP       = keep existing typography; contrast safety still applies.
+   MIGRATE    = move EN heading to the canonical world font + safe H1/H2 color.
+   COLOR-LOCK = preserve an intentional readable color treatment while moving EN typography to the canonical world font.
+
+   Font sizes are intentionally NOT forced here. Existing page scale stays intact
+   unless the page already uses canonical WORLD-05 utility classes.
+   ========================================================= */
+
+@import url('./mmd-global.css?v=20260909-world05');
+
+/* -----------------------------------------
+   SCRIPT SAFETY
+----------------------------------------- */
+html[data-mmd-world="public"] [data-mmd-script="th"][data-mmd-migration="keep"],
+html[data-mmd-world="sigil"] [data-mmd-script="th"][data-mmd-migration="keep"],
+html[data-mmd-world="public"] [data-mmd-script="th"][data-mmd-migration="color-lock"],
+html[data-mmd-world="sigil"] [data-mmd-script="th"][data-mmd-migration="color-lock"]{
+  font-family:var(--mmd-font-th-heading)!important;
+  font-style:normal!important;
+}
+
+html[data-mmd-world="public"] [data-mmd-script="cjk"][data-mmd-migration="keep"],
+html[data-mmd-world="sigil"] [data-mmd-script="cjk"][data-mmd-migration="keep"],
+html[data-mmd-world="public"] [data-mmd-script="cjk"][data-mmd-migration="color-lock"],
+html[data-mmd-world="sigil"] [data-mmd-script="cjk"][data-mmd-migration="color-lock"]{
+  font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif!important;
+  font-style:normal!important;
+}
+
+/* -----------------------------------------
+   PUBLIC · EN MIGRATION
+   H1 = Canela
+   H2/H3 = Playfair Display
+----------------------------------------- */
+html[data-mmd-world="public"] [data-mmd-script="en"][data-mmd-role="h1"][data-mmd-migration="migrate"],
+html[data-mmd-world="public"] [data-mmd-script="en"][data-mmd-role="h1"][data-mmd-migration="color-lock"]{
+  font-family:var(--mmd-public-display)!important;
+  font-style:normal!important;
+  font-weight:400!important;
+  font-synthesis:none!important;
+}
+
+html[data-mmd-world="public"] [data-mmd-script="en"]:is([data-mmd-role="h2"],[data-mmd-role="h3"])[data-mmd-migration="migrate"],
+html[data-mmd-world="public"] [data-mmd-script="en"]:is([data-mmd-role="h2"],[data-mmd-role="h3"])[data-mmd-migration="color-lock"]{
+  font-family:var(--mmd-public-editorial)!important;
+  font-style:normal!important;
+  font-weight:500!important;
+  font-synthesis:none!important;
+}
+
+/* -----------------------------------------
+   SIGIL · EN MIGRATION
+   H1/H2/H3 = Playfair Display
+----------------------------------------- */
+html[data-mmd-world="sigil"] [data-mmd-script="en"]:is([data-mmd-role="h1"],[data-mmd-role="h2"],[data-mmd-role="h3"])[data-mmd-migration="migrate"],
+html[data-mmd-world="sigil"] [data-mmd-script="en"]:is([data-mmd-role="h1"],[data-mmd-role="h2"],[data-mmd-role="h3"])[data-mmd-migration="color-lock"]{
+  font-family:var(--mmd-sigil-display)!important;
+  font-style:normal!important;
+  font-weight:500!important;
+  font-synthesis:none!important;
+}
+
+/* -----------------------------------------
+   H1/H2 CONTRAST LOCK
+   Applies to KEEP + MIGRATE.
+   COLOR-LOCK is deliberately excluded.
+----------------------------------------- */
+html[data-mmd-world="public"] :is(h1,h2)[data-mmd-tone="light"]:is([data-mmd-migration="keep"],[data-mmd-migration="migrate"]),
+html[data-mmd-world="sigil"] :is(h1,h2)[data-mmd-tone="light"]:is([data-mmd-migration="keep"],[data-mmd-migration="migrate"]){
+  color:var(--mmd-heading-light)!important;
+  background-image:none!important;
+  -webkit-background-clip:border-box!important;
+  background-clip:border-box!important;
+  -webkit-text-fill-color:currentColor!important;
+  text-shadow:none!important;
+  filter:none!important;
+}
+
+html[data-mmd-world="public"] :is(h1,h2)[data-mmd-tone="dark"]:is([data-mmd-migration="keep"],[data-mmd-migration="migrate"]),
+html[data-mmd-world="sigil"] :is(h1,h2)[data-mmd-tone="dark"]:is([data-mmd-migration="keep"],[data-mmd-migration="migrate"]){
+  color:var(--mmd-heading-dark)!important;
+  background-image:none!important;
+  -webkit-background-clip:border-box!important;
+  background-clip:border-box!important;
+  -webkit-text-fill-color:currentColor!important;
+  text-shadow:none!important;
+  filter:none!important;
+}
+
+/* COLOR-LOCK restores local/approved page treatment by using the WORLD-05 exemption. */
+html[data-mmd-world] [data-mmd-migration="color-lock"]{
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+}
+
+/* -----------------------------------------
+   BODY LANGUAGE SAFETY
+   Neutralizes the older site-head LINE-only font override only inside
+   migrated Public/SIGIL worlds. Component-specific font locks may still win.
+----------------------------------------- */
+html[data-mmd-world="public"]:lang(en) body :where(p,li,blockquote,figcaption),
+html[data-mmd-world="sigil"]:lang(en) body :where(p,li,blockquote,figcaption){
+  font-family:var(--mmd-font-en)!important;
+}
+
+html[data-mmd-world="public"]:lang(th) body :where(p,li,blockquote,figcaption),
+html[data-mmd-world="sigil"]:lang(th) body :where(p,li,blockquote,figcaption){
+  font-family:var(--mmd-font-th)!important;
+}
