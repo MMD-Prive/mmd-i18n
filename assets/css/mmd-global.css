@@ -1,34 +1,50 @@
 /* =========================================
-   MMD • GLOBAL FOUNDATION v2026-WORLD-04
-   LINE Seed Sans TH UI + Noto Sans Thai Headings
-   Safe Light Default + Scoped World Themes
+   MMD • GLOBAL FOUNDATION v2026-WORLD-05
+   Typography + Contrast Canon
 
-   MMD Privé = White World
-   SĪGIL System = Underground World
+   MMD Privé / Public = White World
+   SĪGIL System        = Underground World
 
-   Rule:
-   - Default is never dark.
-   - Main UI / English headline / buttons = LINE Seed Sans TH.
-   - Thai headings = Noto Sans Thai 400.
-   - Thai heading line-height is slightly increased to protect vowels and tone marks.
-   - Thai heading letter-spacing is relaxed for readability.
-   - No global transparent / gradient headline.
-   - SIGIL dark mode only inside .sigil-system.
+   PUBLIC EN
+   - Display / Hero = Canela
+   - Editorial      = Playfair Display
+
+   SIGIL EN
+   - Display / Hero / Editorial = Playfair Display
+
+   SHARED
+   - Label / CTA = Outfit
+   - EN body     = Inter
+   - TH          = Noto Sans Thai
+
+   HEADLINE CONTRAST LOCK
+   - Public light H1/H2  = #18171B
+   - Public dark/photo   = #FFF8ED
+   - SIGIL dark H1/H2    = #FFF8ED
+   - SIGIL light inset   = #18171B
+   - Gold / gradients are opt-in accents, never default H1/H2.
 ========================================= */
 
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@400;500;600&display=swap');
-@import url('https://cdn.jsdelivr.net/gh/googlefonts/line-seed-sans@latest/LINESeedSansTH.css');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+Thai:wght@400;500;600;700&family=Outfit:wght@600;700&family=Playfair+Display:wght@500;600&display=swap');
 
 :root{
   /* =========================
      FONT SYSTEM
   ========================= */
-  --mmd-font-main:"LINE Seed Sans TH","Noto Sans Thai",system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
-  --mmd-font-ui:"LINE Seed Sans TH","Noto Sans Thai",system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
-  --mmd-font-en:"LINE Seed Sans TH","Noto Sans Thai",system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
-  --mmd-font-display-en:"LINE Seed Sans TH","Noto Sans Thai",system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
-  --mmd-font-th:"Noto Sans Thai","LINE Seed Sans TH",system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
-  --mmd-font-th-heading:"Noto Sans Thai","LINE Seed Sans TH",system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  --mmd-font-main:"Noto Sans Thai","Inter",system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  --mmd-font-th:"Noto Sans Thai","Inter",system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  --mmd-font-th-heading:"Noto Sans Thai","Inter",system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  --mmd-font-en:"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
+  --mmd-font-ui:"Inter","Noto Sans Thai",system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  --mmd-font-label:"Outfit","Noto Sans Thai",Arial,Helvetica,sans-serif;
+
+  --mmd-public-display:"Canela","Times New Roman",serif;
+  --mmd-public-editorial:"Playfair Display",Georgia,"Times New Roman",serif;
+  --mmd-sigil-display:"Playfair Display",Georgia,"Times New Roman",serif;
+  --mmd-sigil-editorial:"Playfair Display",Georgia,"Times New Roman",serif;
+
+  /* Backward-compatible display alias defaults to Public. */
+  --mmd-font-display-en:var(--mmd-public-display);
 
   --font-main:var(--mmd-font-main);
   --font-ui:var(--mmd-font-ui);
@@ -38,8 +54,42 @@
   --font-display-en:var(--mmd-font-display-en);
 
   /* =========================
+     TYPE SCALE
+  ========================= */
+  --mmd-type-display-xl:clamp(4.25rem,9vw,8.625rem);   /* 68 → 138 */
+  --mmd-type-h1:clamp(3.25rem,7vw,6.75rem);           /* 52 → 108 */
+  --mmd-type-h2-feature:clamp(2.5rem,5vw,4.75rem);    /* 40 → 76  */
+  --mmd-type-h2-editorial:clamp(2.125rem,4vw,3.75rem);/* 34 → 60  */
+  --mmd-type-h3:clamp(1.625rem,3vw,2.5rem);           /* 26 → 40  */
+  --mmd-type-h4:clamp(1.3125rem,2vw,1.75rem);        /* 21 → 28  */
+  --mmd-type-body:clamp(.9375rem,1vw,1.125rem);       /* 15 → 18  */
+  --mmd-type-label:clamp(.6875rem,.8vw,.8125rem);    /* 11 → 13  */
+  --mmd-type-eyebrow:clamp(.5625rem,.7vw,.6875rem);  /* 9 → 11   */
+
+  --mmd-leading-display:.86;
+  --mmd-leading-h1:.92;
+  --mmd-leading-feature:.96;
+  --mmd-leading-editorial:1.04;
+  --mmd-leading-h3:1.08;
+  --mmd-leading-body:1.65;
+
+  --mmd-track-display:-.055em;
+  --mmd-track-headline:-.04em;
+  --mmd-track-editorial:-.03em;
+  --mmd-track-label:.08em;
+  --mmd-track-eyebrow:.14em;
+
+  /* =========================
+     CONTRAST TOKENS
+  ========================= */
+  --mmd-heading-light:#18171b;
+  --mmd-body-light:#555158;
+  --mmd-heading-dark:#fff8ed;
+  --mmd-body-dark:rgba(255,248,237,.82);
+  --mmd-meta-dark:rgba(255,248,237,.60);
+
+  /* =========================
      NEUTRAL LIGHT FOUNDATION
-     Safe for every page
   ========================= */
   --mmd-paper:#fbfaf8;
   --mmd-paper-soft:#f4f2ef;
@@ -75,7 +125,6 @@
 
   /* =========================
      SAFE LEGACY ALIASES
-     Keep old pages light by default
   ========================= */
   --mmd-bg:var(--mmd-paper);
   --mmd-bg-soft:var(--mmd-paper-soft);
@@ -97,8 +146,6 @@
   --white-soft:var(--mmd-text);
   --white-dim:var(--mmd-text-muted);
 
-  /* Legacy gold aliases become wine in public world only.
-     SIGIL overrides these inside .sigil-system. */
   --gold:var(--mmd-wine);
   --g1:var(--mmd-wine-bright);
   --g2:var(--mmd-wine);
@@ -107,7 +154,7 @@
 }
 
 /* =========================================
-   BASE — NEVER FORCE DARK HERE
+   BASE — SAFE LIGHT DEFAULT
 ========================================= */
 
 html{
@@ -123,7 +170,8 @@ body{
   color:var(--mmd-ink);
   font-family:var(--mmd-font-main);
   font-weight:400;
-  text-rendering:geometricPrecision;
+  line-height:var(--mmd-leading-body);
+  text-rendering:optimizeLegibility;
   -webkit-font-smoothing:antialiased;
   -moz-osx-font-smoothing:grayscale;
 }
@@ -150,9 +198,7 @@ canvas{
   max-width:100%;
 }
 
-a{
-  color:inherit;
-}
+a{color:inherit;}
 
 ::selection{
   background:rgba(148,21,35,.18);
@@ -161,10 +207,15 @@ a{
 
 /* =========================================
    HEADLINE SAFETY RESET
-   Prevent invisible transparent headings
+   Plain solid text is the default.
+   Gradients must opt in explicitly.
 ========================================= */
 
-:where(h1,h2,h3,h4,h5,h6,.mmd-display-title,.mmd-title,.mmd-heading,.mmd-headline):not(.mmd-gradient-burgundy):not(.mmd-gradient-gold):not(.mmd-heading-boss):not(.mmd-display-en):not(.mmd-brand-en):not(.mmd-hero-display-en){
+:where(h1,h2,h3,h4,h5,h6,.mmd-display-title,.mmd-title,.mmd-heading,.mmd-headline)
+:not(.mmd-gradient-burgundy)
+:not(.mmd-gradient-gold)
+:not(.mmd-heading-boss)
+:not([data-mmd-color-lock]){
   color:var(--mmd-text);
   background-image:none;
   -webkit-background-clip:border-box;
@@ -174,12 +225,10 @@ a{
   filter:none;
 }
 
-:where(h1,h2,h3,h4,h5,h6){
-  text-shadow:none;
-}
+:where(h1,h2,h3,h4,h5,h6){text-shadow:none;}
 
 /* =========================================
-   TYPOGRAPHY UTILITIES
+   FONT UTILITIES
 ========================================= */
 
 .mmd-font-main{font-family:var(--mmd-font-main);}
@@ -187,18 +236,9 @@ a{
 .mmd-font-th{font-family:var(--mmd-font-th);}
 .mmd-font-th-heading{font-family:var(--mmd-font-th-heading);}
 .mmd-font-en{font-family:var(--mmd-font-en);}
+.mmd-font-label{font-family:var(--mmd-font-label);}
 
-/* English display and brand headline: LINE Seed Sans TH */
-.mmd-display-en,
-.mmd-brand-en,
-.mmd-hero-display-en{
-  font-family:var(--mmd-font-display-en);
-  font-weight:700;
-  letter-spacing:-.032em;
-  line-height:.98;
-}
-
-/* Thai display and Thai headings: Noto Sans Thai 400 */
+/* Thai is always practical and readable. */
 .mmd-display-title,
 .mmd-h1,
 .mmd-h2,
@@ -206,23 +246,17 @@ a{
 .mmd-title-th,
 .mmd-heading-th,
 .mmd-th-title,
-.mmd-th-heading{
+.mmd-th-heading,
+[lang="th"].mmd-heading,
+[lang="th"].mmd-title{
   color:var(--mmd-text);
-  font-family:var(--mmd-font-th-heading);
-  font-weight:400;
-  letter-spacing:-.006em;
-  line-height:1.28;
+  font-family:var(--mmd-font-th-heading)!important;
+  font-weight:600;
+  letter-spacing:-.015em;
+  line-height:1.18;
 }
 
-.mmd-display-title,
-.mmd-h1,
-.mmd-title-th{
-  line-height:1.30;
-}
-
-.mmd-h2{
-  font-size:22px;
-}
+.mmd-h2{font-size:22px;}
 
 .mmd-text,
 .mmd-body,
@@ -235,6 +269,20 @@ a{
   line-height:1.78;
 }
 
+.mmd-body-en{
+  font-family:var(--mmd-font-en)!important;
+  font-size:var(--mmd-type-body);
+  font-weight:400;
+  line-height:var(--mmd-leading-body);
+}
+
+.mmd-body-th{
+  font-family:var(--mmd-font-th)!important;
+  font-size:var(--mmd-type-body);
+  font-weight:400;
+  line-height:1.75;
+}
+
 .mmd-body-strong{
   color:var(--mmd-text);
   font-weight:500;
@@ -243,20 +291,32 @@ a{
 .mmd-muted{color:var(--mmd-text-muted);}
 .mmd-soft{color:var(--mmd-text-soft);}
 
+.mmd-eyebrow{
+  font-family:var(--mmd-font-label)!important;
+  font-size:var(--mmd-type-eyebrow);
+  font-weight:700;
+  line-height:1.2;
+  letter-spacing:var(--mmd-track-eyebrow);
+  text-transform:uppercase;
+}
+
+.mmd-label,
+.mmd-cta,
+.mmd-nav{
+  font-family:var(--mmd-font-label)!important;
+  font-size:var(--mmd-type-label);
+  font-weight:600;
+  line-height:1.2;
+  letter-spacing:var(--mmd-track-label);
+}
+
 /* =========================================
-   SAFE BURGUNDY GRADIENT
-   Use only on explicit elements
+   EXPLICIT BURGUNDY GRADIENT — PUBLIC ACCENT
 ========================================= */
 
 .mmd-gradient-burgundy{
   color:var(--mmd-wine);
-  background:linear-gradient(
-    112deg,
-    #c91e35 0%,
-    #941523 34%,
-    #563127 68%,
-    #2f211c 100%
-  );
+  background:linear-gradient(112deg,#c91e35 0%,#941523 34%,#563127 68%,#2f211c 100%);
   -webkit-background-clip:text;
   background-clip:text;
   -webkit-text-fill-color:transparent;
@@ -273,8 +333,8 @@ a{
 }
 
 /* =========================================
-   MMD PRIVÉ — WHITE WORLD
-   Add class "mmd-prive" on page root
+   MMD PRIVÉ / PUBLIC — WHITE WORLD
+   Required root: .mmd-prive
 ========================================= */
 
 .mmd-prive{
@@ -287,6 +347,15 @@ a{
   --mmd-text-muted:rgba(24,23,27,.58);
   --mmd-text-faint:rgba(24,23,27,.34);
   --mmd-line:#dfdadd;
+
+  --mmd-heading-color:var(--mmd-heading-light);
+  --world-font-display:var(--mmd-public-display);
+  --world-font-editorial:var(--mmd-public-editorial);
+  --world-font-body:var(--mmd-font-main);
+  --world-font-label:var(--mmd-font-label);
+
+  --mmd-font-display-en:var(--mmd-public-display);
+  --font-display-en:var(--mmd-font-display-en);
 
   --mmd-action:var(--mmd-wine);
   --mmd-action-deep:var(--mmd-wine-deep);
@@ -305,10 +374,69 @@ a{
   color:var(--mmd-text);
 }
 
+/* PUBLIC H1/H2 SOLID CONTRAST LOCK */
+.mmd-prive :where(h1,h2,.mmd-h1,.mmd-h2,.mmd-h2-feature,.mmd-h2-editorial,.mmd-display-title,.mmd-title,.mmd-headline)
+:not(.mmd-gradient-burgundy)
+:not(.mmd-gradient-gold)
+:not([data-mmd-color-lock]){
+  color:var(--mmd-heading-light)!important;
+  background-image:none!important;
+  -webkit-background-clip:border-box!important;
+  background-clip:border-box!important;
+  -webkit-text-fill-color:currentColor!important;
+  text-shadow:none!important;
+  filter:none!important;
+}
+
+/* PUBLIC EN DISPLAY — CANELA */
+.mmd-prive :where(.mmd-display-en,.mmd-brand-en,.mmd-hero-display-en,.mmd-display-xl,.mmd-h1-en,.mmd-h2-feature-en){
+  font-family:var(--mmd-public-display)!important;
+  font-weight:400;
+  letter-spacing:var(--mmd-track-display);
+}
+
+.mmd-prive .mmd-display-xl{
+  font-size:var(--mmd-type-display-xl);
+  line-height:var(--mmd-leading-display);
+}
+
+.mmd-prive :where(.mmd-display-en,.mmd-brand-en,.mmd-hero-display-en,.mmd-h1-en){
+  font-size:var(--mmd-type-h1);
+  line-height:var(--mmd-leading-h1);
+}
+
+.mmd-prive .mmd-h2-feature-en{
+  font-size:var(--mmd-type-h2-feature);
+  line-height:var(--mmd-leading-feature);
+  letter-spacing:var(--mmd-track-headline);
+}
+
+/* PUBLIC EDITORIAL — PLAYFAIR */
+.mmd-prive :where(.mmd-h2-editorial-en,.mmd-h3-en,.mmd-card-title-en){
+  font-family:var(--mmd-public-editorial)!important;
+  font-weight:500;
+  letter-spacing:var(--mmd-track-editorial);
+}
+
+.mmd-prive .mmd-h2-editorial-en{
+  font-size:var(--mmd-type-h2-editorial);
+  line-height:var(--mmd-leading-editorial);
+}
+
+.mmd-prive .mmd-h3-en{
+  font-size:var(--mmd-type-h3);
+  line-height:var(--mmd-leading-h3);
+}
+
+.mmd-prive .mmd-card-title-en{
+  font-size:var(--mmd-type-h4);
+  line-height:1.1;
+}
+
 .mmd-prive .mmd-kicker{
   width:fit-content;
   color:var(--mmd-action);
-  font-family:var(--mmd-font-en);
+  font-family:var(--mmd-font-label)!important;
   font-size:11px;
   font-weight:700;
   line-height:1;
@@ -365,32 +493,33 @@ a{
   background:rgba(148,21,35,.045);
 }
 
-/* Dark card inside MMD Privé must opt in */
+/* PUBLIC DARK / PHOTO SURFACE — ALWAYS WARM IVORY */
+.mmd-prive :where(.mmd-dark-card,.mmd-founder-panel,.mmd-hero-dark,[data-mmd-surface="dark"]){
+  --mmd-text:var(--mmd-heading-dark);
+  --mmd-text-soft:var(--mmd-body-dark);
+  --mmd-text-muted:var(--mmd-meta-dark);
+  color-scheme:dark;
+}
+
+.mmd-prive :where(.mmd-dark-card,.mmd-founder-panel,.mmd-hero-dark,[data-mmd-surface="dark"])
+:where(h1,h2,.mmd-h1,.mmd-h2,.mmd-h2-feature,.mmd-h2-editorial,.mmd-display-title,.mmd-title,.mmd-headline)
+:not([data-mmd-color-lock]){
+  color:var(--mmd-heading-dark)!important;
+  background:none!important;
+  -webkit-text-fill-color:currentColor!important;
+  text-shadow:none!important;
+  filter:none!important;
+}
+
 .mmd-prive .mmd-dark-card,
 .mmd-prive .mmd-founder-panel,
 .mmd-prive .mmd-hero-dark{
   background:linear-gradient(180deg,#121113,#070708);
-  color:#f8f7f5;
-  color-scheme:dark;
-}
-
-.mmd-prive .mmd-dark-card :where(h1,h2,h3,h4,h5,h6,.mmd-title,.mmd-display-title),
-.mmd-prive .mmd-founder-panel :where(h1,h2,h3,h4,h5,h6,.mmd-title,.mmd-display-title),
-.mmd-prive .mmd-hero-dark :where(h1,h2,h3,h4,h5,h6,.mmd-title,.mmd-display-title){
-  color:#f8f7f5;
-  background:none;
-  -webkit-text-fill-color:currentColor;
-}
-
-.mmd-prive .mmd-dark-card .mmd-text,
-.mmd-prive .mmd-founder-panel .mmd-text,
-.mmd-prive .mmd-hero-dark .mmd-text{
-  color:rgba(248,247,245,.76);
+  color:var(--mmd-heading-dark);
 }
 
 /* =========================================
    MMD PROFILES / COMPANION PUBLIC PALETTE
-   Optional page root class: "mmd-profiles"
 ========================================= */
 
 .mmd-profiles{
@@ -423,7 +552,7 @@ a{
 
 /* =========================================
    SĪGIL SYSTEM — UNDERGROUND WORLD
-   Add class "sigil-system" on page root
+   Required root: .sigil-system
 ========================================= */
 
 .sigil-system{
@@ -431,11 +560,20 @@ a{
   --mmd-bg-deep:#020202;
   --mmd-bg-soft:#090909;
 
-  --mmd-text:rgba(255,248,237,.90);
-  --mmd-text-soft:rgba(255,248,237,.74);
-  --mmd-text-muted:rgba(255,248,237,.56);
+  --mmd-text:var(--mmd-heading-dark);
+  --mmd-text-soft:var(--mmd-body-dark);
+  --mmd-text-muted:var(--mmd-meta-dark);
   --mmd-text-faint:rgba(255,248,237,.38);
   --mmd-line:rgba(255,255,255,.09);
+
+  --mmd-heading-color:var(--mmd-heading-dark);
+  --world-font-display:var(--mmd-sigil-display);
+  --world-font-editorial:var(--mmd-sigil-editorial);
+  --world-font-body:var(--mmd-font-main);
+  --world-font-label:var(--mmd-font-label);
+
+  --mmd-font-display-en:var(--mmd-sigil-display);
+  --font-display-en:var(--mmd-font-display-en);
 
   --mmd-gold-champagne:#fff4c8;
   --mmd-gold-light:#f3d58d;
@@ -462,6 +600,80 @@ a{
   color:var(--mmd-text);
 }
 
+/* SIGIL H1/H2 SOLID CONTRAST LOCK */
+.sigil-system :where(h1,h2,.mmd-h1,.mmd-h2,.mmd-h2-feature,.mmd-h2-editorial,.mmd-display-title,.mmd-title,.mmd-headline)
+:not(.mmd-gradient-gold)
+:not(.mmd-heading-boss)
+:not([data-mmd-color-lock]){
+  color:var(--mmd-heading-dark)!important;
+  background-image:none!important;
+  -webkit-background-clip:border-box!important;
+  background-clip:border-box!important;
+  -webkit-text-fill-color:currentColor!important;
+  text-shadow:none!important;
+  filter:none!important;
+}
+
+/* SIGIL EN DISPLAY + EDITORIAL — PLAYFAIR */
+.sigil-system :where(.mmd-display-en,.mmd-brand-en,.mmd-hero-display-en,.mmd-display-xl,.mmd-h1-en,.mmd-h2-feature-en,.mmd-h2-editorial-en,.mmd-h3-en,.mmd-card-title-en){
+  font-family:var(--mmd-sigil-display)!important;
+  font-weight:500;
+  letter-spacing:var(--mmd-track-editorial);
+}
+
+.sigil-system .mmd-display-xl{
+  font-size:clamp(3.75rem,8vw,7.5rem); /* 60 → 120 */
+  line-height:.88;
+  letter-spacing:-.045em;
+}
+
+.sigil-system :where(.mmd-display-en,.mmd-brand-en,.mmd-hero-display-en,.mmd-h1-en){
+  font-size:clamp(3rem,6vw,5.75rem); /* 48 → 92 */
+  line-height:.94;
+  letter-spacing:-.04em;
+}
+
+.sigil-system .mmd-h2-feature-en{
+  font-size:clamp(2.25rem,4.5vw,4rem); /* 36 → 64 */
+  line-height:1;
+  letter-spacing:-.035em;
+}
+
+.sigil-system .mmd-h2-editorial-en{
+  font-size:clamp(2rem,3.5vw,3.5rem); /* 32 → 56 */
+  line-height:1.03;
+  letter-spacing:-.025em;
+}
+
+.sigil-system .mmd-h3-en{
+  font-size:clamp(1.5rem,2.5vw,2.25rem); /* 24 → 36 */
+  line-height:1.08;
+  letter-spacing:-.02em;
+}
+
+.sigil-system .mmd-card-title-en{
+  font-size:var(--mmd-type-h4);
+  line-height:1.1;
+}
+
+/* SIGIL LIGHT INSET — USE PUBLIC INK, NEVER GOLD ON LIGHT */
+.sigil-system :where(.mmd-light-card,[data-mmd-surface="light"]){
+  --mmd-text:var(--mmd-heading-light);
+  --mmd-text-soft:var(--mmd-body-light);
+  --mmd-text-muted:rgba(24,23,27,.58);
+  color-scheme:light;
+}
+
+.sigil-system :where(.mmd-light-card,[data-mmd-surface="light"])
+:where(h1,h2,.mmd-h1,.mmd-h2,.mmd-h2-feature,.mmd-h2-editorial,.mmd-display-title,.mmd-title,.mmd-headline)
+:not([data-mmd-color-lock]){
+  color:var(--mmd-heading-light)!important;
+  background:none!important;
+  -webkit-text-fill-color:currentColor!important;
+  text-shadow:none!important;
+  filter:none!important;
+}
+
 .sigil-system .mmd-glass{
   border:1px solid rgba(255,255,255,.09);
   border-radius:var(--mmd-radius-xl);
@@ -480,8 +692,9 @@ a{
 .sigil-system .mmd-kicker{
   width:fit-content;
   color:var(--mmd-gold-light);
-  font-family:var(--mmd-font-en);
+  font-family:var(--mmd-font-label)!important;
   font-size:11px;
+  font-weight:700;
   line-height:1;
   letter-spacing:.16em;
   text-transform:uppercase;
@@ -503,6 +716,7 @@ a{
   box-shadow:inset 0 1px 0 rgba(255,255,255,.08);
 }
 
+/* Decorative SIGIL gold remains explicit only. */
 .sigil-system .mmd-heading-boss,
 .sigil-system .mmd-gradient-gold{
   color:transparent;
@@ -584,8 +798,8 @@ a{
   border-radius:var(--mmd-radius-pill);
   border:1px solid transparent;
   text-decoration:none;
-  font-family:var(--mmd-font-ui);
-  font-size:13.5px;
+  font-family:var(--mmd-font-label);
+  font-size:13px;
   font-weight:700;
   line-height:1;
   cursor:pointer;
@@ -593,7 +807,7 @@ a{
 }
 
 /* =========================================
-   MOBILE
+   MOBILE SAFETY
 ========================================= */
 
 @media screen and (max-width:767px){
@@ -606,16 +820,8 @@ a{
   .mmd-th-title,
   .mmd-th-heading{
     letter-spacing:0;
-    line-height:1.34;
+    line-height:1.24;
   }
 
-  .mmd-display-en,
-  .mmd-brand-en,
-  .mmd-hero-display-en{
-    letter-spacing:-.026em;
-  }
-
-  .mmd-btn{
-    width:100%;
-  }
+  .mmd-btn{width:100%;}
 }
