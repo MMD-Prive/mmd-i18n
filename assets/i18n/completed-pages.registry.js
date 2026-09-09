@@ -26,6 +26,7 @@
     { path: "/member/private", world: "member" },
     { path: "/member/membership", world: "member" },
     { path: "/member/kenji-ai-20", world: "member" },
+    { path: "/sigil/member/membership/benefits", world: "member", bundle: "member-membership-benefits" },
     { path: "/pay/membership", world: "member" },
     { path: "/confirm/payment-proof", world: "member" },
     { path: "/confirm/public-access-payment", world: "public" },
