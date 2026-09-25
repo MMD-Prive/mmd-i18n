@@ -41,7 +41,8 @@
     "jobBrief.owner.option.women": "Women", "jobBrief.owner.option.men": "Men", "jobBrief.owner.option.all": "All genders",
     "jobBrief.owner.option.thai": "Thai", "jobBrief.owner.option.english": "English", "jobBrief.owner.option.chinese": "Chinese",
     "jobBrief.owner.option.japanese": "Japanese", "jobBrief.owner.option.korean": "Korean", "jobBrief.owner.option.other": "Other",
-    "jobBrief.owner.option.comfortable": "Available", "jobBrief.owner.option.not_yet": "Not yet", "jobBrief.owner.option.none": "Not selected"
+    "jobBrief.owner.option.comfortable": "Available", "jobBrief.owner.option.not_yet": "Not yet", "jobBrief.owner.option.none": "Not selected",
+    "jobBrief.owner.folder.linked": "Folder linked", "jobBrief.owner.folder.missing": "Folder not found", "jobBrief.owner.folder.unavailable": "Folder status unavailable"
   };
   function t(key) {
     var dict = window.I18N_DICT || {};
@@ -117,7 +118,8 @@
   }
   function responseHtml(response, brief) {
     var stage = esc(t("jobBrief.owner.stage." + (response.identity_stage || "application_required")));
-    var model = esc(response.model_record_id || response.response_id);
+    var model = esc(response.model_identity && response.model_identity.working_name || response.model_record_id || response.response_id);
+    var folderStatus = response.identity_stage === "existing_bound" ? '<span>' + esc(t("jobBrief.owner.folder." + (response.model_identity && response.model_identity.folder_status || "unavailable"))) + '</span>' : '';
     var selected = response.decision === "selected";
     var ready = response.identity_stage === "existing_bound" || response.identity_stage === "pending_review";
     var interestLabel = t(response.interest === "interested" ? "jobBrief.owner.interested" : "jobBrief.owner.notInterested");
@@ -126,7 +128,7 @@
     var folder = response.identity_stage === "existing_bound"
       ? '<a class="lb-link" href="/internal/admin/model-link" target="_blank" rel="noopener">' + esc(t("jobBrief.owner.folderLink")) + '</a>'
       : selected ? '<button type="button" data-prepare="' + esc(brief.brief_id) + '" data-response="' + esc(response.response_id) + '">' + esc(t("jobBrief.owner.folderLink")) + '</button>' : '';
-    return '<div class="lb-response"><strong>' + model + '</strong><div class="lb-meta"><span>' + stage + '</span><span>' + esc(interestLabel) + '</span><span>' + esc(decisionLabel) + '</span></div><div class="lb-actions">' + review + folder +
+    return '<div class="lb-response"><strong>' + model + '</strong><div class="lb-meta"><span>' + stage + '</span>' + folderStatus + '<span>' + esc(interestLabel) + '</span><span>' + esc(decisionLabel) + '</span></div><div class="lb-actions">' + review + folder +
       (response.interest === "interested" && !selected && ready ? '<button type="button" data-select="' + esc(brief.brief_id) + '" data-response="' + esc(response.response_id) + '" data-response-version="' + Number(response.version || 0) + '" data-version="' + Number(brief.version || 0) + '" data-decision="selected">' + esc(t("jobBrief.owner.select")) + '</button>' : '') +
       (response.interest === "interested" && !selected ? '<button type="button" data-select="' + esc(brief.brief_id) + '" data-response="' + esc(response.response_id) + '" data-response-version="' + Number(response.version || 0) + '" data-version="' + Number(brief.version || 0) + '" data-decision="not_selected">' + esc(t("jobBrief.owner.reject")) + '</button>' : '') + '</div><div data-review-slot="' + esc(response.response_id) + '"></div></div>';
   }

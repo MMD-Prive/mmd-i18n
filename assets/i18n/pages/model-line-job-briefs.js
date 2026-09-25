@@ -27,6 +27,7 @@
       "jobBrief.expired": "งานนี้หมดเวลารับสมัครแล้ว",
       "jobBrief.apply": "ดำเนินการสมัครเป็นโมเดล",
       "jobBrief.returnToBrief": "กลับไปดูบรีฟงาน",
+      "jobBrief.backToBriefs": "ดูบรีฟที่ยังเปิดรับ",
       "jobBrief.loading": "กำลังโหลดรายการงาน…",
       "jobBrief.status": "สถานะ",
       "jobBrief.hiddenLabel": "ซ่อนไว้",
@@ -58,7 +59,8 @@
       "jobBrief.owner.option.women": "ผู้หญิง", "jobBrief.owner.option.men": "ผู้ชาย", "jobBrief.owner.option.all": "ทุกเพศ",
       "jobBrief.owner.option.thai": "ไทย", "jobBrief.owner.option.english": "อังกฤษ", "jobBrief.owner.option.chinese": "จีน",
       "jobBrief.owner.option.japanese": "ญี่ปุ่น", "jobBrief.owner.option.korean": "เกาหลี", "jobBrief.owner.option.other": "อื่น ๆ",
-      "jobBrief.owner.option.comfortable": "สะดวก", "jobBrief.owner.option.not_yet": "ยังไม่สะดวก", "jobBrief.owner.option.none": "ไม่ได้เลือก"
+      "jobBrief.owner.option.comfortable": "สะดวก", "jobBrief.owner.option.not_yet": "ยังไม่สะดวก", "jobBrief.owner.option.none": "ไม่ได้เลือก",
+      "jobBrief.owner.folder.linked": "มีโฟลเดอร์แล้ว", "jobBrief.owner.folder.missing": "ยังไม่พบโฟลเดอร์", "jobBrief.owner.folder.unavailable": "ตรวจสถานะโฟลเดอร์ไม่ได้"
     },
     en: {
       "jobBrief.title": "Available assignments",
@@ -84,6 +86,7 @@
       "jobBrief.expired": "This brief has expired.",
       "jobBrief.apply": "Continue model application",
       "jobBrief.returnToBrief": "Return to the brief",
+      "jobBrief.backToBriefs": "Browse open briefs",
       "jobBrief.loading": "Loading briefs…",
       "jobBrief.status": "Status",
       "jobBrief.hiddenLabel": "Hidden",
@@ -115,7 +118,8 @@
       "jobBrief.owner.option.women": "Women", "jobBrief.owner.option.men": "Men", "jobBrief.owner.option.all": "All genders",
       "jobBrief.owner.option.thai": "Thai", "jobBrief.owner.option.english": "English", "jobBrief.owner.option.chinese": "Chinese",
       "jobBrief.owner.option.japanese": "Japanese", "jobBrief.owner.option.korean": "Korean", "jobBrief.owner.option.other": "Other",
-      "jobBrief.owner.option.comfortable": "Available", "jobBrief.owner.option.not_yet": "Not yet", "jobBrief.owner.option.none": "Not selected"
+      "jobBrief.owner.option.comfortable": "Available", "jobBrief.owner.option.not_yet": "Not yet", "jobBrief.owner.option.none": "Not selected",
+      "jobBrief.owner.folder.linked": "Folder linked", "jobBrief.owner.folder.missing": "Folder not found", "jobBrief.owner.folder.unavailable": "Folder status unavailable"
     },
     zh: {
       "jobBrief.title": "可申请的工作",
@@ -141,6 +145,7 @@
       "jobBrief.expired": "此工作的申请时间已结束。",
       "jobBrief.apply": "继续申请成为模特",
       "jobBrief.returnToBrief": "返回查看工作详情",
+      "jobBrief.backToBriefs": "查看仍在开放的工作",
       "jobBrief.loading": "正在加载工作列表…",
       "jobBrief.status": "状态",
       "jobBrief.hiddenLabel": "已隐藏",
@@ -172,7 +177,8 @@
       "jobBrief.owner.option.women": "女性", "jobBrief.owner.option.men": "男性", "jobBrief.owner.option.all": "所有性别",
       "jobBrief.owner.option.thai": "泰语", "jobBrief.owner.option.english": "英语", "jobBrief.owner.option.chinese": "中文",
       "jobBrief.owner.option.japanese": "日语", "jobBrief.owner.option.korean": "韩语", "jobBrief.owner.option.other": "其他",
-      "jobBrief.owner.option.comfortable": "方便", "jobBrief.owner.option.not_yet": "暂不方便", "jobBrief.owner.option.none": "未选择"
+      "jobBrief.owner.option.comfortable": "方便", "jobBrief.owner.option.not_yet": "暂不方便", "jobBrief.owner.option.none": "未选择",
+      "jobBrief.owner.folder.linked": "文件夹已关联", "jobBrief.owner.folder.missing": "尚未找到文件夹", "jobBrief.owner.folder.unavailable": "无法检查文件夹状态"
     }
   };
   Object.keys(copy).forEach(function (lang) {
