@@ -34,7 +34,10 @@
     "jobBrief.owner.retry": "Retry", "jobBrief.owner.responseVersion": "This response changed. Refresh and review it again.",
     "jobBrief.owner.stage.existing_bound": "Verified Model", "jobBrief.owner.stage.application_required": "Application needed",
     "jobBrief.owner.stage.pending_review": "Application under review",
-    "jobBrief.owner.filter.startDate": "Start date", "jobBrief.owner.unit.hours": "hours", "jobBrief.owner.unit.models": "models"
+    "jobBrief.owner.filter.startDate": "Start date", "jobBrief.owner.unit.hours": "hours", "jobBrief.owner.unit.models": "models",
+    "jobBrief.owner.app.nickname": "Name", "jobBrief.owner.app.age": "Age", "jobBrief.owner.app.province": "Province",
+    "jobBrief.owner.app.description": "About", "jobBrief.owner.app.publicScope": "Public scope", "jobBrief.owner.app.privateScope": "Private scope",
+    "jobBrief.owner.app.languages": "Languages", "jobBrief.owner.app.video": "Video call", "jobBrief.owner.app.preferred": "Preferred time"
   };
   function t(key) {
     var dict = window.I18N_DICT || {};
@@ -94,6 +97,17 @@
       return '<button type="button" data-filter="' + status + '" aria-pressed="' + (filter === status ? "true" : "false") + '">' + esc(t("jobBrief.owner.filter." + status)) + '</button>';
     }).join("") + '<label>' + esc(t("jobBrief.owner.filter.startDate")) + '<input type="date" data-filter-date value="' + esc(startDate) + '"></label>';
   }
+  function applicationHtml(data, responseId) {
+    var a = data.application || {};
+    var rows = [["nickname", a.nickname], ["age", a.age], ["province", a.province],
+      ["description", a.self_description], ["publicScope", a.public_client_gender],
+      ["privateScope", a.private_opt_in ? a.private_client_gender : "—"],
+      ["languages", Array.isArray(a.languages) ? a.languages.join(", ") : ""],
+      ["video", a.video_call_preference], ["preferred", a.preferred_at_bangkok]];
+    return '<div class="lb-grid">' + rows.filter(function (row) { return row[1] !== undefined && row[1] !== null && row[1] !== ""; }).map(function (row) {
+      return '<div><small>' + esc(t("jobBrief.owner.app." + row[0])) + '</small><br><strong>' + esc(row[1]) + '</strong></div>';
+    }).join("") + '</div><label><input type="checkbox" data-reviewed="' + esc(responseId) + '">' + esc(t("jobBrief.owner.confirmReview")) + '</label>';
+  }
   function responseHtml(response, brief) {
     var stage = esc(t("jobBrief.owner.stage." + (response.identity_stage || "application_required")));
     var model = esc(response.model_record_id || response.response_id);
@@ -101,14 +115,13 @@
     var ready = response.identity_stage === "existing_bound" || response.identity_stage === "pending_review";
     var interestLabel = t(response.interest === "interested" ? "jobBrief.owner.interested" : "jobBrief.owner.notInterested");
     var decisionLabel = t(response.decision === "selected" ? "jobBrief.owner.selected" : response.decision === "not_selected" ? "jobBrief.owner.reject" : "jobBrief.owner.pending");
-    var checkbox = response.identity_stage === "pending_review" ? '<label><input type="checkbox" data-reviewed="' + esc(response.response_id) + '">' + esc(t("jobBrief.owner.confirmReview")) + '</label>' : '';
-    var review = response.identity_stage !== "existing_bound" ? '<a class="lb-link" href="/internal/admin/model-applications" target="_blank" rel="noopener">' + esc(t("jobBrief.owner.applicantReview")) + '</a>' : '';
+    var review = response.identity_stage === "pending_review" ? '<button type="button" data-review="' + esc(brief.brief_id) + '" data-response="' + esc(response.response_id) + '">' + esc(t("jobBrief.owner.applicantReview")) + '</button>' : '';
     var folder = response.identity_stage === "existing_bound"
       ? '<a class="lb-link" href="/internal/admin/model-link" target="_blank" rel="noopener">' + esc(t("jobBrief.owner.folderLink")) + '</a>'
       : selected ? '<button type="button" data-prepare="' + esc(brief.brief_id) + '" data-response="' + esc(response.response_id) + '">' + esc(t("jobBrief.owner.folderLink")) + '</button>' : '';
-    return '<div class="lb-response"><strong>' + model + '</strong><div class="lb-meta"><span>' + stage + '</span><span>' + esc(interestLabel) + '</span><span>' + esc(decisionLabel) + '</span></div>' + checkbox + '<div class="lb-actions">' + review + folder +
+    return '<div class="lb-response"><strong>' + model + '</strong><div class="lb-meta"><span>' + stage + '</span><span>' + esc(interestLabel) + '</span><span>' + esc(decisionLabel) + '</span></div><div class="lb-actions">' + review + folder +
       (response.interest === "interested" && !selected && ready ? '<button type="button" data-select="' + esc(brief.brief_id) + '" data-response="' + esc(response.response_id) + '" data-response-version="' + Number(response.version || 0) + '" data-version="' + Number(brief.version || 0) + '" data-decision="selected">' + esc(t("jobBrief.owner.select")) + '</button>' : '') +
-      (response.interest === "interested" && !selected ? '<button type="button" data-select="' + esc(brief.brief_id) + '" data-response="' + esc(response.response_id) + '" data-response-version="' + Number(response.version || 0) + '" data-version="' + Number(brief.version || 0) + '" data-decision="not_selected">' + esc(t("jobBrief.owner.reject")) + '</button>' : '') + '</div></div>';
+      (response.interest === "interested" && !selected ? '<button type="button" data-select="' + esc(brief.brief_id) + '" data-response="' + esc(response.response_id) + '" data-response-version="' + Number(response.version || 0) + '" data-version="' + Number(brief.version || 0) + '" data-decision="not_selected">' + esc(t("jobBrief.owner.reject")) + '</button>' : '') + '</div><div data-review-slot="' + esc(response.response_id) + '"></div></div>';
   }
   function render() {
     renderFilters();
@@ -131,7 +144,7 @@
     finally { busy = false; }
   }
   root.addEventListener("click", async function (event) {
-    var target = event.target.closest("button[data-filter],button[data-edit],button[data-action],button[data-select],button[data-prepare]");
+    var target = event.target.closest("button[data-filter],button[data-edit],button[data-action],button[data-select],button[data-prepare],button[data-review]");
     if (!target || busy) return;
     if (target.dataset.filter) { filter = target.dataset.filter; render(); return; }
     if (target.dataset.edit) { editing = items.find(function (x) { return x.brief_id === target.dataset.edit; }) || null; renderForm(); formPanel.open = true; formPanel.scrollIntoView({ behavior: "smooth", block: "start" }); return; }
@@ -144,6 +157,11 @@
           if (!command.reason.trim()) return;
         }
         await api(command);
+      } else if (target.dataset.review) {
+        var application = await api({ action: "review_application", brief_id: target.dataset.review, response_id: target.dataset.response });
+        var slot = root.querySelector('[data-review-slot="' + CSS.escape(target.dataset.response) + '"]');
+        if (slot) slot.innerHTML = applicationHtml(application, target.dataset.response);
+        return;
       } else if (target.dataset.prepare) {
         await api({ action: "prepare_link", brief_id: target.dataset.prepare, response_id: target.dataset.response });
         window.location.assign("/internal/admin/model-link");
@@ -156,7 +174,7 @@
       }
       notice(t("jobBrief.owner.saved"), false);
     } catch (error) { notice(error.message === "response_version_conflict" ? t("jobBrief.owner.responseVersion") : t("jobBrief.owner.error") + " " + error.message, true); }
-    finally { busy = false; target.disabled = false; await load(); }
+    finally { busy = false; target.disabled = false; if (!target.dataset.review) await load(); }
   });
   root.addEventListener("change", function (event) {
     if (event.target.matches("input[data-filter-date]")) { startDate = event.target.value; render(); }

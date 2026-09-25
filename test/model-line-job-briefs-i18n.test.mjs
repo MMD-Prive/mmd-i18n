@@ -9,7 +9,7 @@ test("Model LINE job briefs copy defines the complete shared key set in supporte
   const window = { I18N_DICT: { th: { "existing.key": "keep" } } };
   vm.runInNewContext(source, { window });
   const keys = Object.keys(window.I18N_DICT.th).filter(key => key.startsWith("jobBrief.")).sort();
-  assert.equal(keys.length, 80);
+  assert.equal(keys.length, 89);
   for (const lang of ["th", "en", "zh"]) {
     assert.deepEqual(Object.keys(window.I18N_DICT[lang]).filter(key => key.startsWith("jobBrief.")).sort(), keys);
     for (const key of keys) assert.ok(window.I18N_DICT[lang][key].trim(), `${lang}.${key}`);
@@ -20,6 +20,7 @@ test("Model LINE job briefs copy defines the complete shared key set in supporte
   assert.ok(keys.includes("jobBrief.owner.stage.pending_review"));
   assert.ok(keys.includes("jobBrief.owner.filter.startDate"));
   assert.ok(keys.includes("jobBrief.owner.unit.hours"));
+  assert.ok(keys.includes("jobBrief.owner.app.description"));
   assert.equal(window.I18N_DICT.th["jobBrief.interestPending"], "ส่งความสนใจแล้ว รอ MMD พิจารณา ยังไม่ถือว่ายืนยันรับงาน");
   assert.equal(window.I18N_DICT.th["jobBrief.returnToBrief"], "กลับไปดูบรีฟงาน");
   assert.equal(window.I18N_DICT.th["existing.key"], "keep");

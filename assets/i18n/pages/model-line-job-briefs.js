@@ -51,7 +51,10 @@
       "jobBrief.owner.retry": "ลองอีกครั้ง", "jobBrief.owner.responseVersion": "คำตอบนี้เปลี่ยนแล้ว กรุณาโหลดใหม่และตรวจอีกครั้ง",
       "jobBrief.owner.stage.existing_bound": "เชื่อมบัญชีโมเดลแล้ว", "jobBrief.owner.stage.application_required": "ต้องส่งใบสมัครก่อน",
       "jobBrief.owner.stage.pending_review": "รอการตรวจสอบใบสมัคร",
-      "jobBrief.owner.filter.startDate": "วันเริ่มงาน", "jobBrief.owner.unit.hours": "ชั่วโมง", "jobBrief.owner.unit.models": "โมเดล"
+      "jobBrief.owner.filter.startDate": "วันเริ่มงาน", "jobBrief.owner.unit.hours": "ชั่วโมง", "jobBrief.owner.unit.models": "โมเดล",
+      "jobBrief.owner.app.nickname": "ชื่อเล่น", "jobBrief.owner.app.age": "อายุ", "jobBrief.owner.app.province": "จังหวัด",
+      "jobBrief.owner.app.description": "ข้อมูลแนะนำตัว", "jobBrief.owner.app.publicScope": "ขอบเขตงาน Public", "jobBrief.owner.app.privateScope": "ขอบเขตงาน Private",
+      "jobBrief.owner.app.languages": "ภาษา", "jobBrief.owner.app.video": "วิดีโอคอล", "jobBrief.owner.app.preferred": "เวลาที่สะดวก"
     },
     en: {
       "jobBrief.title": "Available assignments",
@@ -101,7 +104,10 @@
       "jobBrief.owner.retry": "Try again", "jobBrief.owner.responseVersion": "This response changed. Refresh and review it again.",
       "jobBrief.owner.stage.existing_bound": "Model account linked", "jobBrief.owner.stage.application_required": "Application required",
       "jobBrief.owner.stage.pending_review": "Application under review",
-      "jobBrief.owner.filter.startDate": "Start date", "jobBrief.owner.unit.hours": "hours", "jobBrief.owner.unit.models": "models"
+      "jobBrief.owner.filter.startDate": "Start date", "jobBrief.owner.unit.hours": "hours", "jobBrief.owner.unit.models": "models",
+      "jobBrief.owner.app.nickname": "Nickname", "jobBrief.owner.app.age": "Age", "jobBrief.owner.app.province": "Province",
+      "jobBrief.owner.app.description": "About", "jobBrief.owner.app.publicScope": "Public scope", "jobBrief.owner.app.privateScope": "Private scope",
+      "jobBrief.owner.app.languages": "Languages", "jobBrief.owner.app.video": "Video call", "jobBrief.owner.app.preferred": "Preferred time"
     },
     zh: {
       "jobBrief.title": "可申请的工作",
@@ -151,7 +157,10 @@
       "jobBrief.owner.retry": "重试", "jobBrief.owner.responseVersion": "此回复已更新，请刷新后再次审核。",
       "jobBrief.owner.stage.existing_bound": "模特账户已关联", "jobBrief.owner.stage.application_required": "需要提交申请",
       "jobBrief.owner.stage.pending_review": "申请审核中",
-      "jobBrief.owner.filter.startDate": "开始日期", "jobBrief.owner.unit.hours": "小时", "jobBrief.owner.unit.models": "名模特"
+      "jobBrief.owner.filter.startDate": "开始日期", "jobBrief.owner.unit.hours": "小时", "jobBrief.owner.unit.models": "名模特",
+      "jobBrief.owner.app.nickname": "昵称", "jobBrief.owner.app.age": "年龄", "jobBrief.owner.app.province": "所在府",
+      "jobBrief.owner.app.description": "自我介绍", "jobBrief.owner.app.publicScope": "公开工作范围", "jobBrief.owner.app.privateScope": "私人工作范围",
+      "jobBrief.owner.app.languages": "语言", "jobBrief.owner.app.video": "视频通话", "jobBrief.owner.app.preferred": "方便的时间"
     }
   };
   Object.keys(copy).forEach(function (lang) {
