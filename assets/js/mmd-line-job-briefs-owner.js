@@ -37,7 +37,11 @@
     "jobBrief.owner.filter.startDate": "Start date", "jobBrief.owner.unit.hours": "hours", "jobBrief.owner.unit.models": "models",
     "jobBrief.owner.app.nickname": "Name", "jobBrief.owner.app.age": "Age", "jobBrief.owner.app.province": "Province",
     "jobBrief.owner.app.description": "About", "jobBrief.owner.app.publicScope": "Public scope", "jobBrief.owner.app.privateScope": "Private scope",
-    "jobBrief.owner.app.languages": "Languages", "jobBrief.owner.app.video": "Video call", "jobBrief.owner.app.preferred": "Preferred time"
+    "jobBrief.owner.app.languages": "Languages", "jobBrief.owner.app.video": "Video call", "jobBrief.owner.app.preferred": "Preferred time",
+    "jobBrief.owner.option.women": "Women", "jobBrief.owner.option.men": "Men", "jobBrief.owner.option.all": "All genders",
+    "jobBrief.owner.option.thai": "Thai", "jobBrief.owner.option.english": "English", "jobBrief.owner.option.chinese": "Chinese",
+    "jobBrief.owner.option.japanese": "Japanese", "jobBrief.owner.option.korean": "Korean", "jobBrief.owner.option.other": "Other",
+    "jobBrief.owner.option.comfortable": "Available", "jobBrief.owner.option.not_yet": "Not yet", "jobBrief.owner.option.none": "Not selected"
   };
   function t(key) {
     var dict = window.I18N_DICT || {};
@@ -99,11 +103,13 @@
   }
   function applicationHtml(data, responseId) {
     var a = data.application || {};
+    function choice(value) { return t("jobBrief.owner.option." + value); }
     var rows = [["nickname", a.nickname], ["age", a.age], ["province", a.province],
-      ["description", a.self_description], ["publicScope", a.public_client_gender],
-      ["privateScope", a.private_opt_in ? a.private_client_gender : "—"],
-      ["languages", Array.isArray(a.languages) ? a.languages.join(", ") : ""],
-      ["video", a.video_call_preference], ["preferred", a.preferred_at_bangkok]];
+      ["description", a.self_description], ["publicScope", a.public_client_gender ? choice(a.public_client_gender) : ""],
+      ["privateScope", a.private_opt_in && a.private_client_gender ? choice(a.private_client_gender) : choice("none")],
+      ["languages", Array.isArray(a.languages) ? a.languages.map(choice).join(", ") : ""],
+      ["video", a.video_call_preference ? choice(a.video_call_preference) : ""],
+      ["preferred", a.preferred_at_bangkok ? datetime(a.preferred_at_bangkok + ":00+07:00") : ""]];
     return '<div class="lb-grid">' + rows.filter(function (row) { return row[1] !== undefined && row[1] !== null && row[1] !== ""; }).map(function (row) {
       return '<div><small>' + esc(t("jobBrief.owner.app." + row[0])) + '</small><br><strong>' + esc(row[1]) + '</strong></div>';
     }).join("") + '</div><label><input type="checkbox" data-reviewed="' + esc(responseId) + '">' + esc(t("jobBrief.owner.confirmReview")) + '</label>';

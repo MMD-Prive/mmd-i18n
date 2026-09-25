@@ -54,7 +54,11 @@
       "jobBrief.owner.filter.startDate": "วันเริ่มงาน", "jobBrief.owner.unit.hours": "ชั่วโมง", "jobBrief.owner.unit.models": "โมเดล",
       "jobBrief.owner.app.nickname": "ชื่อเล่น", "jobBrief.owner.app.age": "อายุ", "jobBrief.owner.app.province": "จังหวัด",
       "jobBrief.owner.app.description": "ข้อมูลแนะนำตัว", "jobBrief.owner.app.publicScope": "ขอบเขตงาน Public", "jobBrief.owner.app.privateScope": "ขอบเขตงาน Private",
-      "jobBrief.owner.app.languages": "ภาษา", "jobBrief.owner.app.video": "วิดีโอคอล", "jobBrief.owner.app.preferred": "เวลาที่สะดวก"
+      "jobBrief.owner.app.languages": "ภาษา", "jobBrief.owner.app.video": "วิดีโอคอล", "jobBrief.owner.app.preferred": "เวลาที่สะดวก",
+      "jobBrief.owner.option.women": "ผู้หญิง", "jobBrief.owner.option.men": "ผู้ชาย", "jobBrief.owner.option.all": "ทุกเพศ",
+      "jobBrief.owner.option.thai": "ไทย", "jobBrief.owner.option.english": "อังกฤษ", "jobBrief.owner.option.chinese": "จีน",
+      "jobBrief.owner.option.japanese": "ญี่ปุ่น", "jobBrief.owner.option.korean": "เกาหลี", "jobBrief.owner.option.other": "อื่น ๆ",
+      "jobBrief.owner.option.comfortable": "สะดวก", "jobBrief.owner.option.not_yet": "ยังไม่สะดวก", "jobBrief.owner.option.none": "ไม่ได้เลือก"
     },
     en: {
       "jobBrief.title": "Available assignments",
@@ -107,7 +111,11 @@
       "jobBrief.owner.filter.startDate": "Start date", "jobBrief.owner.unit.hours": "hours", "jobBrief.owner.unit.models": "models",
       "jobBrief.owner.app.nickname": "Nickname", "jobBrief.owner.app.age": "Age", "jobBrief.owner.app.province": "Province",
       "jobBrief.owner.app.description": "About", "jobBrief.owner.app.publicScope": "Public scope", "jobBrief.owner.app.privateScope": "Private scope",
-      "jobBrief.owner.app.languages": "Languages", "jobBrief.owner.app.video": "Video call", "jobBrief.owner.app.preferred": "Preferred time"
+      "jobBrief.owner.app.languages": "Languages", "jobBrief.owner.app.video": "Video call", "jobBrief.owner.app.preferred": "Preferred time",
+      "jobBrief.owner.option.women": "Women", "jobBrief.owner.option.men": "Men", "jobBrief.owner.option.all": "All genders",
+      "jobBrief.owner.option.thai": "Thai", "jobBrief.owner.option.english": "English", "jobBrief.owner.option.chinese": "Chinese",
+      "jobBrief.owner.option.japanese": "Japanese", "jobBrief.owner.option.korean": "Korean", "jobBrief.owner.option.other": "Other",
+      "jobBrief.owner.option.comfortable": "Available", "jobBrief.owner.option.not_yet": "Not yet", "jobBrief.owner.option.none": "Not selected"
     },
     zh: {
       "jobBrief.title": "可申请的工作",
@@ -160,7 +168,11 @@
       "jobBrief.owner.filter.startDate": "开始日期", "jobBrief.owner.unit.hours": "小时", "jobBrief.owner.unit.models": "名模特",
       "jobBrief.owner.app.nickname": "昵称", "jobBrief.owner.app.age": "年龄", "jobBrief.owner.app.province": "所在府",
       "jobBrief.owner.app.description": "自我介绍", "jobBrief.owner.app.publicScope": "公开工作范围", "jobBrief.owner.app.privateScope": "私人工作范围",
-      "jobBrief.owner.app.languages": "语言", "jobBrief.owner.app.video": "视频通话", "jobBrief.owner.app.preferred": "方便的时间"
+      "jobBrief.owner.app.languages": "语言", "jobBrief.owner.app.video": "视频通话", "jobBrief.owner.app.preferred": "方便的时间",
+      "jobBrief.owner.option.women": "女性", "jobBrief.owner.option.men": "男性", "jobBrief.owner.option.all": "所有性别",
+      "jobBrief.owner.option.thai": "泰语", "jobBrief.owner.option.english": "英语", "jobBrief.owner.option.chinese": "中文",
+      "jobBrief.owner.option.japanese": "日语", "jobBrief.owner.option.korean": "韩语", "jobBrief.owner.option.other": "其他",
+      "jobBrief.owner.option.comfortable": "方便", "jobBrief.owner.option.not_yet": "暂不方便", "jobBrief.owner.option.none": "未选择"
     }
   };
   Object.keys(copy).forEach(function (lang) {
