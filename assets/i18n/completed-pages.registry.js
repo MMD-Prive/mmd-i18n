@@ -6,7 +6,7 @@
   var W = window;
   var routes = [
     { path: "/", world: "public" },
-    { path: "/profiles", world: "public" },
+    { path: "/profiles", world: "public", bundle: "profiles" },
     { path: "/public/access", world: "public" },
     { path: "/services/companion", world: "public" },
     { path: "/booking", world: "public" },
