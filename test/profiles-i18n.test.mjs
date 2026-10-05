@@ -1,1 +1,29 @@
-import test from "node:test";\nimport assert from "node:assert/strict";\nimport fs from "node:fs";\n\nconst core=fs.readFileSync("assets/i18n/pages/profiles.core.js","utf8");\nconst runtime=fs.readFileSync("assets/i18n/pages/profiles.runtime.js","utf8");\nconst registry=fs.readFileSync("assets/i18n/completed-pages.registry.js","utf8");\nconst loader=fs.readFileSync("components/webflow/mmd-i18n-loader.html","utf8");\n\ntest("Profiles canonical copy covers TH EN ZH and current public role layers",()=>{\n  assert.ok(core.includes('add("th",'));\n  assert.ok(core.includes('add("en",'));\n  assert.ok(core.includes('add("zh",'));\n  for(const key of ["role.driver_companion.title","dayoff.title","nightlife.title","social.title","bangkok.title","sport.title","wellness.title","business.title","creative.title","medical.title","member.title","consent.title","access.body"]) assert.ok(core.includes('"'+key+'"'),key);\n});\n\ntest("Profiles runtime stays route-scoped and bridges existing language buttons",()=>{\n  assert.ok(runtime.includes('/profiles'));\n  assert.ok(runtime.includes('data-set-lang'));\n  assert.ok(runtime.includes('profiles.roleIntro.title'));\n  assert.ok(runtime.includes('MutationObserver'));\n  assert.ok(runtime.includes('catalog.result'));\n});\n\ntest("Profiles route is registered with its canonical bundle and loader scripts",()=>{\n  assert.ok(registry.includes('{ path: "/profiles", world: "public", bundle: "profiles" }'));\n  assert.ok(loader.includes('pages/profiles.core.js'));\n  assert.ok(loader.includes('pages/profiles.runtime.js'));\n});\n
+import test from "node:test";
+import assert from "node:assert/strict";
+import fs from "node:fs";
+
+const core=fs.readFileSync("assets/i18n/pages/profiles.core.js","utf8");
+const runtime=fs.readFileSync("assets/i18n/pages/profiles.runtime.js","utf8");
+const registry=fs.readFileSync("assets/i18n/completed-pages.registry.js","utf8");
+const loader=fs.readFileSync("components/webflow/mmd-i18n-loader.html","utf8");
+
+test("Profiles canonical copy covers TH EN ZH and current public role layers",()=>{
+  assert.ok(core.includes('add("th",'));
+  assert.ok(core.includes('add("en",'));
+  assert.ok(core.includes('add("zh",'));
+  for(const key of ["role.driver_companion.title","dayoff.title","nightlife.title","social.title","bangkok.title","sport.title","wellness.title","business.title","creative.title","medical.title","member.title","consent.title","access.body"]) assert.ok(core.includes('"'+key+'"'),key);
+});
+
+test("Profiles runtime stays route-scoped and bridges existing language buttons",()=>{
+  assert.ok(runtime.includes('/profiles'));
+  assert.ok(runtime.includes('data-set-lang'));
+  assert.ok(runtime.includes('profiles.roleIntro.title'));
+  assert.ok(runtime.includes('MutationObserver'));
+  assert.ok(runtime.includes('catalog.result'));
+});
+
+test("Profiles route is registered with its canonical bundle and loader scripts",()=>{
+  assert.ok(registry.includes('{ path: "/profiles", world: "public", bundle: "profiles" }'));
+  assert.ok(loader.includes('pages/profiles.core.js'));
+  assert.ok(loader.includes('pages/profiles.runtime.js'));
+});
