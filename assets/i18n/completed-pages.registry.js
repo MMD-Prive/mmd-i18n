@@ -33,7 +33,7 @@
     { path: "/confirm/public-access-payment", world: "public" },
     { path: "/confirm/public-access-received", world: "public" },
     { path: "/confirm/access-proof", world: "public" },
-    { path: "/blackcard/black-card", world: "member" },
+    { path: "/blackcard/black-card", world: "member", bundle: "blackcard-black-card" },
     { path: "/blackcard/confirm", world: "member" },
 
     { path: "/promotion/6-years-care-back", world: "campaign", bundle: "care-back" },
