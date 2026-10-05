@@ -126,4 +126,173 @@ add("zh",{
 "access.kicker":"SELECTED PUBLIC ACCESS","access.body":"<strong>Red Card</strong> 可在 MMD 确认 availability 后，以 Public Job 形式开放与 Public / selected-public models 的 Exclusive Model Meet。Private / Exclusive Model 范围需要 Black Card entitlement，并保留在独立的 Private route。","access.cta":"查看 Public Membership",
 "catalog.badge":"精选","catalog.line":"经 MMD 审核并批准用于此角色的公开资料。","catalog.fit":"确认之前","catalog.detail":"每次确认前，MMD 都会检查时间、边界与双方是否合适。","catalog.cta":"请 MMD 检查时间与匹配度","catalog.ctaFemale":"先进入 BELIEVE","catalog.medicalCta":"提交已验证请求给 MMD 审核","catalog.privatePreview":"PRIVATE PREVIEW · 验证身份后查看权限","catalog.chooseRole":"请先选择上方角色，仅显示符合资格的资料。","catalog.none":"目前此角色暂无经 MMD 批准公开的资料。","catalog.result":"显示 {n} 个 Profiles · {role}"
 });
+
+add("th",{
+"dayoff.title":"วันหยุดนี้ ไม่ต้องไปคนเดียว","dayoff.body":"ไม่ใช่แพ็กเกจกาแฟ แต่เป็นช่วงเวลาที่มีแผนจริง เลือกคนที่เหมาะกับกิจกรรม แล้วให้ MMD ช่วยดูความลงตัวของวันนั้น",
+"dayoff.p1.line":"หนึ่งกิจกรรมหลัก + อีกหนึ่งจุด เช่น Exhibition + Dinner, Movie + Supper หรือ Shopping + Dessert","dayoff.p1.m1":"3 ชั่วโมง","dayoff.p1.m2":"สูงสุด 2 stops",
+"dayoff.p2.line":"หลายกิจกรรมในครึ่งวัน เช่น Lunch → Gallery → Shopping → Dessert พร้อม Mini Plan จาก MMD ได้","dayoff.p2.m1":"5 ชั่วโมง","dayoff.p2.m2":"หลายจุด",
+"dayoff.p3.line":"ให้ MMD ช่วยวางวันทั้งวันจาก mood และสิ่งที่คุณชอบ สำหรับวันหยุดที่อยากเปลี่ยน routine จริง ๆ","dayoff.p3.m1":"8 ชั่วโมง","dayoff.p3.m2":"Full day",
+"dayoff.rules":"DAY OFF แนะนำ 10:00–20:00 · OT ก่อน 00:00 ฿990/ชม. · เวลาที่จองไว้ล่วงหน้าหลัง 00:00 +฿500/ชม. · OT หลัง 00:00 ฿1,490/ชม. · หลัง 03:00 ฿1,790/ชม. · หลัง 06:00 ต้องให้ MMD review ใหม่ · Premium กับ OT ไม่คิดซ้อนในนาทีเดียวกัน · ต่อเวลาต้อง Request ใน MY MMD → Model Approve ใน MMD MODEL → MMD ยืนยัน · ค่าอาหาร/เครื่องดื่ม/Ticket/Activity/เดินทาง/Parking คิดตามจริง",
+
+"nightlife.title":"คืนนี้ จะให้จบแค่ Dinner หรือไปต่อ?","nightlife.body":"สำหรับ Dinner, Bar, Concert, Club, Celebration และคืนที่ต้องการคนเดิมอยู่ด้วยตามช่วงเวลาที่จอง",
+"nightlife.p1.line":"Dinner + Drink, Concert + Late Supper หรือ Event + After spot แบบไม่ต้องยาวทั้งคืน","nightlife.p1.m1":"3 ชั่วโมง",
+"nightlife.p2.line":"Dinner → Cocktail Bar → Night Spot สำหรับคืนที่อยากให้จังหวะต่อเนื่องและไม่ต้องเปลี่ยนคนกลางทาง","nightlife.p2.m1":"5 ชั่วโมง",
+"nightlife.p3.line":"Dinner → Bar → Club / Concert → Late Supper สำหรับคืนที่ตั้งใจออกไปใช้จริง ๆ","nightlife.p3.m1":"7 ชั่วโมง",
+"nightlife.rules":"NIGHT LIFE เริ่มได้ตั้งแต่ช่วงเย็น · OT ก่อน 00:00 ฿990/ชม. · เวลาที่จองไว้ล่วงหน้าหลัง 00:00 +฿500/ชม. · OT หลัง 00:00 ฿1,490/ชม. · OT หลัง 03:00 ฿1,790/ชม. · หลัง 06:00 ต้องให้ MMD review ใหม่ · Premium กับ OT ไม่คิดซ้อนในนาทีเดียวกัน · ต่อเวลาต้อง Request ใน MY MMD → Model Approve ใน MMD MODEL → MMD ยืนยัน · ค่าอาหาร/เครื่องดื่ม/Table minimum/Ticket/Club/Concert/Taxi/Parking คิดตามจริง",
+
+"social.title":"บางงาน แค่มีคนไปด้วยก็เปลี่ยนทั้งบรรยากาศ","social.body":"สำหรับ Dinner, Wedding, Gala, Corporate Event และ Social occasion ที่ต้องการคนที่แต่งตัวเหมาะ เข้าสังคมเป็น และเข้าใจบริบทของงาน",
+"social.p1.line":"Dinner, Reception หรือ Invitation ที่อยากมีคู่ไปด้วยแบบสุภาพ ดูดี และคุยกับคนในงานได้","social.p1.m1":"3 ชั่วโมง",
+"social.p2.line":"Wedding, Launch, Corporate Event หรือ Celebration ที่ต้องอยู่ด้วยกันตลอดช่วงหลักของงาน","social.p2.m1":"4 ชั่วโมง",
+"social.p3.line":"ค่ำคืนที่ยาวขึ้น ตั้งแต่ Dinner / Reception ไปจนถึงช่วงหลักของงาน พร้อม briefing เรื่อง dress code และ social context","social.p3.m1":"6 ชั่วโมง",
+"social.commercial":"Brand guest, commercial event, media appearance หรือการใช้ภาพ/วิดีโอเชิงพาณิชย์ ต้อง brief และ quote แยกตามหน้าที่และ usage rights",
+"social.rules":"OT ก่อน 00:00 ฿1,290/ชม. · เวลาที่จองไว้ล่วงหน้าหลัง 00:00 +฿500/ชม. · OT หลัง 00:00 ฿1,790/ชม. · OT หลัง 03:00 ฿2,090/ชม. · หลัง 06:00 ต้อง MMD review · หากลักษณะงานเปลี่ยนเป็น Night Life / Commercial ต้อง Change Plan และ re-quote · ต่อเวลาต้อง Request ใน MY MMD → Model Approve ใน MMD MODEL → MMD ยืนยัน · ค่าอาหาร/เครื่องดื่ม/Ticket/เดินทาง/Parking/wardrobe พิเศษคิดตามจริง",
+
+"bangkok.title":"Bangkok is the destination. เขาคือคนที่ไปด้วย","bangkok.body":"Local Companion สำหรับคนที่อยากใช้กรุงเทพแบบมีคนรู้จังหวะเมืองไปด้วย — MMD ช่วยวาง route, match personality และดู continuity หลายจุด โดยไม่ขายเป็นบริการมัคคุเทศก์ เว้นแต่ MMD ยืนยันผู้มีใบอนุญาตโดยเฉพาะ",
+"bangkok.p1.line":"เลือก 2–3 จุดในโซนเดียวกัน เช่น Old Town, Riverside, Siam หรือ Ari แล้วใช้เมืองไปด้วยกันแบบไม่รีบ","bangkok.p1.m1":"3 ชั่วโมง",
+"bangkok.p2.line":"ครึ่งวันที่มีหลาย mood เช่น Neighborhood → Food → River → Sunset โดย MMD ช่วยจัด route ให้เข้ากับสิ่งที่คุณชอบ","bangkok.p2.m1":"5 ชั่วโมง",
+"bangkok.p3.line":"หนึ่งวันเต็มในกรุงเทพจาก mood ของคุณ — MMD ช่วยเรียง route, timing และคนที่เหมาะกับ day plan นั้น","bangkok.p3.m1":"8 ชั่วโมง",
+"bangkok.guide":"หากต้องการบริการมัคคุเทศก์เชิงประวัติศาสตร์ วัฒนธรรม หรือการนำเที่ยวอย่างเป็นทางการ MMD จะจัดเฉพาะผู้ที่ตรวจใบอนุญาตแล้วและ quote แยก",
+"bangkok.rules":"Bangkok city only · OT ก่อน 00:00 ฿1,190/ชม. · เวลาที่จองไว้ล่วงหน้าหลัง 00:00 +฿500/ชม. · OT หลัง 00:00 ฿1,690/ชม. · OT หลัง 03:00 ฿1,990/ชม. · หลัง 06:00 ต้อง MMD review · ถ้า activity เปลี่ยนเป็น Night Life ให้ Change Plan / re-quote · ออกนอกกรุงเทพต้อง re-quote · ต่อเวลาต้อง Request ใน MY MMD → Model Approve ใน MMD MODEL → MMD ยืนยัน · ค่าอาหาร/เครื่องดื่ม/ตั๋ว/กิจกรรม/BTS-MRT/Taxi/Boat/Parking คิดตามจริง · Companion ทั่วไปไม่ใช่ Licensed Tour Guide",
+
+"sport.title":"กิจกรรมที่อยากทำ สนุกขึ้นเมื่อมีคนไปด้วย","sport.body":"Running, Tennis, Badminton, Gym buddy หรือ Outdoor activity ที่อยากมี Companion ที่เข้ากับจังหวะของคุณ — MMD จะยืนยัน activity fit และ availability ก่อนทุกงาน",
+"sport.p1.line":"หนึ่งกิจกรรมหลัก เช่น Tennis, Badminton, Gym buddy หรือ Run + Coffee หลังจบกิจกรรม","sport.p1.m1":"3 ชั่วโมง",
+"sport.p2.line":"วันกิจกรรมที่มีเวลาเต็มขึ้น เช่น Court time → Lunch หรือสอง activity blocks ในโซนเดียวกัน","sport.p2.m1":"5 ชั่วโมง",
+"sport.p3.line":"ใช้วันหยุดแบบ active ตั้งแต่กิจกรรมเช้า ไปจนถึงจุดพักหรือมื้ออาหารที่วางไว้ด้วยกัน","sport.p3.m1":"8 ชั่วโมง",
+"sport.rules":"Sport Activity คือ Companion สำหรับทำกิจกรรมร่วมกัน ไม่ใช่ Personal Trainer, Therapist หรือผู้ให้คำแนะนำทางการแพทย์ · MMD จะยืนยันความเหมาะสมของ Model กับกิจกรรมก่อนทุกครั้ง · ค่า venue/court/class/equipment/ticket/เดินทาง/Parking/อาหารและเครื่องดื่มคิดตามจริง · OT ก่อน 00:00 ฿990/ชม. · OT หลัง 00:00 ฿1,490/ชม. · หลัง 03:00 ฿1,790/ชม. · หลัง 06:00 ต้อง MMD review · ต่อเวลาต้อง Request ใน MY MMD → Model Approve ใน MMD MODEL → MMD ยืนยัน",
+
+"wellness.title":"ให้วันของคุณค่อย ๆ กลับมาอยู่ในจังหวะที่ดี","wellness.body":"Wellness day, healthy lifestyle หรือวันพักที่อยากมีคนไปด้วย — MMD จะดู lifestyle fit และ availability ก่อนทุกงาน เพื่อให้แผนวันนั้นสบายและเป็นของคุณจริง ๆ",
+"wellness.p1.line":"ช่วงเวลาสบาย ๆ สำหรับ healthy brunch, เดินเล่น, wellness venue หรือกิจกรรมเบา ๆ ในโซนเดียวกัน","wellness.p1.m1":"3 ชั่วโมง",
+"wellness.p2.line":"ครึ่งวันที่มี healthy meal, easy activity และจุดพักที่เลือกตาม mood ของคุณโดยไม่รีบ","wellness.p2.m1":"5 ชั่วโมง",
+"wellness.p3.line":"หนึ่งวันเต็มที่เว้นจังหวะให้คุณได้พัก กินดี เดินทางสบาย และใช้เวลากับสิ่งที่ทำให้รู้สึกดีขึ้น","wellness.p3.m1":"8 ชั่วโมง",
+"wellness.rules":"Wellness Companion คือเพื่อนร่วมวันสำหรับ lifestyle และกิจกรรมที่ตกลงกัน ไม่ใช่ Personal Trainer, Therapist, massage, recovery treatment หรือผู้ให้คำแนะนำทางการแพทย์ · หากต้องการ massage หรือ recovery service ให้ใช้ MMS Wellness route แยก · MMD จะยืนยันความเหมาะสมของ Model กับแผนและ availability ก่อนทุกครั้ง · ค่า venue/class/ticket/เดินทาง/Parking/อาหารและเครื่องดื่มคิดตามจริง · OT ก่อน 00:00 ฿1,690/ชม. · OT หลัง 00:00 ฿2,190/ชม. · หลัง 03:00 ฿2,690/ชม. · หลัง 06:00 ต้อง MMD review · ต่อเวลาต้อง Request ใน MY MMD → Model Approve ใน MMD MODEL → MMD ยืนยัน",
+
+"business.title":"บางบริบท แค่มีคนที่วางตัวดีไปด้วยก็พอ","business.body":"Business lunch, networking event, meeting context และ smart-casual presence สำหรับวันที่อยากมี Companion ที่เข้าใจ dress code และ social context ของคุณ",
+"business.p1.line":"Lunch, coffee meeting หรือช่วงพบปะสำคัญที่ต้องการคนไปด้วยอย่างสุภาพและเหมาะกับบริบท","business.p1.m1":"3 ชั่วโมง",
+"business.p2.line":"Networking event, client-facing lunch หรือ agenda ที่มีหลายช่วงในวันเดียวกัน โดย MMD ช่วยเช็ก fit และ dress context ล่วงหน้า","business.p2.m1":"5 ชั่วโมง",
+"business.p3.line":"หนึ่งวันสำหรับ lunch, networking และ social business context ที่ต้องการ continuity โดยยังคงเป็น Companion คนเดิมตามเวลาที่จอง","business.p3.m1":"8 ชั่วโมง",
+"business.rules":"Business Companion คือ social presence companion ไม่ใช่พนักงานบริษัท เลขานุการ ตัวแทนเจรจา ผู้รับมอบอำนาจ หรือผู้มีสิทธิ์เซ็นเอกสาร/ตกลงแทนลูกค้า · MMD จะยืนยัน context, dress code และ availability ก่อนทุกครั้ง · ค่าอาหาร/เครื่องดื่ม/venue/ticket/transport/Parking/wardrobe พิเศษคิดตามจริง · OT ก่อน 00:00 ฿1,990/ชม. · OT หลัง 00:00 ฿2,490/ชม. · หลัง 03:00 ฿2,990/ชม. · หลัง 06:00 ต้อง MMD review · หากขอบเขตเปลี่ยนเป็นงาน commercial, spokesperson หรือ professional service ต้อง Change Plan และ re-quote · ต่อเวลาต้อง Request ใน MY MMD → Model Approve ใน MMD MODEL → MMD ยืนยัน",
+
+"creative.title":"วันที่อยากดูอะไรใหม่ ๆ ไม่ต้องไปคนเดียว","creative.body":"Gallery, exhibition, photo walk, music, design หรือ creative day ที่อยากมีคนที่ share interest เดียวกันไปใช้เวลาและคุยกันใน context นั้น",
+"creative.p1.line":"Gallery, exhibition, bookstore หรือ creative coffee ที่อยากมีคนไปเดินดู พูดคุย และใช้ mood เดียวกัน","creative.p1.m1":"3 ชั่วโมง",
+"creative.p2.line":"Photo walk, gallery route, music หรือ design context ที่มี 2–3 moments ในโซนเดียวกัน โดย MMD เช็ก shared interest และ availability ก่อน","creative.p2.m1":"5 ชั่วโมง",
+"creative.p3.line":"หนึ่งวันเต็มสำหรับ gallery, city walk, music หรือ creative plan ที่อยากค่อย ๆ ใช้เวลา โดยมี Companion คนเดิมอยู่ใน context ที่ตกลงกัน","creative.p3.m1":"8 ชั่วโมง",
+"creative.rules":"Creative Companion คือ shared-interest companion ไม่ใช่ช่างภาพ นักออกแบบ ศิลปินรับจ้าง ผู้ผลิตงาน หรือผู้ให้บริการวิชาชีพ · Photo walk คือการทำกิจกรรมร่วมกันเท่านั้น ไม่มีภาพส่งมอบหรือ usage rights · งานถ่ายภาพ/วิดีโอเชิงพาณิชย์, creative production หรือการใช้ภาพต้องส่ง brief และ quote แยก · MMD จะยืนยัน shared interest, context และ availability ก่อนทุกครั้ง · ค่า ticket/exhibition/venue/transport/Parking/อาหารและเครื่องดื่มคิดตามจริง · OT ก่อน 00:00 ฿1,690/ชม. · OT หลัง 00:00 ฿2,190/ชม. · หลัง 03:00 ฿2,690/ชม. · หลัง 06:00 ต้อง MMD review · ต่อเวลาต้อง Request ใน MY MMD → Model Approve ใน MMD MODEL → MMD ยืนยัน",
+
+"medical.title":"คำขอที่ต้องให้ MMD ตรวจความเหมาะสมก่อน","medical.body":"Medical Professional เปิดเฉพาะผู้ที่ MMD ตรวจ credential แล้ว และรับเป็น request brief เท่านั้น เพื่อให้ MMD ดู specialty, ขอบเขตวิชาชีพ, เวลา/สถานที่ และความเหมาะสมก่อนตอบกลับ",
+"medical.line":"ส่งเฉพาะรายละเอียดเท่าที่จำเป็นและขอบเขตที่ต้องการให้ MMD พิจารณา — ยังไม่มีราคา การชำระเงิน การยืนยันคิว หรือการจับคู่จากหน้านี้",
+"medical.rules":"ไม่ใช่บริการฉุกเฉิน และหน้านี้ไม่ใช้สำหรับ diagnosis, treatment, therapy หรือคำแนะนำทางการแพทย์ · MMD จะไม่อ้าง claim เกิน credential ที่ตรวจแล้ว และจะไม่เสนอราคา/checkout จนกว่าจะผ่าน MMD review และกำหนดขอบเขตที่ถูกต้อง"
+});
+
+add("en",{
+"dayoff.title":"Your day off does not have to be a solo day","dayoff.body":"This is not a coffee package. It is planned time together: choose the right person for the activity and let MMD check the fit of the day.",
+"dayoff.p1.line":"One main activity + one more stop, such as Exhibition + Dinner, Movie + Supper, or Shopping + Dessert.","dayoff.p1.m1":"3 hours","dayoff.p1.m2":"Up to 2 stops",
+"dayoff.p2.line":"Several activities across half a day, such as Lunch → Gallery → Shopping → Dessert, with an optional Mini Plan from MMD.","dayoff.p2.m1":"5 hours","dayoff.p2.m2":"Multiple stops",
+"dayoff.p3.line":"Let MMD shape a full day around your mood and interests when you want a real break from routine.","dayoff.p3.m1":"8 hours","dayoff.p3.m2":"Full day",
+"dayoff.rules":"DAY OFF is recommended for 10:00–20:00 · OT before 00:00 ฿990/hr · Pre-booked time after 00:00 +฿500/hr · OT after 00:00 ฿1,490/hr · after 03:00 ฿1,790/hr · after 06:00 requires a new MMD review · Premium and OT are not stacked for the same minutes · Extensions require MY MMD Request → Model Approve in MMD MODEL → MMD confirmation · Food, drinks, tickets, activities, transport, and parking are charged at actual cost.",
+
+"nightlife.title":"Does tonight end at Dinner, or keep going?","nightlife.body":"For Dinner, Bar, Concert, Club, Celebration, and nights when you want the same person with you for the booked time.",
+"nightlife.p1.line":"Dinner + Drink, Concert + Late Supper, or Event + After spot without committing to the whole night.","nightlife.p1.m1":"3 hours",
+"nightlife.p2.line":"Dinner → Cocktail Bar → Night Spot for a continuous night without changing companions halfway through.","nightlife.p2.m1":"5 hours",
+"nightlife.p3.line":"Dinner → Bar → Club / Concert → Late Supper for a night you genuinely plan to use.","nightlife.p3.m1":"7 hours",
+"nightlife.rules":"NIGHT LIFE can start from the evening · OT before 00:00 ฿990/hr · Pre-booked time after 00:00 +฿500/hr · OT after 00:00 ฿1,490/hr · after 03:00 ฿1,790/hr · after 06:00 requires a new MMD review · Premium and OT are not stacked for the same minutes · Extensions require MY MMD Request → Model Approve in MMD MODEL → MMD confirmation · Food, drinks, table minimums, tickets, clubs, concerts, taxi, and parking are charged at actual cost.",
+
+"social.title":"For some occasions, simply having the right person beside you changes the room","social.body":"For Dinner, Wedding, Gala, Corporate Event, and social occasions that call for someone who dresses appropriately, socialises well, and understands the context.",
+"social.p1.line":"Dinner, Reception, or Invitation when you want a polished companion who can comfortably engage with people at the event.","social.p1.m1":"3 hours",
+"social.p2.line":"Wedding, Launch, Corporate Event, or Celebration where you want the same person through the main part of the event.","social.p2.m1":"4 hours",
+"social.p3.line":"A longer evening from Dinner / Reception into the main event, with dress-code and social-context briefing.","social.p3.m1":"6 hours",
+"social.commercial":"Brand guest, commercial event, media appearance, or commercial photo/video usage requires a separate brief and quote based on duties and usage rights.",
+"social.rules":"OT before 00:00 ฿1,290/hr · Pre-booked time after 00:00 +฿500/hr · OT after 00:00 ฿1,790/hr · after 03:00 ฿2,090/hr · after 06:00 requires MMD review · If the scope becomes Night Life / Commercial, the plan must change and be re-quoted · Extensions require MY MMD Request → Model Approve in MMD MODEL → MMD confirmation · Food, drinks, tickets, transport, parking, and special wardrobe are charged at actual cost.",
+
+"bangkok.title":"Bangkok is the destination. He is the person you go with.","bangkok.body":"A Local Companion for experiencing Bangkok with someone who understands the rhythm of the city. MMD helps with route, personality match, and continuity across stops. This is not sold as a tour-guide service unless MMD specifically confirms a licensed guide.",
+"bangkok.p1.line":"Choose 2–3 stops in one area, such as Old Town, Riverside, Siam, or Ari, and enjoy the city without rushing.","bangkok.p1.m1":"3 hours",
+"bangkok.p2.line":"A half day with several moods, such as Neighborhood → Food → River → Sunset, with MMD shaping the route around your interests.","bangkok.p2.m1":"5 hours",
+"bangkok.p3.line":"A full Bangkok day built from your mood, with MMD arranging route, timing, and the person who fits that day plan.","bangkok.p3.m1":"8 hours",
+"bangkok.guide":"For historical, cultural, or formal guided-tour service, MMD will arrange only a verified licensed guide and quote it separately.",
+"bangkok.rules":"Bangkok city only · OT before 00:00 ฿1,190/hr · Pre-booked time after 00:00 +฿500/hr · OT after 00:00 ฿1,690/hr · after 03:00 ฿1,990/hr · after 06:00 requires MMD review · If the activity becomes Night Life, Change Plan / re-quote applies · Outside Bangkok requires re-quote · Extensions require MY MMD Request → Model Approve in MMD MODEL → MMD confirmation · Food, drinks, tickets, activities, BTS/MRT, taxi, boat, and parking are actual cost · A general Companion is not a Licensed Tour Guide.",
+
+"sport.title":"The activity is more fun when someone goes with you","sport.body":"Running, Tennis, Badminton, Gym buddy, or Outdoor activity with a Companion who matches your pace. MMD confirms activity fit and availability before every job.",
+"sport.p1.line":"One main activity such as Tennis, Badminton, Gym buddy, or a Run + Coffee afterwards.","sport.p1.m1":"3 hours",
+"sport.p2.line":"A fuller activity day such as Court time → Lunch, or two activity blocks in the same area.","sport.p2.m1":"5 hours",
+"sport.p3.line":"An active day off from a morning activity through a planned rest stop or meal together.","sport.p3.m1":"8 hours",
+"sport.rules":"Sport Activity is companionship for doing an activity together, not Personal Training, Therapy, or medical advice · MMD confirms the Model/activity fit before every booking · Venue, court, class, equipment, ticket, transport, parking, food, and drinks are actual cost · OT before 00:00 ฿990/hr · OT after 00:00 ฿1,490/hr · after 03:00 ฿1,790/hr · after 06:00 requires MMD review · Extensions require MY MMD Request → Model Approve in MMD MODEL → MMD confirmation.",
+
+"wellness.title":"Let your day settle back into a better rhythm","wellness.body":"A Wellness day, healthy lifestyle plan, or rest day with someone beside you. MMD checks lifestyle fit and availability so the day stays comfortable and genuinely yours.",
+"wellness.p1.line":"An easy window for healthy brunch, a walk, wellness venue, or light activity in one area.","wellness.p1.m1":"3 hours",
+"wellness.p2.line":"A half day with a healthy meal, easy activity, and rest stops chosen around your mood without rushing.","wellness.p2.m1":"5 hours",
+"wellness.p3.line":"A full day with room to rest, eat well, travel comfortably, and spend time on what helps you feel better.","wellness.p3.m1":"8 hours",
+"wellness.rules":"Wellness Companion is a lifestyle/activity companion, not a Personal Trainer, Therapist, massage, recovery treatment, or medical-advice provider · For massage or recovery service use the separate MMS Wellness route · MMD confirms Model/plan fit and availability each time · Venue, class, ticket, transport, parking, food, and drinks are actual cost · OT before 00:00 ฿1,690/hr · OT after 00:00 ฿2,190/hr · after 03:00 ฿2,690/hr · after 06:00 requires MMD review · Extensions require MY MMD Request → Model Approve in MMD MODEL → MMD confirmation.",
+
+"business.title":"In some contexts, the right presence beside you is enough","business.body":"Business lunch, networking event, meeting context, and smart-casual presence for days when you want a Companion who understands dress code and social context.",
+"business.p1.line":"Lunch, coffee meeting, or an important meeting period when you want someone present in a polished, context-appropriate way.","business.p1.m1":"3 hours",
+"business.p2.line":"Networking event, client-facing lunch, or an agenda with several parts in one day, with MMD checking fit and dress context in advance.","business.p2.m1":"5 hours",
+"business.p3.line":"A full day across lunch, networking, and social-business context with the same Companion for the booked time.","business.p3.m1":"8 hours",
+"business.rules":"Business Companion is social presence, not an employee, secretary, negotiator, authorised representative, or someone who can sign or agree on the client's behalf · MMD confirms context, dress code, and availability every time · Food, drinks, venue, tickets, transport, parking, and special wardrobe are actual cost · OT before 00:00 ฿1,990/hr · OT after 00:00 ฿2,490/hr · after 03:00 ฿2,990/hr · after 06:00 requires MMD review · Commercial, spokesperson, or professional-service scope requires Change Plan and re-quote · Extensions require MY MMD Request → Model Approve in MMD MODEL → MMD confirmation.",
+
+"creative.title":"When you want to see something new, you do not have to go alone","creative.body":"Gallery, exhibition, photo walk, music, design, or a creative day with someone who shares the interest and can spend time in that context with you.",
+"creative.p1.line":"Gallery, exhibition, bookstore, or creative coffee with someone to browse, talk, and share the mood.","creative.p1.m1":"3 hours",
+"creative.p2.line":"Photo walk, gallery route, music, or design context with 2–3 moments in the same area, after MMD checks shared interest and availability.","creative.p2.m1":"5 hours",
+"creative.p3.line":"A full day for gallery, city walk, music, or a creative plan with the same Companion in the agreed context.","creative.p3.m1":"8 hours",
+"creative.rules":"Creative Companion is shared-interest companionship, not a photographer, designer, commissioned artist, producer, or professional service provider · Photo walk means doing the activity together; no delivered images or usage rights are included · Commercial photo/video, creative production, or image usage requires a separate brief and quote · MMD confirms shared interest, context, and availability every time · Tickets, exhibitions, venue, transport, parking, food, and drinks are actual cost · OT before 00:00 ฿1,690/hr · OT after 00:00 ฿2,190/hr · after 03:00 ฿2,690/hr · after 06:00 requires MMD review · Extensions require MY MMD Request → Model Approve in MMD MODEL → MMD confirmation.",
+
+"medical.title":"A request MMD needs to review before anything else","medical.body":"Medical Professional is available only for people whose credentials MMD has verified, and only through a request brief so MMD can review specialty, professional scope, time/location, and fit before responding.",
+"medical.line":"Send only the details necessary for MMD to review the requested scope. There is no price, payment, confirmed availability, or matching from this page.",
+"medical.rules":"This is not an emergency service and this page is not for diagnosis, treatment, therapy, or medical advice · MMD will not make claims beyond verified credentials and will not offer price/checkout until MMD review defines the correct scope."
+});
+
+add("zh",{
+"dayoff.title":"这个休息日，不必一个人过","dayoff.body":"这不是一个“喝咖啡套餐”，而是一段有计划的相处时间。先选适合活动的人，再由 MMD 确认当天是否合适。",
+"dayoff.p1.line":"一个主要活动 + 另一个地点，例如 Exhibition + Dinner、Movie + Supper 或 Shopping + Dessert。","dayoff.p1.m1":"3 小时","dayoff.p1.m2":"最多 2 个 stops",
+"dayoff.p2.line":"半天安排多个活动，例如 Lunch → Gallery → Shopping → Dessert，也可由 MMD 提供 Mini Plan。","dayoff.p2.m1":"5 小时","dayoff.p2.m2":"多个地点",
+"dayoff.p3.line":"让 MMD 根据你的 mood 与兴趣安排一整天，适合真正想换个 routine 的休息日。","dayoff.p3.m1":"8 小时","dayoff.p3.m2":"全天",
+"dayoff.rules":"DAY OFF 建议 10:00–20:00 · 00:00 前 OT ฿990/小时 · 预先预约的 00:00 后时段 +฿500/小时 · 00:00 后 OT ฿1,490/小时 · 03:00 后 ฿1,790/小时 · 06:00 后需 MMD 重新审核 · Premium 与 OT 不在同一分钟重复计算 · 延时需 MY MMD Request → MMD MODEL 中 Model Approve → MMD 确认 · 餐饮、Ticket、Activity、交通与 Parking 按实际费用。",
+
+"nightlife.title":"今晚，只到 Dinner，还是继续？","nightlife.body":"适合 Dinner、Bar、Concert、Club、Celebration，以及希望同一个人在已预约时段内持续陪伴的夜晚。",
+"nightlife.p1.line":"Dinner + Drink、Concert + Late Supper 或 Event + After spot，不必直接安排整晚。","nightlife.p1.m1":"3 小时",
+"nightlife.p2.line":"Dinner → Cocktail Bar → Night Spot，适合希望整晚节奏连贯、不想中途换人的情况。","nightlife.p2.m1":"5 小时",
+"nightlife.p3.line":"Dinner → Bar → Club / Concert → Late Supper，适合真正计划好好出去一晚。","nightlife.p3.m1":"7 小时",
+"nightlife.rules":"NIGHT LIFE 可从傍晚开始 · 00:00 前 OT ฿990/小时 · 预先预约的 00:00 后时段 +฿500/小时 · 00:00 后 OT ฿1,490/小时 · 03:00 后 ฿1,790/小时 · 06:00 后需 MMD 重新审核 · Premium 与 OT 不重复计算 · 延时需 MY MMD Request → MMD MODEL 中 Model Approve → MMD 确认 · 餐饮、Table minimum、Ticket、Club、Concert、Taxi 与 Parking 按实际费用。",
+
+"social.title":"有些场合，只要对的人陪你去，整个氛围就会不同","social.body":"适合 Dinner、Wedding、Gala、Corporate Event 与 Social occasion，需要懂得穿着、社交与场合分寸的人。",
+"social.p1.line":"Dinner、Reception 或 Invitation，需要一位举止得体、能自然与现场宾客交流的同行者。","social.p1.m1":"3 小时",
+"social.p2.line":"Wedding、Launch、Corporate Event 或 Celebration，需要同一个人在活动主要时段持续陪同。","social.p2.m1":"4 小时",
+"social.p3.line":"更长的晚间安排，从 Dinner / Reception 到活动主要时段，并包含 dress code 与 social context briefing。","social.p3.m1":"6 小时",
+"social.commercial":"Brand guest、commercial event、media appearance 或商业照片/视频使用，需要按职责与 usage rights 单独提交 brief 与 quote。",
+"social.rules":"00:00 前 OT ฿1,290/小时 · 预先预约的 00:00 后时段 +฿500/小时 · 00:00 后 OT ฿1,790/小时 · 03:00 后 ฿2,090/小时 · 06:00 后需 MMD review · 若工作变为 Night Life / Commercial，需 Change Plan 并重新报价 · 延时需 MY MMD Request → MMD MODEL 中 Model Approve → MMD 确认 · 餐饮、Ticket、交通、Parking 与特殊 wardrobe 按实际费用。",
+
+"bangkok.title":"Bangkok is the destination. 他是陪你一起去的人。","bangkok.body":"Local Companion 适合想和熟悉城市节奏的人一起体验 Bangkok。MMD 可协助 route、personality match 与多个地点的 continuity；除非 MMD 特别确认持牌导游，否则不作为导游服务销售。",
+"bangkok.p1.line":"在同一区域选择 2–3 个地点，例如 Old Town、Riverside、Siam 或 Ari，慢慢使用这座城市。","bangkok.p1.m1":"3 小时",
+"bangkok.p2.line":"半天多个 mood，例如 Neighborhood → Food → River → Sunset，由 MMD 按你的兴趣安排 route。","bangkok.p2.m1":"5 小时",
+"bangkok.p3.line":"根据你的 mood 安排一整天 Bangkok，由 MMD 组合 route、timing 与适合该 day plan 的人。","bangkok.p3.m1":"8 小时",
+"bangkok.guide":"如需历史、文化或正式导览服务，MMD 只会安排已核实执照的 Licensed Guide，并单独报价。",
+"bangkok.rules":"仅 Bangkok city · 00:00 前 OT ฿1,190/小时 · 预先预约的 00:00 后时段 +฿500/小时 · 00:00 后 OT ฿1,690/小时 · 03:00 后 ฿1,990/小时 · 06:00 后需 MMD review · 若 activity 变成 Night Life，需 Change Plan / re-quote · 离开 Bangkok 需重新报价 · 延时需 MY MMD Request → MMD MODEL 中 Model Approve → MMD 确认 · 餐饮、票券、活动、BTS/MRT、Taxi、Boat、Parking 按实际费用 · 一般 Companion 并非 Licensed Tour Guide。",
+
+"sport.title":"想做的活动，有人一起会更好玩","sport.body":"Running、Tennis、Badminton、Gym buddy 或 Outdoor activity，由节奏适合你的 Companion 一起参与；MMD 每次都会先确认 activity fit 与 availability。",
+"sport.p1.line":"一个主要活动，例如 Tennis、Badminton、Gym buddy，或 Run + Coffee。","sport.p1.m1":"3 小时",
+"sport.p2.line":"更完整的活动日，例如 Court time → Lunch，或在同一区域安排两个 activity blocks。","sport.p2.m1":"5 小时",
+"sport.p3.line":"Active day off，从早上的活动一路到计划好的休息点或用餐。","sport.p3.m1":"8 小时",
+"sport.rules":"Sport Activity 是一起参加活动的 Companion，不是 Personal Trainer、Therapist 或医疗建议提供者 · MMD 每次都会确认 Model 与活动的适配度 · venue/court/class/equipment/ticket/交通/Parking/餐饮按实际费用 · 00:00 前 OT ฿990/小时 · 00:00 后 OT ฿1,490/小时 · 03:00 后 ฿1,790/小时 · 06:00 后需 MMD review · 延时需 MY MMD Request → MMD MODEL 中 Model Approve → MMD 确认。",
+
+"wellness.title":"让你的这一天，慢慢回到舒服的节奏","wellness.body":"Wellness day、healthy lifestyle 或休息日，希望有人一起时，MMD 会先确认 lifestyle fit 与 availability，让当天的安排真正舒服、适合你。",
+"wellness.p1.line":"轻松的一段时间，可安排 healthy brunch、散步、wellness venue 或同一区域内的轻活动。","wellness.p1.m1":"3 小时",
+"wellness.p2.line":"半天安排 healthy meal、easy activity 与按 mood 选择的休息点，不必赶时间。","wellness.p2.m1":"5 小时",
+"wellness.p3.line":"完整一天，留出休息、好好吃饭、舒适移动，以及做让自己感觉更好的事。","wellness.p3.m1":"8 小时",
+"wellness.rules":"Wellness Companion 是 lifestyle 与共同活动的陪伴，不是 Personal Trainer、Therapist、massage、recovery treatment 或医疗建议提供者 · 如需 massage 或 recovery service，请使用独立 MMS Wellness route · MMD 每次确认 Model/plan fit 与 availability · venue/class/ticket/交通/Parking/餐饮按实际费用 · 00:00 前 OT ฿1,690/小时 · 00:00 后 OT ฿2,190/小时 · 03:00 后 ฿2,690/小时 · 06:00 后需 MMD review · 延时需 MY MMD Request → MMD MODEL 中 Model Approve → MMD 确认。",
+
+"business.title":"有些场合，只需要一个举止得体的人陪在身边","business.body":"Business lunch、networking event、meeting context 与 smart-casual presence，适合希望同行者理解你的 dress code 与 social context 的日子。",
+"business.p1.line":"Lunch、coffee meeting 或重要会面时段，需要有人以得体、符合场合的方式陪同。","business.p1.m1":"3 小时",
+"business.p2.line":"Networking event、client-facing lunch 或同一天多个 agenda，由 MMD 预先确认 fit 与 dress context。","business.p2.m1":"5 小时",
+"business.p3.line":"一整天跨越 lunch、networking 与 social business context，并在预约时间内保持同一个 Companion。","business.p3.m1":"8 小时",
+"business.rules":"Business Companion 是 social presence companion，不是公司员工、秘书、谈判代表、授权代理，也无权替客户签署文件或达成协议 · MMD 每次确认 context、dress code 与 availability · 餐饮、venue、ticket、transport、Parking、特殊 wardrobe 按实际费用 · 00:00 前 OT ฿1,990/小时 · 00:00 后 OT ฿2,490/小时 · 03:00 后 ฿2,990/小时 · 06:00 后需 MMD review · 若范围变为 commercial、spokesperson 或 professional service，需 Change Plan 并 re-quote · 延时需 MY MMD Request → MMD MODEL 中 Model Approve → MMD 确认。",
+
+"creative.title":"想去看点新的，不必一个人去","creative.body":"Gallery、exhibition、photo walk、music、design 或 creative day，与真正 share interest 的人一起在那个 context 里花时间、聊天。",
+"creative.p1.line":"Gallery、exhibition、bookstore 或 creative coffee，有人一起逛、聊、共享同一种 mood。","creative.p1.m1":"3 小时",
+"creative.p2.line":"Photo walk、gallery route、music 或 design context，在同一区域安排 2–3 个 moments，并由 MMD 先确认 shared interest 与 availability。","creative.p2.m1":"5 小时",
+"creative.p3.line":"一整天用于 gallery、city walk、music 或 creative plan，由同一个 Companion 在已约定的 context 中陪同。","creative.p3.m1":"8 小时",
+"creative.rules":"Creative Companion 是 shared-interest companion，不是摄影师、设计师、受委托艺术家、制作人或专业服务提供者 · Photo walk 只是共同参与活动，不包含成品照片或 usage rights · 商业照片/视频、creative production 或图像使用需另行 brief 与 quote · MMD 每次确认 shared interest、context 与 availability · ticket/exhibition/venue/transport/Parking/餐饮按实际费用 · 00:00 前 OT ฿1,690/小时 · 00:00 后 OT ฿2,190/小时 · 03:00 后 ฿2,690/小时 · 06:00 后需 MMD review · 延时需 MY MMD Request → MMD MODEL 中 Model Approve → MMD 确认。",
+
+"medical.title":"需要先由 MMD 判断是否合适的请求","medical.body":"Medical Professional 只开放给经 MMD 核实 credential 的专业人士，并仅接受 request brief，让 MMD 先审核 specialty、专业范围、时间/地点与整体适配度。",
+"medical.line":"只提交 MMD 审核所需的必要资料与范围；本页不会直接提供价格、付款、确认档期或匹配结果。",
+"medical.rules":"这不是紧急服务，本页也不用于 diagnosis、treatment、therapy 或医疗建议 · MMD 不会做超出已核实 credential 的 claim，也不会在 MMD review 与正确范围确定前提供价格或 checkout。"
+});
+
 })();
