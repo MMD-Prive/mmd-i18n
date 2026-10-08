@@ -136,7 +136,7 @@
     "publicModel.success.cta":"คุยกับ MMD ต่อ",
 
     "publicModel.after.kicker":"AFTER YOUR PROFILE",
-    "publicModel.after.title":"ผ่านก่อน ค่อยเข้า MMD MODEL",
+    "publicModel.after.title":"ผ่านก่อน ค่อยเข้า MY MODEL",
     "publicModel.after.desc":"การส่งโปรไฟล์ยังไม่ใช่การอนุมัติหรือเริ่มรับงานทันที ถ้าผ่านและพร้อมจริง ระบบงานของ Model จะถูกเปิดเป็นอีกขั้นหนึ่ง",
     "publicModel.after.copyKicker":"NO NEED TO RUSH",
     "publicModel.after.copyTitle":"ตอนนี้ส่งตัวตนมาก่อนก็พอ",
@@ -303,7 +303,7 @@
     "publicModel.success.cta":"Continue with MMD",
 
     "publicModel.after.kicker":"AFTER YOUR PROFILE",
-    "publicModel.after.title":"Get approved first, then enter MMD MODEL",
+    "publicModel.after.title":"Get approved first, then enter MY MODEL",
     "publicModel.after.desc":"Sending a profile is not approval and does not start work immediately. If you pass review and are ready, the Model work system opens as the next step.",
     "publicModel.after.copyKicker":"NO NEED TO RUSH",
     "publicModel.after.copyTitle":"For now, just show us who you are",
@@ -470,7 +470,7 @@
     "publicModel.success.cta":"继续联系 MMD",
 
     "publicModel.after.kicker":"AFTER YOUR PROFILE",
-    "publicModel.after.title":"先通过审核，再进入 MMD MODEL",
+    "publicModel.after.title":"先通过审核，再进入 MY MODEL",
     "publicModel.after.desc":"提交资料并不代表已经批准，也不会立即开始接工作。通过审核并准备好之后，Model 工作系统才会作为下一步开放。",
     "publicModel.after.copyKicker":"NO NEED TO RUSH",
     "publicModel.after.copyTitle":"现在先让我们认识真实的你就够了",
