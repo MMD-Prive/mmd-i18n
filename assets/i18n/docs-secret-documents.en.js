@@ -39,8 +39,8 @@
     "docs.secret.library.title": "Choose the document",
     "docs.secret.library.subtitle": "MMD sent you to read.",
     "docs.secret.library.body": "These are the main MMD document gates. You may choose the document you were sent here for, but reading content, downloading files, or generating temporary links depends on your code or token.",
-    "docs.secret.card.public.title": "Public Work Access Brief",
-    "docs.secret.card.public.body": "Read Public Work boundaries, privacy, safety, workflow, and MY MODEL Console supporting documents.",
+    "docs.secret.card.public.title": "Curated Work Access Brief",
+    "docs.secret.card.public.body": "Read Curated Work boundaries, privacy, safety, workflow, and MY MODEL Console supporting documents.",
     "docs.secret.card.console.title": "MY MODEL Console",
     "docs.secret.card.console.body": "Learn how the console works: Line on/off, photo upload, job alerts, AI support, and post-work payout.",
     "docs.secret.card.privacy.title": "Privacy & Data Brief",
@@ -65,6 +65,6 @@
     "docs.secret.final.subtitle": "but this is not job acceptance.",
     "docs.secret.final.body": "This code is only for reading information before making a decision. You can read, understand, and ask questions. Actual job acceptance happens only after details, time, location, conditions, and MMD confirmation are complete.",
     "docs.secret.final.request": "Request new code",
-    "docs.secret.final.public": "Read Public Work Brief"
+    "docs.secret.final.public": "Read Curated Work Brief"
   });
 })();
