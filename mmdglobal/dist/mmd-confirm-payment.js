@@ -240,7 +240,7 @@
           </header>
 
           <div class="mmd-modal-body">
-            <iframe id="mmd-rules-iframe" src="${RULES_URL}" title="MMD Model Work Rules" frameborder="0" loading="eager"></iframe>
+            <iframe id="mmd-rules-iframe" src="${RULES_URL}" title="MY MODEL Work Rules" frameborder="0" loading="eager"></iframe>
           </div>
 
           <footer class="mmd-modal-footer">
