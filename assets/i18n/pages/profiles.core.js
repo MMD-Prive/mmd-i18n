@@ -22,7 +22,7 @@ add("th",{
 "role.nightlife_companion.title":"เพื่อนสายปาร์ตี้","role.nightlife_companion.body":"Night out, Concert และ Celebration",
 "role.creative_companion.title":"เพื่อนสายศิลป์","role.creative_companion.body":"Gallery, Music, Photo walk และ Creative day",
 "role.medical_professional.title":"บุรุษทางการแพทย์","role.medical_professional.body":"เฉพาะผู้มี credential ที่ MMD ตรวจสอบแล้ว",
-"role.mms.title":"Male Massage","role.mms.body":"MMS เป็นบริการ Therapist แยกจาก Public Model",
+"role.mms.title":"Male Massage","role.mms.body":"MMS เป็นบริการ Therapist แยกจากโมเดลคัดสรร (Curated Models)",
 "role.custom.title":"บรีฟแบบของคุณเอง","role.custom.body":"บอก MMD ว่าวันนี้คุณกำลังมองหาใครแบบไหน",
 "stage2.hint":"STEP 2 · ใครจะใช้บริการ","stage2.all":"ทั้งหมด","stage2.male":"ผู้ชาย","stage2.female":"ผู้หญิง",
 "common.book":"จองแพ็กเกจนี้ ↗","common.brief":"ส่งบรีฟให้ MMD ↗","common.licensedGuide":"ขอ Licensed Guide ↗","common.verifiedRequest":"ส่ง Verified Request ให้ MMD ↗",
@@ -43,7 +43,7 @@ add("th",{
 "confidential.kicker":"FOR MMD PROFILES · CONFIDENTIAL WORK","confidential.title":"มีโปรไฟล์อยู่แล้ว แต่บางงานอยากให้เป็นเรื่องส่วนตัว?","confidential.body":"คุณยังมี Public Profile ได้ตามปกติ และเลือกให้บางงานส่งเป็น Confidential ผ่าน MMD เท่านั้น รายละเอียดลูกค้า ข้อเสนองาน และเรทถึงตัวจะไม่แสดงบนหน้า Public โดย Confidential เป็นเพียงรูปแบบการปกปิดรายละเอียดงาน—ไม่ได้เปลี่ยนงานเป็น Private Money อัตโนมัติ ก่อนกดรับทุกงาน MY MODEL จะระบุชัดว่าใช้ PUBLIC MONEY หรือ PRIVATE MONEY","confidential.cta":"ติดต่อ MMD Apply ↗",
 "member.kicker":"MMD MEMBERS","member.title":"โปรไฟล์สำหรับสมาชิก MMD","member.note.loggedOut":"เข้าสู่ MY MMD เพื่อดูโปรไฟล์เพิ่มเติมตามสิทธิ์สมาชิกของคุณ","member.note.loggedIn":"ให้ MMD ช่วยดูความเหมาะและความพร้อมก่อนส่งคำขอ","member.login":"เข้าสู่ MY MMD ↗","member.cardLabel":"สำหรับสมาชิก MMD","member.cardCta":"ให้ MMD ช่วยดูรายละเอียด ↗",
 "consent.kicker":"FOR EXISTING MMD PROFILES","consent.title":"รูปของคุณ คุณเป็นคนเลือกว่าจะให้ใครเห็น","consent.body":"หากมี Profile กับ MMD อยู่แล้ว คุณสามารถยืนยัน Role ที่อนุญาตให้ใช้รูปบน /profiles สำหรับผู้ที่ยังไม่เป็นสมาชิก หรือขอถอนการแสดงรูปได้ โดยไม่กระทบ Profile ภายในและงาน Confidential ที่ MMD ส่งให้คุณ","consent.cta":"ยืนยันหรือถอนสิทธิ์รูป ↗",
-"access.kicker":"SELECTED PUBLIC ACCESS","access.body":"<strong>Red Card</strong> สามารถเปิด Exclusive Model Meet กับ Public / selected-public models ในรูปแบบ Public Job ได้ตาม availability ที่ MMD ยืนยัน ส่วน Private / Exclusive Model scope ใช้ Black Card entitlement และอยู่ใน Private route แยกต่างหาก","access.cta":"ดู Public Membership",
+"access.kicker":"SELECTED PUBLIC ACCESS","access.body":"<strong>Red Card</strong> สามารถเปิด Exclusive Model Meet กับโมเดลคัดสรร (Curated Models) ในรูปแบบ Public Job ได้ตาม availability ที่ MMD ยืนยัน ส่วน Private / Exclusive Model scope ใช้ Black Card entitlement และอยู่ใน Private route แยกต่างหาก","access.cta":"ดู Public Membership",
 "catalog.badge":"CURATED","catalog.line":"โปรไฟล์ที่ MMD อนุมัติสำหรับบทบาทนี้แล้ว","catalog.fit":"ก่อนยืนยันงาน","catalog.detail":"MMD จะตรวจคิว ขอบเขต และความเหมาะสมของทั้งสองฝ่ายก่อนยืนยันทุกครั้ง","catalog.cta":"ให้ MMD เช็กคิวและความเหมาะ","catalog.ctaFemale":"ไปที่ BELIEVE ก่อน","catalog.medicalCta":"ส่ง Verified Request ให้ MMD review","catalog.privatePreview":"PRIVATE PREVIEW · ยืนยันตัวตนเพื่อดูสิทธิ์","catalog.chooseRole":"เลือกบทบาทด้านบนก่อน แล้วรายชื่อที่เหมาะจะปรากฏตรงนี้","catalog.none":"ตอนนี้ยังไม่มีคนที่ MMD เปิดสำหรับบทบาทนี้","catalog.result":"แสดง {n} โปรไฟล์ · {role}"
 });
 
@@ -62,7 +62,7 @@ add("en",{
 "role.nightlife_companion.title":"Nightlife Companion","role.nightlife_companion.body":"Nights out, concerts, and celebrations.",
 "role.creative_companion.title":"Creative Companion","role.creative_companion.body":"Galleries, music, photo walks, and creative days.",
 "role.medical_professional.title":"Medical Professional","role.medical_professional.body":"Only credential-verified professionals reviewed by MMD.",
-"role.mms.title":"Male Massage","role.mms.body":"MMS is a Therapist service, separate from Public Models.",
+"role.mms.title":"Male Massage","role.mms.body":"MMS is a Therapist service, separate from Curated Models.",
 "role.custom.title":"Your own brief","role.custom.body":"Tell MMD what kind of person you are looking for today.",
 "stage2.hint":"STEP 2 · Who is this for?","stage2.all":"All","stage2.male":"Men","stage2.female":"Women",
 "common.book":"Book this package ↗","common.brief":"Send a brief to MMD ↗","common.licensedGuide":"Request a Licensed Guide ↗","common.verifiedRequest":"Send a Verified Request to MMD ↗",
@@ -83,7 +83,7 @@ add("en",{
 "confidential.kicker":"FOR MMD PROFILES · CONFIDENTIAL WORK","confidential.title":"Already have a profile, but want some work kept private?","confidential.body":"You can keep a normal Public Profile while choosing to receive certain work only as Confidential through MMD. Client details, offers, and your payout are not shown publicly. Confidential controls disclosure; it does not automatically turn a job into Private Money. Before accepting, MY MODEL clearly shows whether the job uses PUBLIC MONEY or PRIVATE MONEY.","confidential.cta":"Contact MMD Apply ↗",
 "member.kicker":"MMD MEMBERS","member.title":"Profiles for MMD Members","member.note.loggedOut":"Sign in to MY MMD to see additional profiles available to your verified membership.","member.note.loggedIn":"Let MMD check fit and availability before you send a request.","member.login":"Open MY MMD ↗","member.cardLabel":"For MMD Members","member.cardCta":"Ask MMD for details ↗",
 "consent.kicker":"FOR EXISTING MMD PROFILES","consent.title":"Your image, your choice of who can see it","consent.body":"If you already have an MMD Profile, you can confirm which Roles may use your image on /profiles for visitors who are not yet members, or withdraw public image display without affecting your internal Profile or Confidential work sent by MMD.","consent.cta":"Confirm or withdraw image consent ↗",
-"access.kicker":"SELECTED PUBLIC ACCESS","access.body":"<strong>Red Card</strong> can open Exclusive Model Meet with Public / selected-public models as a Public Job when MMD confirms availability. Private / Exclusive Model scope requires Black Card entitlement and stays on the separate Private route.","access.cta":"View Public Membership",
+"access.kicker":"SELECTED PUBLIC ACCESS","access.body":"<strong>Red Card</strong> can open Exclusive Model Meet with Curated Models as a Public Job when MMD confirms availability. Private / Exclusive Model scope requires Black Card entitlement and stays on the separate Private route.","access.cta":"View Public Membership",
 "catalog.badge":"CURATED","catalog.line":"A profile MMD has approved for this role.","catalog.fit":"Before confirmation","catalog.detail":"MMD checks availability, boundaries, and mutual fit before every confirmation.","catalog.cta":"Ask MMD to check availability","catalog.ctaFemale":"Continue through BELIEVE","catalog.medicalCta":"Send a verified request for MMD review","catalog.privatePreview":"PRIVATE PREVIEW · Verify identity to check access","catalog.chooseRole":"Choose a role above first. Only eligible profiles will appear here.","catalog.none":"No MMD-approved profile is currently open for this role.","catalog.result":"Showing {n} profiles · {role}"
 });
 
@@ -102,7 +102,7 @@ add("zh",{
 "role.nightlife_companion.title":"夜生活陪伴","role.nightlife_companion.body":"Night out、Concert 与 Celebration。",
 "role.creative_companion.title":"创意陪伴","role.creative_companion.body":"Gallery、Music、Photo walk 与 Creative day。",
 "role.medical_professional.title":"医疗专业人士","role.medical_professional.body":"仅限经 MMD 核实 credential 的专业人士。",
-"role.mms.title":"Male Massage","role.mms.body":"MMS 是独立的 Therapist 服务，与 Public Model 分开。",
+"role.mms.title":"Male Massage","role.mms.body":"MMS 是独立的 Therapist 服务，与精选模特（Curated Models）分开。",
 "role.custom.title":"自定义需求","role.custom.body":"告诉 MMD 今天你想找怎样的人。",
 "stage2.hint":"STEP 2 · 谁会使用这项服务","stage2.all":"全部","stage2.male":"男性","stage2.female":"女性",
 "common.book":"预约此方案 ↗","common.brief":"向 MMD 提交需求 ↗","common.licensedGuide":"申请持牌导游 ↗","common.verifiedRequest":"向 MMD 提交 Verified Request ↗",
@@ -123,7 +123,7 @@ add("zh",{
 "confidential.kicker":"FOR MMD PROFILES · CONFIDENTIAL WORK","confidential.title":"已经有 Profile，但希望部分工作保持私密？","confidential.body":"你仍可保留正常的 Public Profile，同时选择让部分工作只通过 MMD 以 Confidential 方式发送。客户资料、工作提案与你的实际报酬不会公开显示。Confidential 只控制信息披露，不会自动把工作变成 Private Money；接受前，MY MODEL 会明确显示使用 PUBLIC MONEY 还是 PRIVATE MONEY。","confidential.cta":"联系 MMD Apply ↗",
 "member.kicker":"MMD MEMBERS","member.title":"MMD 会员可见的 Profiles","member.note.loggedOut":"进入 MY MMD，查看依据你已核实会员权益开放的更多 Profiles。","member.note.loggedIn":"发送请求前，让 MMD 先确认匹配度与档期。","member.login":"进入 MY MMD ↗","member.cardLabel":"MMD 会员可见","member.cardCta":"让 MMD 提供详情 ↗",
 "consent.kicker":"FOR EXISTING MMD PROFILES","consent.title":"你的照片，由你决定谁能看见","consent.body":"如果你已经有 MMD Profile，可以确认哪些 Role 允许在 /profiles 向尚未成为会员的访客展示你的照片，也可以撤回公开展示；这不会影响你的内部 Profile 或 MMD 发给你的 Confidential 工作。","consent.cta":"确认或撤回照片授权 ↗",
-"access.kicker":"SELECTED PUBLIC ACCESS","access.body":"<strong>Red Card</strong> 可在 MMD 确认 availability 后，以 Public Job 形式开放与 Public / selected-public models 的 Exclusive Model Meet。Private / Exclusive Model 范围需要 Black Card entitlement，并保留在独立的 Private route。","access.cta":"查看 Public Membership",
+"access.kicker":"SELECTED PUBLIC ACCESS","access.body":"<strong>Red Card</strong> 可在 MMD 确认 availability 后，以 Public Job 形式开放与精选模特（Curated Models）的 Exclusive Model Meet。Private / Exclusive Model 范围需要 Black Card entitlement，并保留在独立的 Private route。","access.cta":"查看 Public Membership",
 "catalog.badge":"精选","catalog.line":"经 MMD 审核并批准用于此角色的公开资料。","catalog.fit":"确认之前","catalog.detail":"每次确认前，MMD 都会检查时间、边界与双方是否合适。","catalog.cta":"请 MMD 检查时间与匹配度","catalog.ctaFemale":"先进入 BELIEVE","catalog.medicalCta":"提交已验证请求给 MMD 审核","catalog.privatePreview":"PRIVATE PREVIEW · 验证身份后查看权限","catalog.chooseRole":"请先选择上方角色，仅显示符合资格的资料。","catalog.none":"目前此角色暂无经 MMD 批准公开的资料。","catalog.result":"显示 {n} 个 Profiles · {role}"
 });
 
