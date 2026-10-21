@@ -5,6 +5,11 @@
   var dict = (window.I18N_DICT = window.I18N_DICT || {});
   var copy = {
     th: {
+      "sigil.owner.nav.overview": "ภาพรวม",
+      "sigil.owner.nav.status": "สถานะ",
+      "sigil.owner.nav.requests": "คำขอ",
+      "sigil.owner.shell.footer": "ต้าช่วยอ่านข้อมูล · Per เป็นผู้ตัดสินใจ",
+      "sigil.owner.shell.private": "พื้นที่ส่วนตัวสำหรับ Owner",
       "sigil.owner.denied.title": "หน้านี้สำหรับ Owner",
       "sigil.owner.denied.body": "บัญชีนี้ยังไม่มีสิทธิ์เข้าถึง กรุณาติดต่อ Per เพื่อตรวจสอบสิทธิ์ครับ",
       "sigil.owner.unavailable.body": "ขณะนี้ตรวจสอบสิทธิ์ไม่ได้ กรุณาลองใหม่อีกครั้งครับ",
@@ -40,6 +45,11 @@
       "sigil.owner.action.logout": "ออกจากระบบ",
     },
     en: {
+      "sigil.owner.nav.overview": "Overview",
+      "sigil.owner.nav.status": "Status",
+      "sigil.owner.nav.requests": "Requests",
+      "sigil.owner.shell.footer": "TarT helps read the context · Per makes the decisions",
+      "sigil.owner.shell.private": "Private workspace for Owner",
       "sigil.owner.denied.title": "Owner access required",
       "sigil.owner.denied.body": "This account does not have access. Contact Per to review your access.",
       "sigil.owner.unavailable.body": "Access cannot be verified right now. Please try again.",
@@ -75,6 +85,11 @@
       "sigil.owner.action.logout": "Sign out",
     },
     zh: {
+      "sigil.owner.nav.overview": "概览",
+      "sigil.owner.nav.status": "状态",
+      "sigil.owner.nav.requests": "请求",
+      "sigil.owner.shell.footer": "TarT 协助理解信息 · Per 作出决定",
+      "sigil.owner.shell.private": "Owner 私人工作区",
       "sigil.owner.denied.title": "需要 Owner 权限",
       "sigil.owner.denied.body": "此账户没有访问权限。请联系 Per 核实权限。",
       "sigil.owner.unavailable.body": "目前无法验证权限，请稍后重试。",

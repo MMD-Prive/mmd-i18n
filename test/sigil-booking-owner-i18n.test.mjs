@@ -16,7 +16,7 @@ test("SIGIL Booking Owner copy is complete, locale-aligned and fail-closed", () 
     .filter((key) => key.startsWith("sigil.owner."))
     .sort();
 
-  assert.equal(keys.length, 28);
+  assert.equal(keys.length, 33);
   for (const lang of ["th", "en", "zh"]) {
     const localeKeys = Object.keys(window.I18N_DICT[lang])
       .filter((key) => key.startsWith("sigil.owner."))
