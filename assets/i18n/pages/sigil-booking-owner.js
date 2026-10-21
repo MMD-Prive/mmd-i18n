@@ -8,7 +8,7 @@
       "sigil.owner.nav.overview": "ภาพรวม",
       "sigil.owner.nav.status": "สถานะ",
       "sigil.owner.nav.requests": "คำขอ",
-      "sigil.owner.shell.footer": "ต้าช่วยอ่านข้อมูล · Per เป็นผู้ตัดสินใจ",
+      "sigil.owner.shell.footer": "Per เป็นผู้ตัดสินใจในทุกขั้นตอน",
       "sigil.owner.shell.private": "พื้นที่ส่วนตัวสำหรับ Owner",
       "sigil.owner.denied.title": "หน้านี้สำหรับ Owner",
       "sigil.owner.denied.body": "บัญชีนี้ยังไม่มีสิทธิ์เข้าถึง กรุณาติดต่อ Per เพื่อตรวจสอบสิทธิ์ครับ",
@@ -36,7 +36,7 @@
       "sigil.owner.hold.title": "ยังไม่เปิดการจัดการคำขอ",
       "sigil.owner.hold.body":
         "ยังไม่มีการเชื่อมต่อที่ยืนยันได้สำหรับจัดการคำขอ MMD หน้านี้จึงไม่อ่านหรือเปลี่ยนข้อมูลระบบเดิม",
-      "sigil.owner.tart.note.title": "คำแนะนำจาก TarT",
+      "sigil.owner.tart.note.title": "ข้อมูลประกอบการตัดสินใจ",
       "sigil.owner.tart.note.body":
         "จะแสดงคำแนะนำเมื่อมี canonical source เท่านั้นครับ",
       "sigil.owner.hold.note":
@@ -48,7 +48,7 @@
       "sigil.owner.nav.overview": "Overview",
       "sigil.owner.nav.status": "Status",
       "sigil.owner.nav.requests": "Requests",
-      "sigil.owner.shell.footer": "TarT helps read the context · Per makes the decisions",
+      "sigil.owner.shell.footer": "Per makes the decisions at every step",
       "sigil.owner.shell.private": "Private workspace for Owner",
       "sigil.owner.denied.title": "Owner access required",
       "sigil.owner.denied.body": "This account does not have access. Contact Per to review your access.",
@@ -76,7 +76,7 @@
       "sigil.owner.hold.title": "Request management is not enabled",
       "sigil.owner.hold.body":
         "There is no verified connection for managing MMD requests, so this page neither reads nor changes legacy-system data.",
-      "sigil.owner.tart.note.title": "Guidance from TarT",
+      "sigil.owner.tart.note.title": "Context for your decision",
       "sigil.owner.tart.note.body":
         "Guidance appears only when a canonical source is available.",
       "sigil.owner.hold.note":
@@ -88,7 +88,7 @@
       "sigil.owner.nav.overview": "概览",
       "sigil.owner.nav.status": "状态",
       "sigil.owner.nav.requests": "请求",
-      "sigil.owner.shell.footer": "TarT 协助理解信息 · Per 作出决定",
+      "sigil.owner.shell.footer": "每一步均由 Per 作出决定",
       "sigil.owner.shell.private": "Owner 私人工作区",
       "sigil.owner.denied.title": "需要 Owner 权限",
       "sigil.owner.denied.body": "此账户没有访问权限。请联系 Per 核实权限。",
@@ -116,7 +116,7 @@
       "sigil.owner.hold.title": "尚未开放请求管理",
       "sigil.owner.hold.body":
         "目前没有已验证的连接可用于管理 MMD 请求，因此本页面不会读取或更改旧系统数据。",
-      "sigil.owner.tart.note.title": "TarT 的提示",
+      "sigil.owner.tart.note.title": "决策参考信息",
       "sigil.owner.tart.note.body": "仅在有 canonical source 时显示提示。",
       "sigil.owner.hold.note":
         "此混合预览不会创建 Job、Session、Payment 或 Booking Request。",
