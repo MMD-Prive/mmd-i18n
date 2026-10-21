@@ -23,6 +23,13 @@
   D.zh = D.zh || {};
   D.jp = D.jp || {};
 
+  // MY MODEL D-1 LINE reminder card. Worker transport mirrors these TH keys.
+  Object.assign(D.th, {
+    "myModel.reconfirm.open": "เปิด MY MODEL",
+    "myModel.reconfirm.cardAlt": "เปิด MY MODEL เพื่อตรวจรายละเอียดและรับทราบงาน",
+    "myModel.reconfirm.cardBody": "ตรวจรายละเอียดงาน แล้วกด “รับทราบงานแล้ว” ใน MY MODEL",
+  });
+
    
 /* Black Card — TH (add to i18n.dict.js) */
      Object.assign(D.th, {
@@ -456,3 +463,4 @@
     "duets.key.small3": "物語主導のデュオシーン—未公開。",
   });
 })();
+
