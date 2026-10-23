@@ -1,0 +1,70 @@
+{
+  "route": "/promotion/6-years-care-back",
+  "version": "2026-10-24",
+  "memberUrl": "/member/my-mmd",
+  "wishUrl": "/promotion/6-years-care-back/wish",
+  "policySource": "Existing hosted mmdcarebackpolicysweep-1.0.0.js, read 2026-10-24; display only, backend determines eligibility.",
+  "benefitCopy": {
+    "th": [
+      "PRIVATE STANDARD",
+      "Standard · 1 ปี",
+      "+180 วัน",
+      "สมัคร/ต่ออายุ Private Standard ที่เข้าเงื่อนไข CARE BACK ตั้งแต่ ส.ค. 2026 เพิ่ม 180 วันหลังยืนยัน",
+      "PRIVATE PREMIUM",
+      "Premium · 2 ปี",
+      "+1 ปี",
+      "สมัคร/ต่ออายุ Private Premium ที่เข้าเงื่อนไข CARE BACK ตั้งแต่ ส.ค. 2026 เพิ่ม 1 ปีหลังยืนยัน",
+      "CARE BACK รุ่นขยายใช้ระยะเวลาตามแพ็กเกจ วันหมดอายุจริงยึด My MMD"
+    ],
+    "en": [
+      "PRIVATE STANDARD",
+      "Standard · 1 year",
+      "+180 days",
+      "Eligible Private Standard signup/renewal since Aug 2026 adds 180 days after verification",
+      "PRIVATE PREMIUM",
+      "Premium · 2 years",
+      "+1 year",
+      "Eligible Private Premium signup/renewal since Aug 2026 adds 1 year after verification",
+      "Expanded CARE BACK uses tier-specific terms. My MMD shows the verified expiry."
+    ],
+    "zh": [
+      "PRIVATE STANDARD",
+      "Standard · 1 年",
+      "+180 天",
+      "2026年8月起符合 CARE BACK 条件的 Standard 新购/续费，核验后增加180天",
+      "PRIVATE PREMIUM",
+      "Premium · 2 年",
+      "+1 年",
+      "2026年8月起符合 CARE BACK 条件的 Premium 新购/续费，核验后增加1年",
+      "CARE BACK 延长期限按会员方案区分，实际到期日以 My MMD 核验结果为准。"
+    ]
+  },
+  "interface": {
+    "th": {
+      "pause": "พักภาพ",
+      "play": "เล่นภาพ",
+      "loading": "ภาพ",
+      "unavailable": "ภาพโหลดไม่ครบ",
+      "rule": "ส่วนลดจริงขึ้นอยู่กับระดับโมเดล รูปแบบงาน และสิทธิ์ของคุณ ดูรายละเอียดก่อนยืนยันการจองใน My MMD ครับ"
+    },
+    "en": {
+      "pause": "Pause slides",
+      "play": "Play slides",
+      "loading": "Images",
+      "unavailable": "Some images unavailable",
+      "rule": "Your discount depends on Model level, job format and verified eligibility. Check your details in My MMD before confirming a booking."
+    },
+    "zh": {
+      "pause": "暂停图片",
+      "play": "播放图片",
+      "loading": "图片",
+      "unavailable": "部分图片未加载",
+      "rule": "实际折扣取决于 Model 等级、工作形式及已核实的资格。确认预订前，请在 My MMD 查看详情。"
+    }
+  },
+  "memberCTA": {
+    "th": "เปิด My MMD",
+    "en": "Open My MMD",
+    "zh": "打开 My MMD"
+  }
+}
