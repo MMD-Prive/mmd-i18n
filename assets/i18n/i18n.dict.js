@@ -462,5 +462,40 @@
     "duets.key.small2": "全写真を見る · Telegram Premium グループ",
     "duets.key.small3": "物語主導のデュオシーン—未公開。",
   });
+  // Personal Friend Referral LV15 — consent-first, model-to-model copy.
+  Object.assign(D.th, {
+    "partner.recommend.skip": "ข้ามไปเนื้อหา",
+    "partner.recommend.loading": "กำลังเตรียมหน้า",
+    "partner.recommend.imageFallback": "ภาพโหลดไม่สำเร็จ เนื้อหาและปุ่มยังใช้งานได้ครับ",
+    "partner.recommend.hero.title": "แนะนำเพื่อน",
+    "partner.recommend.hero.accent": "ให้ MMD รู้จัก",
+    "partner.recommend.hero.body": "สำหรับนายแบบที่อยากแนะนำเพื่อนให้ MMD รู้จัก ถ้าเจ้าตัวรับรู้และโอเค ส่งข้อมูลสั้น ๆ มาเริ่มคุยกันได้เลยครับ",
+    "partner.recommend.send": "ส่งข้อมูลให้ MMD",
+    "partner.recommend.seeSteps": "ดู 3 ขั้นตอน",
+    "partner.recommend.reassurance": "เจ้าตัวรับรู้ก่อน · เลือกวิธีติดต่อได้",
+    "partner.recommend.steps.title": "เริ่มง่าย ๆ ใน 3 ขั้นตอน",
+    "partner.recommend.step1.label": "คุยกับเพื่อน",
+    "partner.recommend.step2.label": "เตรียมข้อมูล",
+    "partner.recommend.step3.label": "เลือกวิธีคุย",
+    "partner.recommend.step1.title": "ให้เพื่อนรับรู้ก่อน",
+    "partner.recommend.step1.body": "บอกเพื่อนว่าคุณอยากแนะนำให้ MMD รู้จัก แล้วตกลงกันว่าจะส่งข้อมูลส่วนไหนครับ",
+    "partner.recommend.step2.title": "เริ่มจากข้อมูลสั้น ๆ",
+    "partner.recommend.step2.body": "ชื่อเล่น รูปปัจจุบันหรือโปรไฟล์สาธารณะ ความสัมพันธ์ของคุณกับเพื่อน และวิธีติดต่อที่เจ้าตัวสะดวกครับ",
+    "partner.recommend.step3.title": "เลือกวิธีติดต่อที่สบายใจ",
+    "partner.recommend.step3.body": "ให้ MMD คุยผ่านคุณก่อน หรือติดต่อเจ้าตัวโดยตรงตามที่ตกลงกันไว้ได้ครับ",
+    "partner.recommend.faq.title": "ก่อนส่งข้อมูล",
+    "partner.recommend.faq.after.title": "หลังส่งแล้วเกิดอะไรขึ้น?",
+    "partner.recommend.faq.after.body": "MMD จะดูข้อมูลเบื้องต้นและติดต่อกลับ เพื่อบอกว่าขั้นถัดไปควรคุยผ่านคุณหรือคุยกับเจ้าตัวโดยตรงครับ",
+    "partner.recommend.faq.care.title": "ข้อมูลได้รับการดูแลอย่างไร?",
+    "partner.recommend.faq.care.body": "เจ้าตัวเลือกข้อมูลที่เปิดเผย วิธีติดต่อ และจังหวะการคุยได้ MMD ดูข้อมูลเท่าที่จำเป็นต่อการพิจารณาและประสานงานครับ",
+    "partner.recommend.faq.work.title": "คุยเรื่องงานและเงื่อนไขเมื่อไร?",
+    "partner.recommend.faq.work.body": "เมื่อมีงานที่เหมาะ MMD จะสรุปบทบาท ขอบเขต และเงื่อนไขให้ผู้เกี่ยวข้องเข้าใจก่อนเริ่มงานครับ",
+    "partner.recommend.agency.title": "ดูแลนายแบบในฐานะโมเดลลิ่ง?",
+    "partner.recommend.agency.body": "คุยเรื่องรายชื่อ เรท งาน และข้อตกลง ผ่านเส้นทางสำหรับผู้จัดการหรือเอเจนซีครับ",
+    "partner.recommend.agency.cta": "ไปหน้าโมเดลลิ่ง",
+    "partner.recommend.dock.label": "พร้อมแนะนำเพื่อน?",
+    "partner.recommend.partnerHome": "หน้า Partner",
+    "partner.recommend.steps.label": "ขั้นตอนแนะนำเพื่อน"
+});
 })();
 
