@@ -17,7 +17,7 @@ for (const file of files) {
   const exempt = /data-mmd-i18n-exempt\s*:\s*\S+/i.test(html);
   const pageArtifact = /<(?:html|main|section|form)\b/i.test(html);
   const hasDict = /assets\/i18n\/i18n\.dict\.js/i.test(html);
-  const hasCore = /assets\/i18n\/i18n\.core\.js/i.test(html);
+  const hasCore = /assets\/i18n\/i18n\.core(?:\.v21)?\.js/i.test(html);
   const hasLegacyEngine = /mmd-i18n\.(?:local|global)\.js|mmd-master\.js/i.test(html);
   const hasLegacySpans = /data-lang=["'](?:th|en|zh|ja|jp)["']/i.test(html);
   const hasBindings = /data-i18n(?:-|=)/i.test(html);
