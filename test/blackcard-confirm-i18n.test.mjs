@@ -31,5 +31,29 @@ test("Black Card confirm bundle defines every page copy key in Thai and English"
 
 test("Black Card confirm bundle is registered and loaded by canonical Webflow loader", () => {
   assert.match(registry, /\{ path: "\/blackcard\/confirm", world: "member", bundle: "blackcard-confirm" \}/);
-  assert.match(loader, /assets\/i18n\/pages\/blackcard-confirm\.js\?v=20261025-blackcard-confirm-1/);
+  assert.match(loader, /assets\/i18n\/pages\/blackcard-confirm\.js\?v=20261025-blackcard-confirm-2/);
+});
+
+test('runtime status/error keys have matching Thai and English copy with a name placeholder', () => {
+  const window = { I18N_DICT: {} };
+  const document = { readyState: 'loading', addEventListener() {} };
+  vm.runInNewContext(bundle, { window, document, location: { pathname: '/blackcard/confirm' } });
+  for (const name of ['loading','choose','choice','saved','saving','no_token','pending','recorded','follow_up','declined','cancelled','expired','verified','evidence','error','error_expired','error_payment','error_product','error_sync','error_conflict','error_reason','change_reason','retry']) {
+    const key = 'bc.confirm.runtime.' + name;
+    for (const lang of ['th', 'en']) assert.equal(typeof window.I18N_DICT[lang][key], 'string', `${lang}.${key}`);
+  }
+  assert.match(window.I18N_DICT.en['bc.confirm.runtime.saved'], /\{name\}/);
+  assert.match(window.I18N_DICT.th['bc.confirm.runtime.saved'], /\{name\}/);
+  assert.ok(!window.I18N_DICT.en['bc.confirm.error.blackcard_required'].includes('verified Black Card access'));
+});
+
+test('bundle applies to the real confirm root and updates its language on language changes', () => {
+  const events = {}, attrs = {}, root = { setAttribute(k,v) { attrs[k] = v; } };
+  let lang = 'en', applied = 0;
+  const window = { MMD_I18N: { getLang() { return lang; }, apply(node) { assert.equal(node, root); applied++; } } };
+  const document = { readyState: 'complete', addEventListener(name, cb) { events[name] = cb; }, getElementById(id) { assert.equal(id, 'bcflow'); return root; } };
+  vm.runInNewContext(bundle, { window, document, location: { pathname: '/blackcard/confirm/' } });
+  assert.equal(attrs.lang, 'en'); assert.equal(attrs['data-mmd-i18n-bundle'], 'blackcard-confirm');
+  lang = 'th'; events['mmd:i18n:change']();
+  assert.equal(attrs.lang, 'th'); assert.equal(applied, 2);
 });
