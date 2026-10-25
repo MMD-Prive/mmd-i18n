@@ -34,7 +34,7 @@
     { path: "/confirm/public-access-received", world: "public" },
     { path: "/confirm/access-proof", world: "public" },
     { path: "/blackcard/black-card", world: "member", bundle: "blackcard-black-card" },
-    { path: "/blackcard/confirm", world: "member" },
+    { path: "/blackcard/confirm", world: "member", bundle: "blackcard-confirm" },
 
     { path: "/promotion/6-years-care-back", world: "campaign", bundle: "care-back" },
     { path: "/promotion/6-years-care-back/wish", world: "campaign", bundle: "care-back-wish" },
