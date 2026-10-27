@@ -23,6 +23,11 @@
   D.zh = D.zh || {};
   D.jp = D.jp || {};
 
+  // MY MODEL Booking privacy entry. Same Thai fallback in the Webflow adapter.
+  Object.assign(D.th, {
+    "myModel.privacy.open": "ความเป็นส่วนตัว · ซ่อนจากลูกค้าบางคน",
+  });
+
   // MY MODEL D-1 LINE reminder card. Worker transport mirrors these TH keys.
   Object.assign(D.th, {
     "myModel.reconfirm.open": "เปิด MY MODEL",
