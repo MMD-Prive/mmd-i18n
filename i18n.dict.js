@@ -4,6 +4,21 @@
 
 window.I18N_DICT = {
   th: {
+    "payment.proof.ops.customer_unknown": "ยังจับคู่ลูกค้าไม่ได้",
+    "payment.proof.ops.currency": "บาท",
+    "payment.proof.ops.amount_unreadable": "อ่านยอดไม่ได้ · ต้องตรวจภาพต้นฉบับ",
+    "payment.proof.ops.amount_pending": "กำลังอ่านยอด / ยังไม่มีผลอ่านยอด",
+    "payment.proof.ops.renewal": "ต่ออายุสมาชิก",
+    "payment.proof.ops.signup": "สมัครสมาชิกใหม่",
+    "payment.proof.ops.purpose_unknown": "ยังยืนยันประเภทเงินไม่ได้",
+    "payment.proof.ops.bank_unverified": "ยังไม่ยืนยันเงินเข้า",
+    "payment.proof.ops.image_pending": "ภาพจากลูกค้า · รอตรวจว่าเป็นสลิปหรือภาพแจ้งปัญหา",
+    "membership.renewal.review_help": "ชำระแล้ว / ข้อมูลสมาชิกเดิมยังไม่ตรง",
+    "membership.renewal.paid_choice": "ชำระแล้ว · ดูขั้นตอนตรวจรายการ",
+    "membership.renewal.paid_warning": "หากชำระแล้ว อย่าชำระซ้ำครับ เก็บสลิปต้นฉบับไว้ให้ตรวจยอด เวลา และบัญชีผู้รับ การรับภาพยังไม่ใช่การยืนยันเงินเข้า",
+    "membership.renewal.paid_review": "ยังไม่มีการยืนยันเงินเข้าหรือเปิดสิทธิ์จากหน้านี้ครับ ให้ตรวจสลิปเดิมและข้อมูล LINE กับประวัติสมาชิกก่อน ไม่ต้องสร้างรายการชำระใหม่",
+    "membership.renewal.paid_progress": "ตรวจรายการเดิมก่อนชำระซ้ำ",
+
     /* Membership */
     "membership.title": "โครงสร้างสมาชิก",
     "membership.subtitle": "เลือกการเข้าถึงที่เหมาะกับคุณ",
