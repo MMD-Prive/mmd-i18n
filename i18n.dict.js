@@ -4,6 +4,8 @@
 
 window.I18N_DICT = {
   th: {
+    "admin.held_review.navigation_label": "หมวดตรวจภาพ",
+    "admin.held_review.read_only": "อ่านอย่างเดียว",
     "admin.held_review.title": "ภาพรอตรวจ",
     "admin.held_review.proofs": "หลักฐานชำระเงิน",
     "admin.held_review.lead": "ภาพที่ระบบยังจัดประเภทไม่ได้ แยกจากหลักฐานชำระเงิน หน้านี้ดูข้อมูลได้อย่างเดียวครับ",
