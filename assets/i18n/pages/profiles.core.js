@@ -9,7 +9,7 @@ function add(lang,obj){Object.keys(obj).forEach(function(k){D[lang]["profiles."+
 
 add("th",{
 "roleIntro.kicker":"CHOOSE THE ROLE FIRST",
-"roleIntro.title":"วันนี้อยากได้ใคร<br><span>มาอยู่ข้าง ๆ?</span>",
+"roleIntro.title":"วันนี้ อยากไปไหน<br><span>ทำอะไรด้วยกันดี</span>",
 "roleIntro.body":"เลือกบทบาทก่อน แล้ว MMD จะเปิดเฉพาะคนที่ผ่านการอนุมัติสำหรับบทบาทนั้นจริง ไม่ดึงนายแบบทุกคนขึ้นมาให้เลือกพร้อมกันครับ",
 "role.everyday_companion.title":"เพื่อนคู่ใจ","role.everyday_companion.body":"คาเฟ่ หนัง ช้อปปิ้ง และวันธรรมดาที่อยากมีใครอยู่ด้วย",
 "role.driver_companion.title":"คนขับรถหล่อ","role.driver_companion.body":"รับส่ง Day trip และการเดินทางที่อยากมีเพื่อนร่วมทาง",
@@ -49,7 +49,7 @@ add("th",{
 
 add("en",{
 "roleIntro.kicker":"CHOOSE THE ROLE FIRST",
-"roleIntro.title":"Who do you want<br><span>beside you today?</span>",
+"roleIntro.title":"Where would you like to go?<br><span>What shall we do together?</span>",
 "roleIntro.body":"Choose the role first. MMD will show only profiles approved for that role instead of exposing every model at once.",
 "role.everyday_companion.title":"Everyday Companion","role.everyday_companion.body":"Cafés, films, shopping, and ordinary days when you want someone beside you.",
 "role.driver_companion.title":"Driver Companion","role.driver_companion.body":"Pick-ups, day trips, and journeys with someone you actually want along.",
@@ -89,7 +89,7 @@ add("en",{
 
 add("zh",{
 "roleIntro.kicker":"CHOOSE THE ROLE FIRST",
-"roleIntro.title":"今天你希望谁<br><span>陪在身边？</span>",
+"roleIntro.title":"今天想去哪里？<br><span>想一起做些什么？</span>",
 "roleIntro.body":"先选择角色。MMD 只显示确实获批适用于该角色的人选，不会一次把所有 Model 全部公开。",
 "role.everyday_companion.title":"日常陪伴","role.everyday_companion.body":"咖啡、电影、购物，以及想有人陪伴的普通一天。",
 "role.driver_companion.title":"司机陪伴","role.driver_companion.body":"接送、Day trip，以及希望有人同行的旅程。",
