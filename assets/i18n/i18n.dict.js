@@ -23,6 +23,13 @@
   D.zh = D.zh || {};
   D.jp = D.jp || {};
 
+  // Owner-reviewed admin held queue labels. Pending images are not verified payments.
+  Object.assign(D.th, {
+    "admin.held_review.title": "สลิปรอตรวจ",
+    "admin.held_review.navigation_label": "หมวดตรวจสลิป",
+    "admin.held_review.loading": "กำลังอ่านรายการสลิปรอตรวจ…",
+  });
+
   // MY MODEL Booking privacy entry. Same Thai fallback in the Webflow adapter.
   Object.assign(D.th, {
     "myModel.privacy.open": "ความเป็นส่วนตัว · ซ่อนจากลูกค้าบางคน",
