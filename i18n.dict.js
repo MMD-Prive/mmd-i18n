@@ -13,6 +13,7 @@ window.I18N_DICT = {
     "membership.status.upstream_error": "ตัวตรวจสิทธิ์สมาชิกขัดข้องชั่วคราวครับ จึงยังยืนยันระดับหรือวันหมดอายุไม่ได้",
     "membership.status.projection_invalid": "ข้อมูลสิทธิ์สมาชิกยังไม่สมบูรณ์ครับ จึงยังยืนยันระดับหรือวันหมดอายุไม่ได้",
 
+    "membership.renewal.term_bonus": "{years} ปี + โบนัสเพิ่ม {bonus}",
     "membership.renewal.pending": "ผมยังยืนยันข้อมูลสมาชิกเดิมและข้อเสนอต่ออายุของบัญชีนี้ไม่ได้ครับ ต้องให้เปอร์ตรวจประวัติก่อน จึงยังแจ้งราคาและช่องทางชำระไม่ได้ครับ",
     "membership.renewal.payment_pending": "ข้อเสนอนี้ยังไม่เปิดสิทธิ์สมาชิกครับ ต้องตรวจช่องทางชำระสำหรับบัญชีนี้ก่อน",
     "membership.renewal.offer": "ต่ออายุ {label} ได้ {years} ปี ราคา {amount} บาทครับ",
