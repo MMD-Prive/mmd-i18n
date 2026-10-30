@@ -8,6 +8,10 @@ window.I18N_DICT = {
     "membership.title": "โครงสร้างสมาชิก",
     "membership.subtitle": "เลือกการเข้าถึงที่เหมาะกับคุณ",
     "membership.helper": "หน้านี้เป็นข้อมูลแพ็กเกจ ไม่ใช่หน้าชำระเงิน",
+    "membership.status.identity_unresolved": "ตอนนี้ยังจับคู่บัญชี LINE กับข้อมูลสมาชิกที่ยืนยันได้ไม่สำเร็จครับ จึงยังสรุปสถานะสมาชิกไม่ได้",
+    "membership.status.no_entitlement": "ตอนนี้ยังไม่พบสิทธิ์สมาชิกที่ยืนยันได้จากบัญชีนี้ครับ จึงยังสรุปสถานะระดับหรือวันหมดอายุไม่ได้",
+    "membership.status.upstream_error": "ตัวตรวจสิทธิ์สมาชิกขัดข้องชั่วคราวครับ จึงยังยืนยันระดับหรือวันหมดอายุไม่ได้",
+    "membership.status.projection_invalid": "ข้อมูลสิทธิ์สมาชิกยังไม่สมบูรณ์ครับ จึงยังยืนยันระดับหรือวันหมดอายุไม่ได้",
 
     "pkg.7days.title": "7 Days Guest Pass",
     "pkg.7days.desc": "ทดลองระบบและบรรยากาศ ไม่ถือเป็นสถานะสมาชิก",
@@ -82,6 +86,10 @@ window.I18N_DICT = {
     "membership.title": "Membership Structure",
     "membership.subtitle": "Choose the level that fits your usage",
     "membership.helper": "This page explains packages. It is not a payment page.",
+    "membership.status.identity_unresolved": "We could not safely match this LINE account to verified member data yet.",
+    "membership.status.no_entitlement": "No verified membership entitlement is available for this account yet.",
+    "membership.status.upstream_error": "The membership checker is temporarily unavailable, so the current level and expiry cannot be verified.",
+    "membership.status.projection_invalid": "The membership data is incomplete, so the current level and expiry cannot be verified.",
 
     "pkg.7days.title": "7 Days Guest Pass",
     "pkg.7days.desc": "Try the system. Not a membership.",
