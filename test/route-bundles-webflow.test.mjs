@@ -14,17 +14,20 @@ function prepare(){
  assert.equal(ran.status,0,ran.stderr);
  return {dir,manifest:JSON.parse(fs.readFileSync(path.join(dir,'integrity.json'),'utf8'))};
 }
-function openRoute(dir,p){
+function openRoute(dir,p,{scripts=[],win={},suffix='',runs=1}={}){
  const attached=[];
+ const state={};
  const document={
-  currentScript:{src:'https://cdn.jsdelivr.net/gh/MMD-Prive/mmd-i18n@'+'a'.repeat(40)+'/dist/webflow-i18n/global-loader.js'},
+  currentScript:{src:'https://cdn.jsdelivr.net/gh/MMD-Prive/mmd-i18n@'+'a'.repeat(40)+'/dist/webflow-i18n/global-loader.js'+suffix},
+  scripts,
   createElement:()=>({}),
   head:{appendChild:e=>attached.push(e)},
-  documentElement:{setAttribute:()=>{}}
+  documentElement:{setAttribute:(name,value)=>{state[name]=value;}}
  };
- const win={};
- vm.runInNewContext(fs.readFileSync(path.join(dir,'global-loader.js'),'utf8'),{document,window:win,location:{pathname:p},console});
- return {attached,win};
+ const loader=fs.readFileSync(path.join(dir,'global-loader.js'),'utf8');
+ const context={document,window:win,location:{pathname:p},console:{warn(){}}};
+ for(let i=0;i<runs;i++)vm.runInNewContext(loader,context);
+ return {attached,win,state};
 }
 test('build produces canonical bundles without duplicating core',()=>{
  const {dir,manifest}=prepare();
@@ -36,6 +39,24 @@ test('build produces canonical bundles without duplicating core',()=>{
   assert.match(b.integrity,/^sha384-/);
  }
  fs.rmSync(dir,{recursive:true,force:true});
+});
+test('loader rejects legacy coexistence and malformed URLs, and reports load failure',()=>{
+ const {dir}=prepare();
+ try {
+  for(const options of [{win:{__MMD_I18N_V21__:true}},{scripts:[{src:'https://example.test/i18n.core.v21.js?v=1'}]}]){
+   const {attached,state}=openRoute(dir,'/profiles',options);
+   assert.equal(attached.length,0);
+   assert.equal(state['data-mmd-i18n-bundle'],'conflict');
+  }
+  assert.equal(openRoute(dir,'/profiles',{suffix:'.bak'}).attached.length,0);
+  const {attached,state}=openRoute(dir,'/profiles',{runs:2});
+  assert.equal(attached.length,1);
+  assert.equal(state['data-mmd-i18n-bundle'],'loading');
+  attached[0].onerror();
+  assert.equal(state['data-mmd-i18n-bundle'],'failed');
+ } finally {
+  fs.rmSync(dir,{recursive:true,force:true});
+ }
 });
 test('each page injects exactly one route-specific SHA/SRI bundle',()=>{
  const {dir,manifest}=prepare();
