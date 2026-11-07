@@ -1,0 +1,131 @@
+{
+  "createdBy": "scripts/build-webflow-i18n-route-bundles.mjs",
+  "loaderIntegrity": "sha384-Fl0yFiI/55CDGn4U51f88u72vT/+/34xJ2yojYzrE9yDMEbyylTWzS314EQsZbMG",
+  "bundles": {
+    "default": {
+      "filename": "default.js",
+      "integrity": "sha384-9c0eDFb73LiIG2wM2dr2R00bmt9+Vkhz/AV4vpnMziJz7TmR9ZL9gWji7fog/KoH",
+      "sources": [
+        "i18n.dict.js",
+        "completed-pages.registry.js",
+        "i18n.autobind.js",
+        "i18n.core.v21.js"
+      ]
+    },
+    "profiles": {
+      "filename": "profiles.js",
+      "integrity": "sha384-iQouDO9H7fqGwpclHJ7vXvDCb6W2gY8iwzDTiDW3JQmgDZOzGeanVrdzTeAWcHQB",
+      "sources": [
+        "i18n.dict.js",
+        "pages/profiles.core.js",
+        "pages/profiles.runtime.js",
+        "completed-pages.registry.js",
+        "i18n.autobind.js",
+        "i18n.core.v21.js"
+      ]
+    },
+    "black-card": {
+      "filename": "black-card.js",
+      "integrity": "sha384-GtpQ8KfPAf/J4HBB43YjEu1fXgQYc9wY+E3A/TiHxugfrDWUQ32O2rnVP0LKQPre",
+      "sources": [
+        "i18n.dict.js",
+        "pages/blackcard-black-card.js",
+        "completed-pages.registry.js",
+        "i18n.autobind.js",
+        "i18n.core.v21.js"
+      ]
+    },
+    "requests": {
+      "filename": "requests.js",
+      "integrity": "sha384-WHLXrpM931x9rtQGu52xk1XQrpKvoTOLWYuvUCh+h2zUCMa6RKI4vlwhNJHZaOAv",
+      "sources": [
+        "i18n.dict.js",
+        "member-requests.i18n.js",
+        "completed-pages.registry.js",
+        "i18n.autobind.js",
+        "i18n.core.v21.js"
+      ]
+    },
+    "mms": {
+      "filename": "mms.js",
+      "integrity": "sha384-xhOJAI0ccqZ5JrTAzjDllHimlcF6HXSwgSIq5GhW1jfJHJuHFc0beDDBql8B+9Yq",
+      "sources": [
+        "i18n.dict.js",
+        "pages/mms.js",
+        "completed-pages.registry.js",
+        "i18n.autobind.js",
+        "i18n.core.v21.js"
+      ]
+    },
+    "mms-guide": {
+      "filename": "mms-guide.js",
+      "integrity": "sha384-pmzIEwbed4VD2QPsaV0Dv+KxxF7fa8DizVjyYx3K76NboF/H0oY6ue8wVhH1ynj+",
+      "sources": [
+        "i18n.dict.js",
+        "pages/mms.js",
+        "pages/mms-how-to-use.js",
+        "completed-pages.registry.js",
+        "i18n.autobind.js",
+        "i18n.core.v21.js"
+      ]
+    },
+    "mms-therapists": {
+      "filename": "mms-therapists.js",
+      "integrity": "sha384-w0Kegm69PxTFNEo8zSdvSn5zKURbzNopL+/D/YpdPSJVrtY5pqd+BXDqLwRZfTT9",
+      "sources": [
+        "i18n.dict.js",
+        "pages/mms.js",
+        "pages/mms-therapists.js",
+        "completed-pages.registry.js",
+        "i18n.autobind.js",
+        "i18n.core.v21.js"
+      ]
+    },
+    "mms-apply": {
+      "filename": "mms-apply.js",
+      "integrity": "sha384-3w41UGrfex2X3kFs0274SFxD8/Gta8+xSlYrjLt+XY1Q8KgZ6cIeAsMbe8ULu1oL",
+      "sources": [
+        "i18n.dict.js",
+        "pages/mms.js",
+        "pages/mms-therapist-application.js",
+        "completed-pages.registry.js",
+        "i18n.autobind.js",
+        "i18n.core.v21.js"
+      ]
+    },
+    "shop": {
+      "filename": "shop.js",
+      "integrity": "sha384-trhHjoRZF4OwNKdGks2HpjVT6G7B2ZHtEJMncVzMsIdk6i6TfsD+H6VpbIWHmJAb",
+      "sources": [
+        "i18n.dict.js",
+        "pages/mmd-shop.js",
+        "completed-pages.registry.js",
+        "i18n.autobind.js",
+        "i18n.core.v21.js"
+      ]
+    },
+    "care-back": {
+      "filename": "care-back.js",
+      "integrity": "sha384-nv03qPpGMhpHFB9pItQJhDRNZNyrhg7PqMdckkhZJRozDZfbvuGDY+D9C5nHow4O",
+      "sources": [
+        "i18n.dict.js",
+        "care-back-promotion.i18n.js",
+        "completed-pages.registry.js",
+        "i18n.autobind.js",
+        "i18n.core.v21.js"
+      ]
+    },
+    "care-back-wish": {
+      "filename": "care-back-wish.js",
+      "integrity": "sha384-AFrvlxjkFCbk52YZRPJ0Nnvww93Kr7+M8o/rNo+Ggo/L8IFp77sicqDmQHGIDfN/",
+      "sources": [
+        "i18n.dict.js",
+        "care-back-promotion.i18n.js",
+        "care-back-wish-submission.i18n.js",
+        "completed-pages.registry.js",
+        "i18n.autobind.js",
+        "i18n.core.v21.js"
+      ]
+    }
+  }
+}
