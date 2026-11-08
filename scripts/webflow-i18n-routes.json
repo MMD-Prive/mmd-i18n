@@ -1,0 +1,120 @@
+{
+  "intro": "Manifest for optional future route-scoped Webflow i18n bundles. Original Global Webflow Footer remains unchanged until staged QA and an approved SHA/SRI replacement.",
+  "runtime": "i18n.core.v21.js",
+  "preservedActiveLanguages": "TH/EN/ZH as currently declared in v2.1; requires reconciliation with Restore TH-only contract before rollout",
+  "base": [
+    "i18n.dict.js"
+  ],
+  "final": [
+    "completed-pages.registry.js",
+    "i18n.autobind.js",
+    "i18n.core.v21.js"
+  ],
+  "bundles": {
+    "default": [],
+    "profiles": [
+      "pages/profiles.core.js",
+      "pages/profiles.runtime.js"
+    ],
+    "black-card": [
+      "pages/blackcard-black-card.js"
+    ],
+    "requests": [
+      "member-requests.i18n.js"
+    ],
+    "mms": [
+      "pages/mms.js"
+    ],
+    "mms-guide": [
+      "pages/mms.js",
+      "pages/mms-how-to-use.js"
+    ],
+    "mms-therapists": [
+      "pages/mms.js",
+      "pages/mms-therapists.js"
+    ],
+    "mms-apply": [
+      "pages/mms.js",
+      "pages/mms-therapist-application.js"
+    ],
+    "shop": [
+      "pages/mmd-shop.js"
+    ],
+    "care-back": [
+      "care-back-promotion.i18n.js"
+    ],
+    "care-back-wish": [
+      "care-back-promotion.i18n.js",
+      "care-back-wish-submission.i18n.js"
+    ]
+  },
+  "routes": [
+    {
+      "name": "profiles",
+      "exact": [
+        "/profiles"
+      ]
+    },
+    {
+      "name": "black-card",
+      "exact": [
+        "/blackcard/black-card"
+      ]
+    },
+    {
+      "name": "requests",
+      "exact": [
+        "/member/requests",
+        "/my-mmd/requests",
+        "/member/my-mmd/requests"
+      ]
+    },
+    {
+      "name": "mms-guide",
+      "exact": [
+        "/male-massage/how-to-use"
+      ]
+    },
+    {
+      "name": "mms-therapists",
+      "exact": [
+        "/male-massage/therapists/mms",
+        "/male-massage/therapists",
+        "/therapists"
+      ]
+    },
+    {
+      "name": "mms-apply",
+      "exact": [
+        "/apply/mms-therapist",
+        "/apply/mms-therapist-benefits",
+        "/apply/mms-therapist-rules"
+      ]
+    },
+    {
+      "name": "care-back-wish",
+      "exact": [
+        "/promotion/6-years-care-back/wish"
+      ]
+    },
+    {
+      "name": "care-back",
+      "exact": [
+        "/promotion/6-years-care-back"
+      ]
+    },
+    {
+      "name": "mms",
+      "prefix": [
+        "/male-massage",
+        "/mms"
+      ]
+    },
+    {
+      "name": "shop",
+      "prefix": [
+        "/shop"
+      ]
+    }
+  ]
+}
