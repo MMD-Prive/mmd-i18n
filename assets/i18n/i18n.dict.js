@@ -23,6 +23,47 @@
   D.zh = D.zh || {};
   D.jp = D.jp || {};
 
+  // Public membership: static copy. Package amounts and status stay server-owned.
+  Object.assign(D.th, {
+    "curatedMembership.title": "MMD Membership",
+    "curatedMembership.lead": "เลือกแพ็กเกจที่เหมาะกับคุณ เชื่อม LINE แล้วตรวจยอดก่อนชำระ",
+    "curatedMembership.story": "ACT 001 อ่านฟรีทุกตอน",
+    "curatedMembership.intro": "เริ่มต้นกับ MMD",
+    "curatedMembership.benefits": "สิทธิ์และรายละเอียด",
+    "curatedMembership.member": "สมัคร Curated Member",
+    "curatedMembership.upgrade": "ตัวเลือกมากขึ้น",
+    "curatedMembership.elite": "สมัคร Elite",
+    "curatedMembership.priority": "สิทธิ์ลำดับก่อน",
+    "curatedMembership.red": "สมัคร Red Card",
+    "curatedMembership.rules": "กติกา",
+  });
+  Object.assign(D.en, {
+    "curatedMembership.title": "MMD Membership",
+    "curatedMembership.lead": "Choose your membership, connect LINE, and review the total before paying.",
+    "curatedMembership.story": "Read all ACT 001 episodes free",
+    "curatedMembership.intro": "Get started with MMD",
+    "curatedMembership.benefits": "Benefits and details",
+    "curatedMembership.member": "Join Curated Member",
+    "curatedMembership.upgrade": "More ways to explore",
+    "curatedMembership.elite": "Join Elite",
+    "curatedMembership.priority": "Priority access",
+    "curatedMembership.red": "Join Red Card",
+    "curatedMembership.rules": "Terms",
+  });
+  Object.assign(D.zh, {
+    "curatedMembership.title": "MMD 会员",
+    "curatedMembership.lead": "选择会员方案，连接 LINE，然后在付款前核对金额。",
+    "curatedMembership.story": "免费阅读 ACT 001 全部章节",
+    "curatedMembership.intro": "开启 MMD 体验",
+    "curatedMembership.benefits": "权益与详情",
+    "curatedMembership.member": "加入 Curated Member",
+    "curatedMembership.upgrade": "更多选择",
+    "curatedMembership.elite": "加入 Elite",
+    "curatedMembership.priority": "优先权益",
+    "curatedMembership.red": "加入 Red Card",
+    "curatedMembership.rules": "条款",
+  });
+
   // Owner-reviewed admin held queue labels. Pending images are not verified payments.
   Object.assign(D.th, {
     "admin.held_review.title": "สลิปรอตรวจ",
