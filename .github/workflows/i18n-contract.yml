@@ -4,6 +4,7 @@ on:
   pull_request:
     paths:
       - "**/*.html"
+      - "docs/webflow/global-code/**"
       - "assets/i18n/**"
       - "scripts/audit-i18n.mjs"
       - "scripts/report-th-coverage.mjs"
