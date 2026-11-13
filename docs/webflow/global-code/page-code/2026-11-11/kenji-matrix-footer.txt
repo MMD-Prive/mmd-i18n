@@ -1,3 +1,3 @@
-<script defer src="https://cdn.prod.website-files.com/68f879d546d2f4e2ab186e90%2F689e5ba67671442434f3ca35%2F6a9eafdfee3534dc4f0a5ca7%2Fkenjimatrixguardui-1.0.0.js"></script>
+<script defer src="https://cdn.prod.website-files.com/68f879d546d2f4e2ab186e90%2F689e5ba67671442434f3ca35%2F6a9eafdfee3534dc4f0a5ca7%2Fkenjimatrixguardui-1.0.0.js" integrity="sha384-cIo0dpyL8yz80fGeO6syKEBfu0Jh5P6dFM2Utdthg68oYjmjsdPeWnzbsxwteDwi" crossorigin="anonymous"></script>
 
-<script defer src="https://cdn.prod.website-files.com/68f879d546d2f4e2ab186e90%2F689e5ba67671442434f3ca35%2F6a9eafe03165b10b67d3b7b6%2Fkenjimatrixguardruntime-1.0.0.js"></script>
+<script defer src="https://cdn.prod.website-files.com/68f879d546d2f4e2ab186e90%2F689e5ba67671442434f3ca35%2F6a9eafe03165b10b67d3b7b6%2Fkenjimatrixguardruntime-1.0.0.js" integrity="sha384-jeEtYRTT+2sXhO1yCaoXWKxZWr5gGRjp9BybdvIw5s+2dGj2hsZNBjhJVFRBupxh" crossorigin="anonymous"></script>

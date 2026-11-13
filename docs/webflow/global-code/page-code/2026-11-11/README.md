@@ -1,10 +1,10 @@
-# Webflow Page Custom Code จาก Draft PR #56
+# Webflow Page Custom Code จาก PR #56
 
-วางโค้ดเฉพาะหน้าให้ครบก่อนแทนที่ Global เดิมใน draft เดียวกัน ตรวจชุดที่มีอยู่แล้วเพื่อเลี่ยงการวางซ้ำ
+อ่าน [แผนตรวจและย้อนกลับสำหรับ Staging](STAGING-REVIEW.md) และ [รายการต่อหน้า](staging-pages.csv) ก่อนใช้ไฟล์ชุดนี้ ให้ใช้ fragment ในฉบับที่ผ่านการตรวจเดียวกันทั้งชุด และตรวจโค้ดที่ผูกไว้แล้วทุกชั้นก่อนประกอบ draft สำหรับทดสอบ
 
 ## 1. rules-head
 
-**หน้า** หน้า Rules ที่มี #mmd-rules-page-lvmaxx-v2 เช่น ตรวจที่ /rules
+**หน้า** หน้าที่ใช้ #mmd-rules-page-lvmaxx-v2 จริงเท่านั้น · HTML ของ /rules บน Staging ใช้ #mmdRulesPageV2 จึงต้องตรวจ runtime ก่อนเลือกหน้าติดตั้ง
 
 **ช่อง** Head · Inside <head> tag
 
@@ -20,7 +20,7 @@
 
 ## 3. studio-bridge-head
 
-**หน้า** /studio วางหลัง Studio Visual
+**หน้า** /studio เฉพาะกรณีมีหน้า Webflow ที่ render ที่ path นี้ วางหลัง Studio Visual · Staging ปัจจุบัน redirect ไป /internal/admin/studio
 
 **ช่อง** Head · Inside <head> tag
 
@@ -36,7 +36,7 @@
 
 ## 5. partner-head
 
-**หน้า** /partner และ /partner/*
+**หน้า** /partner และ /partner/* ที่เป็นหน้าใช้งานและผ่านการตรวจการผูกโค้ดซ้ำ
 
 **ช่อง** Head · Inside <head> tag
 
@@ -108,7 +108,7 @@
 
 ## 14. partner-footer
 
-**หน้า** /partner และ /partner/*
+**หน้า** /partner และ /partner/* ที่เป็นหน้าใช้งานและผ่านการตรวจการผูกโค้ดซ้ำ
 
 **ช่อง** Footer · Before </body> tag
 
