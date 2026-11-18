@@ -41,3 +41,51 @@ test("binds the rebuilt Webflow embed explicitly instead of relying only on text
   assert.match(bundle, /data-mmd-i18n-bundle/);
   assert.match(bundle, /mmd:i18n:change/);
 });
+
+test("renewal and signup labels follow their links and verified terms survive the policy overlay", async () => {
+  const { runInNewContext } = await import("node:vm");
+  const overlay = readFileSync(new URL("../assets/i18n/pages/member-membership-benefits-policy-v3.js", import.meta.url), "utf8");
+  const makeLink = (path) => ({
+    pathname: path.split("#")[0], hash: path.includes("#") ? "#" + path.split("#")[1] : "",
+    setAttribute(name, value) { this[name] = value; },
+  });
+  const actions = [makeLink("/member/renewal"), makeLink("/sigil/member/membership#privatePackages")];
+  const myMmd = makeLink("/member/dashboard");
+  const root = {
+    querySelector: () => null,
+    querySelectorAll(selector) {
+      if (selector === ".bf4-sticky a") return [actions[0], myMmd];
+      if (selector.includes(".bf4-hero .bf4-actions a,")) return [...actions, myMmd];
+      return [];
+    },
+    setAttribute() {},
+  };
+  const context = {
+    window: {}, location: { pathname: "/sigil/member/membership/benefits" },
+    document: { addEventListener() {}, getElementById: () => root }, setTimeout() {},
+  };
+  runInNewContext(bundle, context);
+  runInNewContext(overlay, context);
+  assert.deepEqual(actions.map(link => link["data-i18n-text"]), ["memberBenefits.cta.renew", "memberBenefits.cta.packages"]);
+  assert.equal(myMmd["data-i18n-text"], "memberBenefits.sticky.dashboard");
+  const dictionaries = context.window.I18N_DICT;
+  for (const [lang, labels] of Object.entries({
+    th: ["ตรวจสิทธิ์ต่ออายุ", "ดูแพ็กเกจสมาชิก", "บาท / 2 ปีแรก"],
+    en: ["Check renewal eligibility", "View membership plans", "THB / first 2 years"],
+    zh: ["查看续费资格", "查看会员方案", "泰铢 / 首 2 年"],
+  })) {
+    const t = key => dictionaries[lang]["memberBenefits." + key];
+    assert.equal(t("cta.renew"), labels[0]);
+    assert.equal(t("cta.packages"), labels[1]);
+    assert.equal(t("mini.cta"), labels[0]);
+    assert.equal(t("acc.renewal.cta"), labels[0]);
+    assert.equal(t("premium.unit"), labels[2]);
+    assert.equal(t("sticky.dashboard"), "My MMD");
+    assert.match(t("mini.desc"), /Standard.*1,000.*Premium.*2,500/);
+    assert.match(t("acc.renewal.body"), /90/);
+    assert.match(t("acc.renewal.body"), /LINE/);
+    assert.match(t("renewal.campaign"), /CARE BACK.*MY MMD/);
+    assert.doesNotMatch(Object.values(dictionaries[lang]).join(" "), /180|\+1 (?:ปี|年|year)|799|1,999|1999|December|ธันวาคม|12月/i);
+  }
+  assert.equal(dictionaries.th["memberBenefits.renewal.campaign"], "CARE BACK ทยอยเปิดข้อเสนอตั้งแต่กลางเดือน สิทธิ์ที่ได้รับขึ้นอยู่กับรอบที่ต่ออายุ ตรวจข้อเสนอของคุณใน MY MMD ก่อนชำระเงิน");
+});
